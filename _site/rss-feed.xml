@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+	<channel>
+		<title>David Kraemer</title>
+		<description>applied math phd student</description>
+		<link></link>
+		<atom:link href="/rss-feed.xml" rel="self" type="application/rss+xml" />
+		
+			<item>
+				<title>Gradients for Grown-Ups (Part 2)</title>
+				
+					<dc:creator>David Kraemer</dc:creator>
+				
+				
+					<description>&lt;p&gt;This is the second in a series of posts, “Gradients for Grown-Ups”. You can see
+the previous post &lt;a href=&quot;gradients-for-grownups-part-01&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+</description>
+				
+				<pubDate>Thu, 10 May 2018 00:00:00 -0400</pubDate>
+				<link>http://localhost:4000/ln/gradients-for-grownups-part-02.html</link>
+				<guid isPermaLink="true">http://localhost:4000/ln/gradients-for-grownups-part-02.html</guid>
+			</item>
+		
+			<item>
+				<title>Gradients for Grown-Ups (Part 1)</title>
+				
+					<dc:creator>David Kraemer</dc:creator>
+				
+				
+					<description>&lt;p&gt;This is the first in a series of posts, “Gradients for Grown-Ups”. You can see
+the next post &lt;a href=&quot;gradients-for-grownups-part-02&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+</description>
+				
+				<pubDate>Wed, 09 May 2018 00:00:00 -0400</pubDate>
+				<link>http://localhost:4000/ln/gradients-for-grownups-part-01.html</link>
+				<guid isPermaLink="true">http://localhost:4000/ln/gradients-for-grownups-part-01.html</guid>
+			</item>
+		
+			<item>
+				<title>A neat proof of the Cauchy criterion</title>
+				
+					<dc:creator>David Kraemer</dc:creator>
+				
+				
+					<description>&lt;p&gt;I took introductory analysis with &lt;em&gt;Understanding Analysis&lt;/em&gt; by Stephen Abbott,
+and I think it is great for the purpose of a first course in real analysis.
+However, now that I’ve done a bit more in analysis, I’ve started to revisit some
+of the important proofs of the textbook with simpler (albeit more developed)
+alternatives.&lt;/p&gt;
+
+</description>
+				
+				<pubDate>Mon, 07 May 2018 00:00:00 -0400</pubDate>
+				<link>http://localhost:4000/ln/neat-proof-of-cauchy-criterion.html</link>
+				<guid isPermaLink="true">http://localhost:4000/ln/neat-proof-of-cauchy-criterion.html</guid>
+			</item>
+		
+			<item>
+				<title>When abstraction is simpler</title>
+				
+					<dc:creator>David Kraemer</dc:creator>
+				
+				
+					<description>&lt;p&gt;I am always delighted when abstraction makes a problem noticeably easier to
+solve. Today I encountered (Jacod 1999) the following homework question:&lt;/p&gt;
+
+</description>
+				
+				<pubDate>Wed, 04 Apr 2018 00:00:00 -0400</pubDate>
+				<link>http://localhost:4000/ln/when-abstraction-is-simpler.html</link>
+				<guid isPermaLink="true">http://localhost:4000/ln/when-abstraction-is-simpler.html</guid>
+			</item>
+		
+	</channel>
+</rss>

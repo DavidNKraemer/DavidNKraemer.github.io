@@ -1,0 +1,306 @@
+<!doctype html>
+<html>
+
+<head>
+
+  <title>
+    
+      A neat proof of the Cauchy criterion | David Kraemer
+    
+  </title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/syntax.css">
+  <!-- Use Atom -->
+  <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="David Kraemer" />
+  <!-- Use RSS-2.0 -->
+  <!--<link href="/rss-feed.xml" type="application/rss+xml" rel="alternate" title="David Kraemer | applied math phd student"/>
+  //-->
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quattrocento+Sans">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <script type="text/javascript" async
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+
+  <!-- Google Analytics -->
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-112060364-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <!-- Use Jekyll SEO plugin -->
+  <!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>A neat proof of the Cauchy criterion | David Kraemer</title>
+<meta name="generator" content="Jekyll v3.6.2" />
+<meta property="og:title" content="A neat proof of the Cauchy criterion" />
+<meta name="author" content="David Kraemer" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="I took introductory analysis with Understanding Analysis by Stephen Abbott, and I think it is great for the purpose of a first course in real analysis. However, now that I’ve done a bit more in analysis, I’ve started to revisit some of the important proofs of the textbook with simpler (albeit more developed) alternatives." />
+<meta property="og:description" content="I took introductory analysis with Understanding Analysis by Stephen Abbott, and I think it is great for the purpose of a first course in real analysis. However, now that I’ve done a bit more in analysis, I’ve started to revisit some of the important proofs of the textbook with simpler (albeit more developed) alternatives." />
+<link rel="canonical" href="http://localhost:4000/ln/neat-proof-of-cauchy-criterion.html" />
+<meta property="og:url" content="http://localhost:4000/ln/neat-proof-of-cauchy-criterion.html" />
+<meta property="og:site_name" content="David Kraemer" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-05-07T00:00:00-04:00" />
+<script type="application/ld+json">
+{"headline":"A neat proof of the Cauchy criterion","dateModified":"2018-05-07T00:00:00-04:00","datePublished":"2018-05-07T00:00:00-04:00","url":"http://localhost:4000/ln/neat-proof-of-cauchy-criterion.html","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/ln/neat-proof-of-cauchy-criterion.html"},"author":{"@type":"Person","name":"David Kraemer"},"description":"I took introductory analysis with Understanding Analysis by Stephen Abbott, and I think it is great for the purpose of a first course in real analysis. However, now that I’ve done a bit more in analysis, I’ve started to revisit some of the important proofs of the textbook with simpler (albeit more developed) alternatives.","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+</head>
+
+
+<body>
+
+  <div class="container">
+    <header class="masthead">
+  <h3 class="masthead-title">
+    <a href="/">David Kraemer</a>
+    <small class="masthead-subtitle">applied math phd student</small>
+    <div class="menu">
+  <nav class="menu-content">
+    
+      <a href="/menu/about">About</a>
+    
+      <a href="/menu/courses">Courses</a>
+    
+      <a href="/menu/projects">Projects</a>
+    
+      <a href="/menu/papers">Papers</a>
+    
+      <a href="/menu/ln">Ln</a>
+    
+      <a href="/menu/contact">Contact</a>
+    
+  </nav>
+  <nav class="social-icons">
+    
+  
+  
+    <a href="https://www.github.com/davidnkraemer" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="http://www.linkedin.com/in/davidnkraemer" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="mailto:david.kraemer@stonybrook.edu" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="/feed.xml"><i class="fa fa-rss-square" aria-hidden="true"></i></a>
+  
+
+  </nav>
+</div>
+
+  </h3>
+</header>
+
+
+    <div class="post-container">
+      <h1>
+  A neat proof of the Cauchy criterion
+</h1>
+
+
+
+<p>I took introductory analysis with <em>Understanding Analysis</em> by Stephen Abbott,
+and I think it is great for the purpose of a first course in real analysis.
+However, now that I’ve done a bit more in analysis, I’ve started to revisit some
+of the important proofs of the textbook with simpler (albeit more developed)
+alternatives.</p>
+
+<p>Here is a proof of the Cauchy criterion on <script type="math/tex">\mathbb{R}</script>, which I am sure
+exists elsewhere. Note that we are still using the completeness axiom that
+Abbott formulates (that <script type="math/tex">\sup A</script> exists for bounded above <script type="math/tex">A</script>), but now
+it’s buried inside of the definitions of <script type="math/tex">\limsup</script> and <script type="math/tex">\liminf</script>.</p>
+
+<p><strong>Theorem</strong> (Cauchy criterion). Let <script type="math/tex">(x_n) \in \mathbb{R}</script> be a Cauchy
+sequence. Then <script type="math/tex">(x_n)</script> converges; i.e., <script type="math/tex">\lim_{n \to \infty} x_n</script> exists.</p>
+
+<p><em>Proof</em>. Denote</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align*}
+\overline{x} &= \limsup_{n \to \infty} x_n \\
+\underline{x} &= \liminf_{n \to \infty} x_n.
+\end{align*} %]]></script>
+
+<p>We show that <script type="math/tex">% <![CDATA[
+|\overline{x} - \underline{x}| < \varepsilon %]]></script> for every
+<script type="math/tex">\varepsilon > 0</script>. This suffices to show that <script type="math/tex">\lim x_n</script> exists.</p>
+
+<p>Both <script type="math/tex">\overline{x}</script> and <script type="math/tex">\underline{x}</script> are cluster points of the sequence
+<script type="math/tex">(x_n)</script>. We will show how to get <script type="math/tex">% <![CDATA[
+| x_n - \overline{x} | < \delta %]]></script> for
+judiciously chosen <script type="math/tex">\delta > 0</script> and sufficiently large <script type="math/tex">n</script>, and use the
+parallel fact for <script type="math/tex">\underline{x}</script> to establish the claim.</p>
+
+<p>Fix <script type="math/tex">\overline{N} \in \mathbb{N}</script> such that <script type="math/tex">% <![CDATA[
+| x_{\overline{N}} -
+\overline{x} | < \frac{\varepsilon}{4} %]]></script> and such that <script type="math/tex">% <![CDATA[
+| x_n -
+x_{\overline{N}} \ < \frac{\varepsilon}{4} %]]></script> for all <script type="math/tex">n \geq \overline{N}</script>.
+The former condition can be satisfied by virtue of <script type="math/tex">\overline{x}</script> being a
+cluster point of <script type="math/tex">(x_n)</script>, and the latter by the fact that <script type="math/tex">(x_n)</script> is Cauchy.
+Then</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align*}
+  | x_n - \overline{x}| &\leq | x_n - x_{\overline{N}} | + \ x_{\overline{N}} -
+  \overline{x} | \\
+  &< \frac{\varepsilon}{2}.
+\end{align*} %]]></script>
+
+<p>We can find an analogous <script type="math/tex">\underline{N} \in \mathbb{N}</script> for <script type="math/tex">\underline{x}</script>.
+Taking <script type="math/tex">N = \max(\overline{N}, \underline{N})</script>, we have that</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align*}
+  | \overline{x} - \underline{x} | & \leq | \overline{x} - x_n | + | x_n - \underline{x} | \\
+  &< \frac{\varepsilon}{2} + \frac{\varepsilon}{2} \\
+  &= \varepsilon,
+\end{align*} %]]></script>
+
+<p>for all <script type="math/tex">n \geq N</script>. This is what we needed. <script type="math/tex">\square</script></p>
+
+
+<span class="post-date">
+  Published on
+  
+  May
+  7th,
+  2018
+  by
+  
+    David Kraemer
+  
+</span>
+
+<div class="post-date">If you liked this post, feel free to share it:</div>
+  <div class="sharing-icons">
+    <a href="https://twitter.com/intent/tweet?text=A neat proof of the Cauchy criterion&amp;url=/ln/neat-proof-of-cauchy-criterion.html" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=/ln/neat-proof-of-cauchy-criterion.html&amp;title=A neat proof of the Cauchy criterion" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+    <a href="https://plus.google.com/share?url=/ln/neat-proof-of-cauchy-criterion.html" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+  </div>
+</div>
+
+
+<div class="related">
+  <h1 >Related lns:</h1>
+  
+  <ul class="related-posts">
+    
+      
+        
+          <li>
+            <h3>
+              <a href="/ln/gradients-for-grownups-part-02.html">
+                Gradients for Grown-Ups (Part 2)
+                <!--<img src="http://localhost:4000/images/">-->
+                <!--<small>May 10, 2018</small>-->
+              </a>
+            </h3>
+          </li>
+          
+        
+      
+        
+          <li>
+            <h3>
+              <a href="/ln/gradients-for-grownups-part-01.html">
+                Gradients for Grown-Ups (Part 1)
+                <!--<img src="http://localhost:4000/images/">-->
+                <!--<small>May 9, 2018</small>-->
+              </a>
+            </h3>
+          </li>
+          
+        
+      
+        
+        
+      
+    
+      
+        
+        
+      
+        
+          <li>
+            <h3>
+              <a href="/ln/when-abstraction-is-simpler.html">
+                When abstraction is simpler
+                <!--<img src="http://localhost:4000/images/">-->
+                <!--<small>April 4, 2018</small>-->
+              </a>
+            </h3>
+          </li>
+          
+        
+      
+    
+      
+        
+        
+      
+    
+  </ul>
+</div>
+
+
+
+
+    </div>
+
+    <footer class="footer">
+  
+  
+  
+    <a href="https://www.github.com/davidnkraemer" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="http://www.linkedin.com/in/davidnkraemer" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="mailto:david.kraemer@stonybrook.edu" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="/feed.xml"><i class="fa fa-rss-square" aria-hidden="true"></i></a>
+  
+
+  <div class="post-date">
+    David Kraemer  | powered by<a
+       href="https://jekyllrb.com/">Jekyll</a>| design by<a href="https://github.com/LeNPaul/Lagrange">Lagrange</a>
+  </div>
+</footer>
+
+
+  </div>
+
+</body>
+</html>

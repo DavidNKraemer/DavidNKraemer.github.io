@@ -1,0 +1,440 @@
+<!doctype html>
+<html>
+
+<head>
+
+  <title>
+    
+      Gradients for Grown-Ups (Part 2) | David Kraemer
+    
+  </title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/syntax.css">
+  <!-- Use Atom -->
+  <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="David Kraemer" />
+  <!-- Use RSS-2.0 -->
+  <!--<link href="/rss-feed.xml" type="application/rss+xml" rel="alternate" title="David Kraemer | applied math phd student"/>
+  //-->
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quattrocento+Sans">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <script type="text/javascript" async
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+
+  <!-- Google Analytics -->
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-112060364-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <!-- Use Jekyll SEO plugin -->
+  <!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>Gradients for Grown-Ups (Part 2) | David Kraemer</title>
+<meta name="generator" content="Jekyll v3.6.2" />
+<meta property="og:title" content="Gradients for Grown-Ups (Part 2)" />
+<meta name="author" content="David Kraemer" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="This is the second in a series of posts, “Gradients for Grown-Ups”. You can see the previous post here." />
+<meta property="og:description" content="This is the second in a series of posts, “Gradients for Grown-Ups”. You can see the previous post here." />
+<link rel="canonical" href="http://localhost:4000/ln/gradients-for-grownups-part-02.html" />
+<meta property="og:url" content="http://localhost:4000/ln/gradients-for-grownups-part-02.html" />
+<meta property="og:site_name" content="David Kraemer" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-05-10T00:00:00-04:00" />
+<script type="application/ld+json">
+{"headline":"Gradients for Grown-Ups (Part 2)","dateModified":"2018-05-10T00:00:00-04:00","datePublished":"2018-05-10T00:00:00-04:00","url":"http://localhost:4000/ln/gradients-for-grownups-part-02.html","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/ln/gradients-for-grownups-part-02.html"},"author":{"@type":"Person","name":"David Kraemer"},"description":"This is the second in a series of posts, “Gradients for Grown-Ups”. You can see the previous post here.","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+</head>
+
+
+<body>
+
+  <div class="container">
+    <header class="masthead">
+  <h3 class="masthead-title">
+    <a href="/">David Kraemer</a>
+    <small class="masthead-subtitle">applied math phd student</small>
+    <div class="menu">
+  <nav class="menu-content">
+    
+      <a href="/menu/about">About</a>
+    
+      <a href="/menu/courses">Courses</a>
+    
+      <a href="/menu/projects">Projects</a>
+    
+      <a href="/menu/papers">Papers</a>
+    
+      <a href="/menu/ln">Ln</a>
+    
+      <a href="/menu/contact">Contact</a>
+    
+  </nav>
+  <nav class="social-icons">
+    
+  
+  
+    <a href="https://www.github.com/davidnkraemer" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="http://www.linkedin.com/in/davidnkraemer" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="mailto:david.kraemer@stonybrook.edu" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="/feed.xml"><i class="fa fa-rss-square" aria-hidden="true"></i></a>
+  
+
+  </nav>
+</div>
+
+  </h3>
+</header>
+
+
+    <div class="post-container">
+      <h1>
+  Gradients for Grown-Ups (Part 2)
+</h1>
+
+
+
+<p>This is the second in a series of posts, “Gradients for Grown-Ups”. You can see
+the previous post <a href="gradients-for-grownups-part-01">here</a>.</p>
+
+<p>Last time, we got started with the example <script type="math/tex">f(x) = c^T x</script> to showcase the
+general procedure for computing gradients:</p>
+
+<ol>
+  <li>Express <script type="math/tex">f(x)</script> in “coordinate form” (e.g. with explicit summations).</li>
+  <li>Compute <script type="math/tex">\frac{\partial f}{\partial x_k}</script> over the coordinate form.</li>
+  <li>Collect the partial derivatives into the gradient vector.</li>
+  <li>Simplify and interpret the result.</li>
+</ol>
+
+<p>This time, we’ll cover two more examples, <script type="math/tex">x^T x</script> and <script type="math/tex">x^T A x</script>. The
+goal is to get more familiar with the general setting of commmon linear algebra
+functions.</p>
+
+<h1 id="example-fx--xt-x">Example: <script type="math/tex">f(x) = x^T x</script></h1>
+
+<p>You will see the objective function <script type="math/tex">f(x) = x^T x</script> in <em>many</em> places in
+optimization, because this is another way of writing <script type="math/tex">\| x \|_2^2</script>. If you
+ever plan on analyzing distance minimization, least squares, or other similar
+problems, you will end up taking the gradient of <script type="math/tex">\| x \|_2^2</script> sooner rather
+than later.</p>
+
+<p>Luckily, this is a relatively straightforward computation. First, let’s
+represent <script type="math/tex">f(x)</script> in coordinate form:</p>
+
+<script type="math/tex; mode=display">x^T x = \sum_{i=1}^{n} x_i x_i = \sum_{i=1}^{n} x_i^2.</script>
+
+<p>Remember, if the compact summand notation is still too dense, feel free to write
+out <script type="math/tex">x_1^2 + x_2^2 + \cdots + x_{n-1}^2 + x_n^2</script>. Next, we take the <script type="math/tex">k</script>th
+partial derivative:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+\frac{\partial}{\partial x_k} x^T x &= 
+\frac{\partial}{\partial x_k} \sum_{i=1}^{n} x_i x_i \\
+&= \sum_{i=1}^{n} \frac{\partial}{\partial x_k}x_i^2.
+\end{align} %]]></script>
+
+<p>If <script type="math/tex">i = k</script>, then <script type="math/tex">\frac{\partial }{\partial x_k} x_k^2 = 2 x_k</script> by the
+power rule. Otherwise, as in the previous case, <script type="math/tex">\frac{\partial }{\partial x_k} x_i^2 = 0</script>. Therefore,</p>
+
+<script type="math/tex; mode=display">\sum_{i=1}^{n} \frac{\partial}{\partial x_k}x_i^2 = 2 x_k.</script>
+
+<p>Now, we put the gradient vector together as before:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+\nabla f(x) &= \nabla x^T x \\
+&= \begin{bmatrix} 2 x_1 \\ 2 x_2 \\ \vdots \\ 2 x_{n-1} \\ 2 x_{n}
+\end{bmatrix}.
+\end{align} %]]></script>
+
+<p>Finally, we notice that this column vector is simply <script type="math/tex">2x</script>. So <script type="math/tex">\nabla x^T x
+= 2x</script>, which is a generalization of the familiar quadratic rule: <script type="math/tex">\frac{d}{dx} x^2 = 2x</script>.</p>
+
+<p>Nice, we’re done!</p>
+
+<h1 id="example-fx--xt-a-x">Example: <script type="math/tex">f(x) = x^T A x</script></h1>
+
+<p>This example is significantly more tricky, so we will take our time in getting
+through it.</p>
+
+<p>Let’s think through what <script type="math/tex">x^T A x</script> translates to. First, let’s consider the
+product <script type="math/tex">A x</script>. Now, there are two ways to picture the matrix-vector
+multiplication:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{bmatrix}
+a_{11} & a_{12} & \cdots & a_{1n} \\
+a_{21} & a_{22} & \cdots & a_{2n} \\
+\vdots & \vdots & \ddots & \vdots \\
+a_{n1} & a_{n2} & \cdots & a_{nn} \\
+\end{bmatrix}
+\begin{bmatrix}
+x_1 \\ x_2 \\ \vdots \\ x_n
+\end{bmatrix}. %]]></script>
+
+<p>First, matrix-vector multiplication is defined so that the <script type="math/tex">k</script>th entry of the
+result is a dot product of the <script type="math/tex">k</script>th row of <script type="math/tex">A</script> with <script type="math/tex">x</script>:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{bmatrix}
+a_{11} & a_{12} & \cdots & a_{1n} \\
+a_{21} & a_{22} & \cdots & a_{2n} \\
+\vdots & \vdots & \ddots & \vdots \\
+a_{n1} & a_{n2} & \cdots & a_{nn} \\
+\end{bmatrix}
+\begin{bmatrix}
+x_1 \\ x_2 \\ \vdots \\ x_n
+\end{bmatrix} = 
+\begin{bmatrix}
+a_{11} x_1 + a_{12} x_2 + \cdots + a_{1n} x_n \\
+a_{21} x_1 + a_{22} x_2 + \cdots + a_{2n} x_n \\
+\vdots \\
+a_{n1} x_1 + a_{n2} x_2 + \cdots + a_{nn} x_n
+\end{bmatrix}. %]]></script>
+
+<p>Alternatively, matrix-vector multiplication is defined to be a linear
+combination of the columns of <script type="math/tex">A</script>:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{bmatrix}
+a_{11} & a_{12} & \cdots & a_{1n} \\
+a_{21} & a_{22} & \cdots & a_{2n} \\
+\vdots & \vdots & \ddots & \vdots \\
+a_{n1} & a_{n2} & \cdots & a_{nn} \\
+\end{bmatrix}
+\begin{bmatrix}
+x_1 \\ x_2 \\ \vdots \\ x_n
+\end{bmatrix} = 
+x_1 
+\begin{bmatrix}
+a_{11} \\ a_{21} \\ \vdots \\ a_{n1}
+\end{bmatrix} + 
+x_2 
+\begin{bmatrix}
+a_{12} \\ a_{22} \\ \vdots \\ a_{n2}
+\end{bmatrix} + \cdots +
+x_n 
+\begin{bmatrix}
+a_{1n} \\ a_{2n} \\ \vdots \\ a_{nn}
+\end{bmatrix}. %]]></script>
+
+<p>This last interpretation is going to be more helpful for our purposes. Writing
+compactly in coordinate form, this is</p>
+
+<script type="math/tex; mode=display">Ax = \sum_{j=1}^{n} x_j 
+\begin{bmatrix} a_{1j} \\ a_{2j} \\ \vdots \\ a_{nj} \end{bmatrix}.</script>
+
+<p>Now we can simply take the inner product <script type="math/tex">x^T (Ax)</script> and put it in coordinate
+form:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+x^T(Ax) &= x^T \left( \sum_{j=1}^{n} x_j 
+\begin{bmatrix} a_{1j} \\ a_{2j} \\ \vdots \\ a_{nj} \end{bmatrix} \right) \\
+&= \sum_{j=1}^{n} x_j \cdot 
+\begin{bmatrix} x_1 & x_2 & \cdots & x_n \end{bmatrix}
+\begin{bmatrix} a_{1j} \\ a_{2j} \\ \vdots \\ a_{nj} \end{bmatrix} \\
+&= \sum_{j=1}^{n} x_j \sum_{i=1}^{n} x_i a_{ij} \\
+&= \sum_{i=1}^{n} \sum_{j=1}^{n} a_{ij} x_i x_j.
+\end{align} %]]></script>
+
+<p>The trickiness ultimately boils down to the fact that there are two separate
+summations going on. When we work with multiple summations, we have to take more
+care with the calculations.</p>
+
+<p>Next, we take the partial derivative with respect to <script type="math/tex">x_k</script>. Let’s simplify
+notation a bit and use <script type="math/tex">\partial_k</script> to mean <script type="math/tex">\frac{\partial}{\partial x_k}</script>.
+We have</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+\partial_k (x^T Ax) &= \partial_k \sum_{i=1}^{n} \sum_{j=1}^{n} a_{ij} x_i x_j
+\\
+&= \sum_{i=1}^{n} \partial_k \sum_{j=1}^{n} a_{ij} x_i x_j.
+\end{align} %]]></script>
+
+<p>Let’s compute <script type="math/tex">\partial_k \sum_{j=1}^{n} a_{ij} x_i x_j</script> in two cases.
+Suppose first that <script type="math/tex">i \ne k</script>. Then this is the very simple case of</p>
+
+<script type="math/tex; mode=display">\partial_k \sum_{j=1}^{n} a_{ij} x_i x_j = a_{ik} x_i.</script>
+
+<p>Now, suppose that <script type="math/tex">i = k</script>. Then we have to take a bit more care, but the
+computation still goes through (relatively) simply:</p>
+
+<script type="math/tex; mode=display">\partial_k \sum_{j=1}^{n} a_{ij} x_i x_j = 
+2a_{kk} x_k + \sum_{j \ne k} a_{kj} x_j.</script>
+
+<p>Combining these two cases (and noticing that we can replace <script type="math/tex">j</script> by <script type="math/tex">i</script>) in
+one sum, we get the very nicely laid out:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+\partial_k (x^T Ax) &= \sum_{i=1}^{n} \partial_k \sum_{j=1}^{n} a_{ij} x_i x_j
+\\
+&= \sum_{i=1}^{n} (a_{ik} + a_{ki}) x_i
+\end{align} %]]></script>
+
+<p>What does this correspond to for the gradient? Notice that</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+(A + A^T)x &= 
+\begin{bmatrix} \sum_{i=1}^{n} (a_{ik} + a_{ki}) x_i \end{bmatrix}
+\end{align}. %]]></script>
+
+<p>This is exactly <script type="math/tex">\nabla (x^T Ax)</script>! So</p>
+
+<script type="math/tex; mode=display">\nabla(x^T Ax) = (A + A^T) x,</script>
+
+<p>and notice that in the special case of <script type="math/tex">A = A^T</script>, we have <script type="math/tex">\nabla(x^T Ax)
+= 2Ax</script>. This actually generalizes our work from last time:</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+\nabla(x^T x) &= \nabla( x^T I x) \\
+&= 2I x \\
+&= 2x
+\end{align}. %]]></script>
+
+<p>So far, we have been using the component-based approach outlined above. We take
+the <script type="math/tex">k</script>th partial derivative and put the gradient together from the bottom up.
+Next time, we will start to incorporate actual <em>properties</em> of the gradient to
+make our lives easier.</p>
+
+
+<span class="post-date">
+  Published on
+  
+  May
+  10th,
+  2018
+  by
+  
+    David Kraemer
+  
+</span>
+
+<div class="post-date">If you liked this post, feel free to share it:</div>
+  <div class="sharing-icons">
+    <a href="https://twitter.com/intent/tweet?text=Gradients for Grown-Ups (Part 2)&amp;url=/ln/gradients-for-grownups-part-02.html" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=/ln/gradients-for-grownups-part-02.html&amp;title=Gradients for Grown-Ups (Part 2)" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+    <a href="https://plus.google.com/share?url=/ln/gradients-for-grownups-part-02.html" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+  </div>
+</div>
+
+
+<div class="related">
+  <h1 >Related lns:</h1>
+  
+  <ul class="related-posts">
+    
+      
+        
+        
+      
+        
+          <li>
+            <h3>
+              <a href="/ln/gradients-for-grownups-part-01.html">
+                Gradients for Grown-Ups (Part 1)
+                <!--<img src="http://localhost:4000/images/">-->
+                <!--<small>May 9, 2018</small>-->
+              </a>
+            </h3>
+          </li>
+          
+        
+      
+        
+          <li>
+            <h3>
+              <a href="/ln/neat-proof-of-cauchy-criterion.html">
+                A neat proof of the Cauchy criterion
+                <!--<img src="http://localhost:4000/images/">-->
+                <!--<small>May 7, 2018</small>-->
+              </a>
+            </h3>
+          </li>
+          
+        
+      
+    
+      
+        
+        
+      
+        
+        
+      
+    
+  </ul>
+</div>
+
+
+
+
+    </div>
+
+    <footer class="footer">
+  
+  
+  
+    <a href="https://www.github.com/davidnkraemer" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="http://www.linkedin.com/in/davidnkraemer" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="mailto:david.kraemer@stonybrook.edu" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="/feed.xml"><i class="fa fa-rss-square" aria-hidden="true"></i></a>
+  
+
+  <div class="post-date">
+    David Kraemer  | powered by<a
+       href="https://jekyllrb.com/">Jekyll</a>| design by<a href="https://github.com/LeNPaul/Lagrange">Lagrange</a>
+  </div>
+</footer>
+
+
+  </div>
+
+</body>
+</html>

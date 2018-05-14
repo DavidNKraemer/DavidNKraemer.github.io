@@ -1,0 +1,371 @@
+<!doctype html>
+<html>
+
+<head>
+
+  <title>
+    
+      Gradients for Grown-Ups (Part 1) | David Kraemer
+    
+  </title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="stylesheet" href="/assets/css/syntax.css">
+  <!-- Use Atom -->
+  <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="David Kraemer" />
+  <!-- Use RSS-2.0 -->
+  <!--<link href="/rss-feed.xml" type="application/rss+xml" rel="alternate" title="David Kraemer | applied math phd student"/>
+  //-->
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quattrocento+Sans">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <script type="text/javascript" async
+    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+  </script>
+
+  <!-- Google Analytics -->
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-112060364-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+  <!-- Use Jekyll SEO plugin -->
+  <!-- Begin Jekyll SEO tag v2.4.0 -->
+<title>Gradients for Grown-Ups (Part 1) | David Kraemer</title>
+<meta name="generator" content="Jekyll v3.6.2" />
+<meta property="og:title" content="Gradients for Grown-Ups (Part 1)" />
+<meta name="author" content="David Kraemer" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="This is the first in a series of posts, “Gradients for Grown-Ups”. You can see the next post here." />
+<meta property="og:description" content="This is the first in a series of posts, “Gradients for Grown-Ups”. You can see the next post here." />
+<link rel="canonical" href="http://localhost:4000/ln/gradients-for-grownups-part-01.html" />
+<meta property="og:url" content="http://localhost:4000/ln/gradients-for-grownups-part-01.html" />
+<meta property="og:site_name" content="David Kraemer" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-05-09T00:00:00-04:00" />
+<script type="application/ld+json">
+{"headline":"Gradients for Grown-Ups (Part 1)","dateModified":"2018-05-09T00:00:00-04:00","datePublished":"2018-05-09T00:00:00-04:00","url":"http://localhost:4000/ln/gradients-for-grownups-part-01.html","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/ln/gradients-for-grownups-part-01.html"},"author":{"@type":"Person","name":"David Kraemer"},"description":"This is the first in a series of posts, “Gradients for Grown-Ups”. You can see the next post here.","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+</head>
+
+
+<body>
+
+  <div class="container">
+    <header class="masthead">
+  <h3 class="masthead-title">
+    <a href="/">David Kraemer</a>
+    <small class="masthead-subtitle">applied math phd student</small>
+    <div class="menu">
+  <nav class="menu-content">
+    
+      <a href="/menu/about">About</a>
+    
+      <a href="/menu/courses">Courses</a>
+    
+      <a href="/menu/projects">Projects</a>
+    
+      <a href="/menu/papers">Papers</a>
+    
+      <a href="/menu/ln">Ln</a>
+    
+      <a href="/menu/contact">Contact</a>
+    
+  </nav>
+  <nav class="social-icons">
+    
+  
+  
+    <a href="https://www.github.com/davidnkraemer" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="http://www.linkedin.com/in/davidnkraemer" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="mailto:david.kraemer@stonybrook.edu" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="/feed.xml"><i class="fa fa-rss-square" aria-hidden="true"></i></a>
+  
+
+  </nav>
+</div>
+
+  </h3>
+</header>
+
+
+    <div class="post-container">
+      <h1>
+  Gradients for Grown-Ups (Part 1)
+</h1>
+
+
+
+<p>This is the first in a series of posts, “Gradients for Grown-Ups”. You can see
+the next post <a href="gradients-for-grownups-part-02">here</a>.</p>
+
+<p>Boyd and Vanderberghe’s <em>Convex Optimization</em><sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup> is an excellent primer for
+learning the fundamentals of the subject. I should know, because I just took a
+course which featured this book. I didn’t always pay attention in class (because
+it was my sixth consecutive hour of lectures! Kids, pay attention in school),
+and the textbook was always a useful fallback on the course material.</p>
+
+<p>I have one complaint about the book, however, which was a problem I had
+throughout. The text assumes that you’ve had multivariate calculus and seen the
+major parts of linear algebra, but I felt that this understates the
+prerequisites. To be sure, I’ve had my share of calculus and analysis. I’ve sat
+in linear algebra lectures more times than I care to admit. So I thought I would
+be fine going in, and I was.</p>
+
+<p>Mostly.</p>
+
+<p>You see, in my calculus classes, a typical question one might encounter is the
+following:</p>
+
+<p><em>Compute <script type="math/tex">\nabla f(x,y)</script>, where <script type="math/tex">f(x,y) = xy \sin(x^2)</script>.</em></p>
+
+<p>This is pretty routine. You compute <script type="math/tex">\frac{\partial f}{\partial x}</script> and
+<script type="math/tex">\frac{\partial f}{\partial y}</script>, and store them in the form of a vector. After
+all, this is what the gradient is.</p>
+
+<p>By contrast, the textbook expects you to be comfortable with questions like
+this:</p>
+
+<p><em>Compute <script type="math/tex">\nabla f(x)</script>, where <script type="math/tex">f(x) = x^TAx</script> for <script type="math/tex">A \in \mathbb{R}^{n
+\times n}</script>.</em></p>
+
+<p>Of course, this is still computing a gradient, which should be natural. But we
+are dealing with very special operations (e.g., matrix-vector products), and the
+gradient is ultimately going to be expressed in terms of them. Also, this is
+<script type="math/tex">\mathbb{R}^{n}</script> world, not the nice <script type="math/tex">x</script> and <script type="math/tex">y</script> world. The generality is
+pretty intimidating!</p>
+
+<p>This post (along with a few successors) will be the <em>post-prerequisite</em>
+prerequisite for working in this subject, given that you’ve had a calculus and
+linear algebra background similar to mine.</p>
+
+<h1 id="overview-the-example-nabla-ct-x">Overview: the example <script type="math/tex">\nabla c^T x</script></h1>
+
+<p>Ultimately, the only difference between what we learned in calculus and what is
+asked of us here is a level of generality. We simply need to perform the basic
+steps from before and we will be done. But instead of being given a parameter
+parameters <script type="math/tex">(x,y,z,\ldots)</script>, we have to interpret <script type="math/tex">x</script> as the list itself.
+Get ready for subscripting hell!</p>
+
+<p>Let’s start with a relatively easy problem. Let <script type="math/tex">c \in \mathbb{R}^n</script> be fixed
+and define <script type="math/tex">f(x) = c^T x</script>. In other words <script type="math/tex">f(x)</script> is a weighted linear
+combination of the elements of <script type="math/tex">x</script>. It’s the sort of term which arises
+naturally in linear programming contexts. We want to compute <script type="math/tex">\nabla f(x)</script>,
+so we will start by selecting an arbitrary index of <script type="math/tex">x</script> (I’m partial to <script type="math/tex">k</script>, but go nuts), and compute its derivative. We have</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+  \frac{\partial}{\partial x_k} f(x) &= 
+  \frac{\partial}{\partial x_k} c^T x \\&= 
+  \frac{\partial}{\partial x_k} \sum_{i=1}^{n} c_i x_i.
+\end{align} %]]></script>
+
+<p>The above is simply by unpacking the <script type="math/tex">c^T x</script> into its component parts, i.e.
+<script type="math/tex">c^T x = c_1 x_1 + c_2 x_2 + \cdots + c_{n-1} x_{n-1} + c_n x_n</script>. If you
+prefer, start off by writing out the terms “explicitly” like this, to make sure
+you keep everything straight. Ideally, as you get more comfortable with these
+operations, you will switch to the summation form. It’s more compact and
+ultimately easier to work with.</p>
+
+<p>Since differentiation is linear, we can write</p>
+
+<script type="math/tex; mode=display">\frac{\partial}{\partial x_k} \sum_{i=1}^{n} c_i x_i = \sum_{i=1}^{n}
+\frac{\partial}{\partial x_k} c_i x_i.</script>
+
+<p>Now we should note a few things that we need to be careful about. First of all,
+the summation index is <script type="math/tex">i</script>, not <script type="math/tex">k</script>. In general these will be distinct,
+because they are referring to differen things. Next, let’s think through the
+evaluation of <script type="math/tex">\frac{\partial}{\partial x_k} c_i x_i</script>. If <script type="math/tex">i = k</script>, then
+this we should have</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+\frac{\partial}{\partial x_k} c_i x_i &= 
+\frac{\partial}{\partial x_k} c_k x_k \\
+&= c_k,
+\end{align} %]]></script>
+
+<p>but otherwise, <script type="math/tex">c_i x_i</script> will not depend on <script type="math/tex">x_k</script>, and so <script type="math/tex">\frac{\partial}{\partial x_k} c_i x_i = 0</script> in that case. Putting this all
+together, we get</p>
+
+<script type="math/tex; mode=display">\sum_{i=1}^{n} \frac{\partial}{\partial x_k} c_i x_i = c_k,</script>
+
+<p>since every term is <script type="math/tex">0</script> except for when <script type="math/tex">i = k</script>. So in total, <script type="math/tex">\frac{\partial}{\partial x_k} c^T x = c_k</script>. Now, this was the <script type="math/tex">k</script>th entry of
+the gradient, so we have</p>
+
+<script type="math/tex; mode=display">% <![CDATA[
+\begin{align}
+  \nabla f(x) &= \nabla c^Tx \\
+  &= \begin{bmatrix} c_1 \\ c_2 \\ \vdots \\ c_{n-1} \\ c_n \end{bmatrix}.
+\end{align} %]]></script>
+
+<p>What is this object? Well, the <script type="math/tex">k</script>th entry of <script type="math/tex">\nabla f(x)</script> is <script type="math/tex">c_k</script>, so
+in fact this is nothing other than <script type="math/tex">c</script> itself. So</p>
+
+<script type="math/tex; mode=display">\nabla c^Tx = c.</script>
+
+<p>By the way, this correctly generalizes our favorite 1-dimensional result:
+<script type="math/tex">\frac{d}{d x} c x = c</script>.</p>
+
+<h1 id="summary-how-to-take-a-harder-gradient">Summary: How to take a hard(er) gradient</h1>
+
+<p>The general procedure, employed here and throughout later posts, is</p>
+
+<ol>
+  <li>Express <script type="math/tex">f(x)</script> in “coordinate form” (e.g. with explicit summations).</li>
+  <li>Compute <script type="math/tex">\frac{\partial f}{\partial x_k}</script> over the coordinate form.</li>
+  <li>Collect the partial derivatives into the gradient vector.</li>
+  <li>Simplify and interpret the result.</li>
+</ol>
+
+<h1 id="addendum-dimension-observations">Addendum: dimension observations</h1>
+
+<p>The weight <script type="math/tex">c</script> was an element of <script type="math/tex">\mathbb{R}^{n}</script>, which is usually interpreted
+to mean that it was a column vector. To form <script type="math/tex">f(x)</script>, we flipped <script type="math/tex">c</script> via
+transposing into a row vector, and multiplied it by <script type="math/tex">x</script>. (Of course, this is
+so that the multiplication makes sense.) The gradient operation seems to have
+flipped it back to a column vector, <script type="math/tex">\nabla f(x) = c</script>.</p>
+
+<p>As we shall see, this is a common thing to expect from linear algebraic functions.</p>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>The book is freely available on Boyd’s <a href="http://web.stanford.edu/~boyd/cvxbook/">site</a>, along with a number of other resources. <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+
+<span class="post-date">
+  Published on
+  
+  May
+  9th,
+  2018
+  by
+  
+    David Kraemer
+  
+</span>
+
+<div class="post-date">If you liked this post, feel free to share it:</div>
+  <div class="sharing-icons">
+    <a href="https://twitter.com/intent/tweet?text=Gradients for Grown-Ups (Part 1)&amp;url=/ln/gradients-for-grownups-part-01.html" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+    <a href="https://www.facebook.com/sharer/sharer.php?u=/ln/gradients-for-grownups-part-01.html&amp;title=Gradients for Grown-Ups (Part 1)" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+    <a href="https://plus.google.com/share?url=/ln/gradients-for-grownups-part-01.html" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+  </div>
+</div>
+
+
+<div class="related">
+  <h1 >Related lns:</h1>
+  
+  <ul class="related-posts">
+    
+      
+        
+          <li>
+            <h3>
+              <a href="/ln/gradients-for-grownups-part-02.html">
+                Gradients for Grown-Ups (Part 2)
+                <!--<img src="http://localhost:4000/images/">-->
+                <!--<small>May 10, 2018</small>-->
+              </a>
+            </h3>
+          </li>
+          
+        
+      
+        
+        
+      
+        
+          <li>
+            <h3>
+              <a href="/ln/neat-proof-of-cauchy-criterion.html">
+                A neat proof of the Cauchy criterion
+                <!--<img src="http://localhost:4000/images/">-->
+                <!--<small>May 7, 2018</small>-->
+              </a>
+            </h3>
+          </li>
+          
+        
+      
+    
+      
+        
+        
+      
+        
+        
+      
+    
+  </ul>
+</div>
+
+
+
+
+    </div>
+
+    <footer class="footer">
+  
+  
+  
+    <a href="https://www.github.com/davidnkraemer" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="http://www.linkedin.com/in/davidnkraemer" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="mailto:david.kraemer@stonybrook.edu" target="_blank"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+  
+
+  
+  
+    <a href="/feed.xml"><i class="fa fa-rss-square" aria-hidden="true"></i></a>
+  
+
+  <div class="post-date">
+    David Kraemer  | powered by<a
+       href="https://jekyllrb.com/">Jekyll</a>| design by<a href="https://github.com/LeNPaul/Lagrange">Lagrange</a>
+  </div>
+</footer>
+
+
+  </div>
+
+</body>
+</html>

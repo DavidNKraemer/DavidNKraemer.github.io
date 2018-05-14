@@ -1,0 +1,492 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-05-10T14:22:53-04:00</updated><id>http://localhost:4000/</id><title type="html">David Kraemer</title><subtitle>applied math phd student</subtitle><author><name>David Kraemer</name></author><entry><title type="html">Gradients for Grown-Ups (Part 2)</title><link href="http://localhost:4000/ln/gradients-for-grownups-part-02.html" rel="alternate" type="text/html" title="Gradients for Grown-Ups (Part 2)" /><published>2018-05-10T00:00:00-04:00</published><updated>2018-05-10T00:00:00-04:00</updated><id>http://localhost:4000/ln/gradients-for-grownups-part-02</id><content type="html" xml:base="http://localhost:4000/ln/gradients-for-grownups-part-02.html">&lt;p&gt;This is the second in a series of posts, “Gradients for Grown-Ups”. You can see
+the previous post &lt;a href=&quot;gradients-for-grownups-part-01&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Last time, we got started with the example &lt;script type=&quot;math/tex&quot;&gt;f(x) = c^T x&lt;/script&gt; to showcase the
+general procedure for computing gradients:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Express &lt;script type=&quot;math/tex&quot;&gt;f(x)&lt;/script&gt; in “coordinate form” (e.g. with explicit summations).&lt;/li&gt;
+  &lt;li&gt;Compute &lt;script type=&quot;math/tex&quot;&gt;\frac{\partial f}{\partial x_k}&lt;/script&gt; over the coordinate form.&lt;/li&gt;
+  &lt;li&gt;Collect the partial derivatives into the gradient vector.&lt;/li&gt;
+  &lt;li&gt;Simplify and interpret the result.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;This time, we’ll cover two more examples, &lt;script type=&quot;math/tex&quot;&gt;x^T x&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;x^T A x&lt;/script&gt;. The
+goal is to get more familiar with the general setting of commmon linear algebra
+functions.&lt;/p&gt;
+
+&lt;h1 id=&quot;example-fx--xt-x&quot;&gt;Example: &lt;script type=&quot;math/tex&quot;&gt;f(x) = x^T x&lt;/script&gt;&lt;/h1&gt;
+
+&lt;p&gt;You will see the objective function &lt;script type=&quot;math/tex&quot;&gt;f(x) = x^T x&lt;/script&gt; in &lt;em&gt;many&lt;/em&gt; places in
+optimization, because this is another way of writing &lt;script type=&quot;math/tex&quot;&gt;\| x \|_2^2&lt;/script&gt;. If you
+ever plan on analyzing distance minimization, least squares, or other similar
+problems, you will end up taking the gradient of &lt;script type=&quot;math/tex&quot;&gt;\| x \|_2^2&lt;/script&gt; sooner rather
+than later.&lt;/p&gt;
+
+&lt;p&gt;Luckily, this is a relatively straightforward computation. First, let’s
+represent &lt;script type=&quot;math/tex&quot;&gt;f(x)&lt;/script&gt; in coordinate form:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;x^T x = \sum_{i=1}^{n} x_i x_i = \sum_{i=1}^{n} x_i^2.&lt;/script&gt;
+
+&lt;p&gt;Remember, if the compact summand notation is still too dense, feel free to write
+out &lt;script type=&quot;math/tex&quot;&gt;x_1^2 + x_2^2 + \cdots + x_{n-1}^2 + x_n^2&lt;/script&gt;. Next, we take the &lt;script type=&quot;math/tex&quot;&gt;k&lt;/script&gt;th
+partial derivative:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+\frac{\partial}{\partial x_k} x^T x &amp;= 
+\frac{\partial}{\partial x_k} \sum_{i=1}^{n} x_i x_i \\
+&amp;= \sum_{i=1}^{n} \frac{\partial}{\partial x_k}x_i^2.
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;If &lt;script type=&quot;math/tex&quot;&gt;i = k&lt;/script&gt;, then &lt;script type=&quot;math/tex&quot;&gt;\frac{\partial }{\partial x_k} x_k^2 = 2 x_k&lt;/script&gt; by the
+power rule. Otherwise, as in the previous case, &lt;script type=&quot;math/tex&quot;&gt;\frac{\partial }{\partial x_k} x_i^2 = 0&lt;/script&gt;. Therefore,&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\sum_{i=1}^{n} \frac{\partial}{\partial x_k}x_i^2 = 2 x_k.&lt;/script&gt;
+
+&lt;p&gt;Now, we put the gradient vector together as before:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+\nabla f(x) &amp;= \nabla x^T x \\
+&amp;= \begin{bmatrix} 2 x_1 \\ 2 x_2 \\ \vdots \\ 2 x_{n-1} \\ 2 x_{n}
+\end{bmatrix}.
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;Finally, we notice that this column vector is simply &lt;script type=&quot;math/tex&quot;&gt;2x&lt;/script&gt;. So &lt;script type=&quot;math/tex&quot;&gt;\nabla x^T x
+= 2x&lt;/script&gt;, which is a generalization of the familiar quadratic rule: &lt;script type=&quot;math/tex&quot;&gt;\frac{d}{dx} x^2 = 2x&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;Nice, we’re done!&lt;/p&gt;
+
+&lt;h1 id=&quot;example-fx--xt-a-x&quot;&gt;Example: &lt;script type=&quot;math/tex&quot;&gt;f(x) = x^T A x&lt;/script&gt;&lt;/h1&gt;
+
+&lt;p&gt;This example is significantly more tricky, so we will take our time in getting
+through it.&lt;/p&gt;
+
+&lt;p&gt;Let’s think through what &lt;script type=&quot;math/tex&quot;&gt;x^T A x&lt;/script&gt; translates to. First, let’s consider the
+product &lt;script type=&quot;math/tex&quot;&gt;A x&lt;/script&gt;. Now, there are two ways to picture the matrix-vector
+multiplication:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{bmatrix}
+a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1n} \\
+a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2n} \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+a_{n1} &amp; a_{n2} &amp; \cdots &amp; a_{nn} \\
+\end{bmatrix}
+\begin{bmatrix}
+x_1 \\ x_2 \\ \vdots \\ x_n
+\end{bmatrix}. %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;First, matrix-vector multiplication is defined so that the &lt;script type=&quot;math/tex&quot;&gt;k&lt;/script&gt;th entry of the
+result is a dot product of the &lt;script type=&quot;math/tex&quot;&gt;k&lt;/script&gt;th row of &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt; with &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt;:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{bmatrix}
+a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1n} \\
+a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2n} \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+a_{n1} &amp; a_{n2} &amp; \cdots &amp; a_{nn} \\
+\end{bmatrix}
+\begin{bmatrix}
+x_1 \\ x_2 \\ \vdots \\ x_n
+\end{bmatrix} = 
+\begin{bmatrix}
+a_{11} x_1 + a_{12} x_2 + \cdots + a_{1n} x_n \\
+a_{21} x_1 + a_{22} x_2 + \cdots + a_{2n} x_n \\
+\vdots \\
+a_{n1} x_1 + a_{n2} x_2 + \cdots + a_{nn} x_n
+\end{bmatrix}. %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;Alternatively, matrix-vector multiplication is defined to be a linear
+combination of the columns of &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt;:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{bmatrix}
+a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1n} \\
+a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2n} \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\
+a_{n1} &amp; a_{n2} &amp; \cdots &amp; a_{nn} \\
+\end{bmatrix}
+\begin{bmatrix}
+x_1 \\ x_2 \\ \vdots \\ x_n
+\end{bmatrix} = 
+x_1 
+\begin{bmatrix}
+a_{11} \\ a_{21} \\ \vdots \\ a_{n1}
+\end{bmatrix} + 
+x_2 
+\begin{bmatrix}
+a_{12} \\ a_{22} \\ \vdots \\ a_{n2}
+\end{bmatrix} + \cdots +
+x_n 
+\begin{bmatrix}
+a_{1n} \\ a_{2n} \\ \vdots \\ a_{nn}
+\end{bmatrix}. %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;This last interpretation is going to be more helpful for our purposes. Writing
+compactly in coordinate form, this is&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;Ax = \sum_{j=1}^{n} x_j 
+\begin{bmatrix} a_{1j} \\ a_{2j} \\ \vdots \\ a_{nj} \end{bmatrix}.&lt;/script&gt;
+
+&lt;p&gt;Now we can simply take the inner product &lt;script type=&quot;math/tex&quot;&gt;x^T (Ax)&lt;/script&gt; and put it in coordinate
+form:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+x^T(Ax) &amp;= x^T \left( \sum_{j=1}^{n} x_j 
+\begin{bmatrix} a_{1j} \\ a_{2j} \\ \vdots \\ a_{nj} \end{bmatrix} \right) \\
+&amp;= \sum_{j=1}^{n} x_j \cdot 
+\begin{bmatrix} x_1 &amp; x_2 &amp; \cdots &amp; x_n \end{bmatrix}
+\begin{bmatrix} a_{1j} \\ a_{2j} \\ \vdots \\ a_{nj} \end{bmatrix} \\
+&amp;= \sum_{j=1}^{n} x_j \sum_{i=1}^{n} x_i a_{ij} \\
+&amp;= \sum_{i=1}^{n} \sum_{j=1}^{n} a_{ij} x_i x_j.
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;The trickiness ultimately boils down to the fact that there are two separate
+summations going on. When we work with multiple summations, we have to take more
+care with the calculations.&lt;/p&gt;
+
+&lt;p&gt;Next, we take the partial derivative with respect to &lt;script type=&quot;math/tex&quot;&gt;x_k&lt;/script&gt;. Let’s simplify
+notation a bit and use &lt;script type=&quot;math/tex&quot;&gt;\partial_k&lt;/script&gt; to mean &lt;script type=&quot;math/tex&quot;&gt;\frac{\partial}{\partial x_k}&lt;/script&gt;.
+We have&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+\partial_k (x^T Ax) &amp;= \partial_k \sum_{i=1}^{n} \sum_{j=1}^{n} a_{ij} x_i x_j
+\\
+&amp;= \sum_{i=1}^{n} \partial_k \sum_{j=1}^{n} a_{ij} x_i x_j.
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;Let’s compute &lt;script type=&quot;math/tex&quot;&gt;\partial_k \sum_{j=1}^{n} a_{ij} x_i x_j&lt;/script&gt; in two cases.
+Suppose first that &lt;script type=&quot;math/tex&quot;&gt;i \ne k&lt;/script&gt;. Then this is the very simple case of&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\partial_k \sum_{j=1}^{n} a_{ij} x_i x_j = a_{ik} x_i.&lt;/script&gt;
+
+&lt;p&gt;Now, suppose that &lt;script type=&quot;math/tex&quot;&gt;i = k&lt;/script&gt;. Then we have to take a bit more care, but the
+computation still goes through (relatively) simply:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\partial_k \sum_{j=1}^{n} a_{ij} x_i x_j = 
+2a_{kk} x_k + \sum_{j \ne k} a_{kj} x_j.&lt;/script&gt;
+
+&lt;p&gt;Combining these two cases (and noticing that we can replace &lt;script type=&quot;math/tex&quot;&gt;j&lt;/script&gt; by &lt;script type=&quot;math/tex&quot;&gt;i&lt;/script&gt;) in
+one sum, we get the very nicely laid out:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+\partial_k (x^T Ax) &amp;= \sum_{i=1}^{n} \partial_k \sum_{j=1}^{n} a_{ij} x_i x_j
+\\
+&amp;= \sum_{i=1}^{n} (a_{ik} + a_{ki}) x_i
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;What does this correspond to for the gradient? Notice that&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+(A + A^T)x &amp;= 
+\begin{bmatrix} \sum_{i=1}^{n} (a_{ik} + a_{ki}) x_i \end{bmatrix}
+\end{align}. %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;This is exactly &lt;script type=&quot;math/tex&quot;&gt;\nabla (x^T Ax)&lt;/script&gt;! So&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\nabla(x^T Ax) = (A + A^T) x,&lt;/script&gt;
+
+&lt;p&gt;and notice that in the special case of &lt;script type=&quot;math/tex&quot;&gt;A = A^T&lt;/script&gt;, we have &lt;script type=&quot;math/tex&quot;&gt;\nabla(x^T Ax)
+= 2Ax&lt;/script&gt;. This actually generalizes our work from last time:&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+\nabla(x^T x) &amp;= \nabla( x^T I x) \\
+&amp;= 2I x \\
+&amp;= 2x
+\end{align}. %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;So far, we have been using the component-based approach outlined above. We take
+the &lt;script type=&quot;math/tex&quot;&gt;k&lt;/script&gt;th partial derivative and put the gradient together from the bottom up.
+Next time, we will start to incorporate actual &lt;em&gt;properties&lt;/em&gt; of the gradient to
+make our lives easier.&lt;/p&gt;</content><author><name>David Kraemer</name></author><category term="math" /><category term="gradient" /><summary type="html">This is the second in a series of posts, “Gradients for Grown-Ups”. You can see the previous post here.</summary></entry><entry><title type="html">Gradients for Grown-Ups (Part 1)</title><link href="http://localhost:4000/ln/gradients-for-grownups-part-01.html" rel="alternate" type="text/html" title="Gradients for Grown-Ups (Part 1)" /><published>2018-05-09T00:00:00-04:00</published><updated>2018-05-09T00:00:00-04:00</updated><id>http://localhost:4000/ln/gradients-for-grownups-part-01</id><content type="html" xml:base="http://localhost:4000/ln/gradients-for-grownups-part-01.html">&lt;p&gt;This is the first in a series of posts, “Gradients for Grown-Ups”. You can see
+the next post &lt;a href=&quot;gradients-for-grownups-part-02&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Boyd and Vanderberghe’s &lt;em&gt;Convex Optimization&lt;/em&gt;&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; is an excellent primer for
+learning the fundamentals of the subject. I should know, because I just took a
+course which featured this book. I didn’t always pay attention in class (because
+it was my sixth consecutive hour of lectures! Kids, pay attention in school),
+and the textbook was always a useful fallback on the course material.&lt;/p&gt;
+
+&lt;p&gt;I have one complaint about the book, however, which was a problem I had
+throughout. The text assumes that you’ve had multivariate calculus and seen the
+major parts of linear algebra, but I felt that this understates the
+prerequisites. To be sure, I’ve had my share of calculus and analysis. I’ve sat
+in linear algebra lectures more times than I care to admit. So I thought I would
+be fine going in, and I was.&lt;/p&gt;
+
+&lt;p&gt;Mostly.&lt;/p&gt;
+
+&lt;p&gt;You see, in my calculus classes, a typical question one might encounter is the
+following:&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Compute &lt;script type=&quot;math/tex&quot;&gt;\nabla f(x,y)&lt;/script&gt;, where &lt;script type=&quot;math/tex&quot;&gt;f(x,y) = xy \sin(x^2)&lt;/script&gt;.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;This is pretty routine. You compute &lt;script type=&quot;math/tex&quot;&gt;\frac{\partial f}{\partial x}&lt;/script&gt; and
+&lt;script type=&quot;math/tex&quot;&gt;\frac{\partial f}{\partial y}&lt;/script&gt;, and store them in the form of a vector. After
+all, this is what the gradient is.&lt;/p&gt;
+
+&lt;p&gt;By contrast, the textbook expects you to be comfortable with questions like
+this:&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Compute &lt;script type=&quot;math/tex&quot;&gt;\nabla f(x)&lt;/script&gt;, where &lt;script type=&quot;math/tex&quot;&gt;f(x) = x^TAx&lt;/script&gt; for &lt;script type=&quot;math/tex&quot;&gt;A \in \mathbb{R}^{n
+\times n}&lt;/script&gt;.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Of course, this is still computing a gradient, which should be natural. But we
+are dealing with very special operations (e.g., matrix-vector products), and the
+gradient is ultimately going to be expressed in terms of them. Also, this is
+&lt;script type=&quot;math/tex&quot;&gt;\mathbb{R}^{n}&lt;/script&gt; world, not the nice &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;y&lt;/script&gt; world. The generality is
+pretty intimidating!&lt;/p&gt;
+
+&lt;p&gt;This post (along with a few successors) will be the &lt;em&gt;post-prerequisite&lt;/em&gt;
+prerequisite for working in this subject, given that you’ve had a calculus and
+linear algebra background similar to mine.&lt;/p&gt;
+
+&lt;h1 id=&quot;overview-the-example-nabla-ct-x&quot;&gt;Overview: the example &lt;script type=&quot;math/tex&quot;&gt;\nabla c^T x&lt;/script&gt;&lt;/h1&gt;
+
+&lt;p&gt;Ultimately, the only difference between what we learned in calculus and what is
+asked of us here is a level of generality. We simply need to perform the basic
+steps from before and we will be done. But instead of being given a parameter
+parameters &lt;script type=&quot;math/tex&quot;&gt;(x,y,z,\ldots)&lt;/script&gt;, we have to interpret &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; as the list itself.
+Get ready for subscripting hell!&lt;/p&gt;
+
+&lt;p&gt;Let’s start with a relatively easy problem. Let &lt;script type=&quot;math/tex&quot;&gt;c \in \mathbb{R}^n&lt;/script&gt; be fixed
+and define &lt;script type=&quot;math/tex&quot;&gt;f(x) = c^T x&lt;/script&gt;. In other words &lt;script type=&quot;math/tex&quot;&gt;f(x)&lt;/script&gt; is a weighted linear
+combination of the elements of &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt;. It’s the sort of term which arises
+naturally in linear programming contexts. We want to compute &lt;script type=&quot;math/tex&quot;&gt;\nabla f(x)&lt;/script&gt;,
+so we will start by selecting an arbitrary index of &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; (I’m partial to &lt;script type=&quot;math/tex&quot;&gt;k&lt;/script&gt;, but go nuts), and compute its derivative. We have&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+  \frac{\partial}{\partial x_k} f(x) &amp;= 
+  \frac{\partial}{\partial x_k} c^T x \\&amp;= 
+  \frac{\partial}{\partial x_k} \sum_{i=1}^{n} c_i x_i.
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;The above is simply by unpacking the &lt;script type=&quot;math/tex&quot;&gt;c^T x&lt;/script&gt; into its component parts, i.e.
+&lt;script type=&quot;math/tex&quot;&gt;c^T x = c_1 x_1 + c_2 x_2 + \cdots + c_{n-1} x_{n-1} + c_n x_n&lt;/script&gt;. If you
+prefer, start off by writing out the terms “explicitly” like this, to make sure
+you keep everything straight. Ideally, as you get more comfortable with these
+operations, you will switch to the summation form. It’s more compact and
+ultimately easier to work with.&lt;/p&gt;
+
+&lt;p&gt;Since differentiation is linear, we can write&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\frac{\partial}{\partial x_k} \sum_{i=1}^{n} c_i x_i = \sum_{i=1}^{n}
+\frac{\partial}{\partial x_k} c_i x_i.&lt;/script&gt;
+
+&lt;p&gt;Now we should note a few things that we need to be careful about. First of all,
+the summation index is &lt;script type=&quot;math/tex&quot;&gt;i&lt;/script&gt;, not &lt;script type=&quot;math/tex&quot;&gt;k&lt;/script&gt;. In general these will be distinct,
+because they are referring to differen things. Next, let’s think through the
+evaluation of &lt;script type=&quot;math/tex&quot;&gt;\frac{\partial}{\partial x_k} c_i x_i&lt;/script&gt;. If &lt;script type=&quot;math/tex&quot;&gt;i = k&lt;/script&gt;, then
+this we should have&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+\frac{\partial}{\partial x_k} c_i x_i &amp;= 
+\frac{\partial}{\partial x_k} c_k x_k \\
+&amp;= c_k,
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;but otherwise, &lt;script type=&quot;math/tex&quot;&gt;c_i x_i&lt;/script&gt; will not depend on &lt;script type=&quot;math/tex&quot;&gt;x_k&lt;/script&gt;, and so &lt;script type=&quot;math/tex&quot;&gt;\frac{\partial}{\partial x_k} c_i x_i = 0&lt;/script&gt; in that case. Putting this all
+together, we get&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\sum_{i=1}^{n} \frac{\partial}{\partial x_k} c_i x_i = c_k,&lt;/script&gt;
+
+&lt;p&gt;since every term is &lt;script type=&quot;math/tex&quot;&gt;0&lt;/script&gt; except for when &lt;script type=&quot;math/tex&quot;&gt;i = k&lt;/script&gt;. So in total, &lt;script type=&quot;math/tex&quot;&gt;\frac{\partial}{\partial x_k} c^T x = c_k&lt;/script&gt;. Now, this was the &lt;script type=&quot;math/tex&quot;&gt;k&lt;/script&gt;th entry of
+the gradient, so we have&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+  \nabla f(x) &amp;= \nabla c^Tx \\
+  &amp;= \begin{bmatrix} c_1 \\ c_2 \\ \vdots \\ c_{n-1} \\ c_n \end{bmatrix}.
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;What is this object? Well, the &lt;script type=&quot;math/tex&quot;&gt;k&lt;/script&gt;th entry of &lt;script type=&quot;math/tex&quot;&gt;\nabla f(x)&lt;/script&gt; is &lt;script type=&quot;math/tex&quot;&gt;c_k&lt;/script&gt;, so
+in fact this is nothing other than &lt;script type=&quot;math/tex&quot;&gt;c&lt;/script&gt; itself. So&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\nabla c^Tx = c.&lt;/script&gt;
+
+&lt;p&gt;By the way, this correctly generalizes our favorite 1-dimensional result:
+&lt;script type=&quot;math/tex&quot;&gt;\frac{d}{d x} c x = c&lt;/script&gt;.&lt;/p&gt;
+
+&lt;h1 id=&quot;summary-how-to-take-a-harder-gradient&quot;&gt;Summary: How to take a hard(er) gradient&lt;/h1&gt;
+
+&lt;p&gt;The general procedure, employed here and throughout later posts, is&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Express &lt;script type=&quot;math/tex&quot;&gt;f(x)&lt;/script&gt; in “coordinate form” (e.g. with explicit summations).&lt;/li&gt;
+  &lt;li&gt;Compute &lt;script type=&quot;math/tex&quot;&gt;\frac{\partial f}{\partial x_k}&lt;/script&gt; over the coordinate form.&lt;/li&gt;
+  &lt;li&gt;Collect the partial derivatives into the gradient vector.&lt;/li&gt;
+  &lt;li&gt;Simplify and interpret the result.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h1 id=&quot;addendum-dimension-observations&quot;&gt;Addendum: dimension observations&lt;/h1&gt;
+
+&lt;p&gt;The weight &lt;script type=&quot;math/tex&quot;&gt;c&lt;/script&gt; was an element of &lt;script type=&quot;math/tex&quot;&gt;\mathbb{R}^{n}&lt;/script&gt;, which is usually interpreted
+to mean that it was a column vector. To form &lt;script type=&quot;math/tex&quot;&gt;f(x)&lt;/script&gt;, we flipped &lt;script type=&quot;math/tex&quot;&gt;c&lt;/script&gt; via
+transposing into a row vector, and multiplied it by &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt;. (Of course, this is
+so that the multiplication makes sense.) The gradient operation seems to have
+flipped it back to a column vector, &lt;script type=&quot;math/tex&quot;&gt;\nabla f(x) = c&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;As we shall see, this is a common thing to expect from linear algebraic functions.&lt;/p&gt;
+
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1&quot;&gt;
+      &lt;p&gt;The book is freely available on Boyd’s &lt;a href=&quot;http://web.stanford.edu/~boyd/cvxbook/&quot;&gt;site&lt;/a&gt;, along with a number of other resources. &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;</content><author><name>David Kraemer</name></author><category term="math" /><category term="gradient" /><summary type="html">This is the first in a series of posts, “Gradients for Grown-Ups”. You can see the next post here.</summary></entry><entry><title type="html">A neat proof of the Cauchy criterion</title><link href="http://localhost:4000/ln/neat-proof-of-cauchy-criterion.html" rel="alternate" type="text/html" title="A neat proof of the Cauchy criterion" /><published>2018-05-07T00:00:00-04:00</published><updated>2018-05-07T00:00:00-04:00</updated><id>http://localhost:4000/ln/neat-proof-of-cauchy-criterion</id><content type="html" xml:base="http://localhost:4000/ln/neat-proof-of-cauchy-criterion.html">&lt;p&gt;I took introductory analysis with &lt;em&gt;Understanding Analysis&lt;/em&gt; by Stephen Abbott,
+and I think it is great for the purpose of a first course in real analysis.
+However, now that I’ve done a bit more in analysis, I’ve started to revisit some
+of the important proofs of the textbook with simpler (albeit more developed)
+alternatives.&lt;/p&gt;
+
+&lt;p&gt;Here is a proof of the Cauchy criterion on &lt;script type=&quot;math/tex&quot;&gt;\mathbb{R}&lt;/script&gt;, which I am sure
+exists elsewhere. Note that we are still using the completeness axiom that
+Abbott formulates (that &lt;script type=&quot;math/tex&quot;&gt;\sup A&lt;/script&gt; exists for bounded above &lt;script type=&quot;math/tex&quot;&gt;A&lt;/script&gt;), but now
+it’s buried inside of the definitions of &lt;script type=&quot;math/tex&quot;&gt;\limsup&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;\liminf&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Theorem&lt;/strong&gt; (Cauchy criterion). Let &lt;script type=&quot;math/tex&quot;&gt;(x_n) \in \mathbb{R}&lt;/script&gt; be a Cauchy
+sequence. Then &lt;script type=&quot;math/tex&quot;&gt;(x_n)&lt;/script&gt; converges; i.e., &lt;script type=&quot;math/tex&quot;&gt;\lim_{n \to \infty} x_n&lt;/script&gt; exists.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Proof&lt;/em&gt;. Denote&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align*}
+\overline{x} &amp;= \limsup_{n \to \infty} x_n \\
+\underline{x} &amp;= \liminf_{n \to \infty} x_n.
+\end{align*} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;We show that &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+|\overline{x} - \underline{x}| &lt; \varepsilon %]]&gt;&lt;/script&gt; for every
+&lt;script type=&quot;math/tex&quot;&gt;\varepsilon &gt; 0&lt;/script&gt;. This suffices to show that &lt;script type=&quot;math/tex&quot;&gt;\lim x_n&lt;/script&gt; exists.&lt;/p&gt;
+
+&lt;p&gt;Both &lt;script type=&quot;math/tex&quot;&gt;\overline{x}&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;\underline{x}&lt;/script&gt; are cluster points of the sequence
+&lt;script type=&quot;math/tex&quot;&gt;(x_n)&lt;/script&gt;. We will show how to get &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+| x_n - \overline{x} | &lt; \delta %]]&gt;&lt;/script&gt; for
+judiciously chosen &lt;script type=&quot;math/tex&quot;&gt;\delta &gt; 0&lt;/script&gt; and sufficiently large &lt;script type=&quot;math/tex&quot;&gt;n&lt;/script&gt;, and use the
+parallel fact for &lt;script type=&quot;math/tex&quot;&gt;\underline{x}&lt;/script&gt; to establish the claim.&lt;/p&gt;
+
+&lt;p&gt;Fix &lt;script type=&quot;math/tex&quot;&gt;\overline{N} \in \mathbb{N}&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+| x_{\overline{N}} -
+\overline{x} | &lt; \frac{\varepsilon}{4} %]]&gt;&lt;/script&gt; and such that &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+| x_n -
+x_{\overline{N}} \ &lt; \frac{\varepsilon}{4} %]]&gt;&lt;/script&gt; for all &lt;script type=&quot;math/tex&quot;&gt;n \geq \overline{N}&lt;/script&gt;.
+The former condition can be satisfied by virtue of &lt;script type=&quot;math/tex&quot;&gt;\overline{x}&lt;/script&gt; being a
+cluster point of &lt;script type=&quot;math/tex&quot;&gt;(x_n)&lt;/script&gt;, and the latter by the fact that &lt;script type=&quot;math/tex&quot;&gt;(x_n)&lt;/script&gt; is Cauchy.
+Then&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align*}
+  | x_n - \overline{x}| &amp;\leq | x_n - x_{\overline{N}} | + \ x_{\overline{N}} -
+  \overline{x} | \\
+  &amp;&lt; \frac{\varepsilon}{2}.
+\end{align*} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;We can find an analogous &lt;script type=&quot;math/tex&quot;&gt;\underline{N} \in \mathbb{N}&lt;/script&gt; for &lt;script type=&quot;math/tex&quot;&gt;\underline{x}&lt;/script&gt;.
+Taking &lt;script type=&quot;math/tex&quot;&gt;N = \max(\overline{N}, \underline{N})&lt;/script&gt;, we have that&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align*}
+  | \overline{x} - \underline{x} | &amp; \leq | \overline{x} - x_n | + | x_n - \underline{x} | \\
+  &amp;&lt; \frac{\varepsilon}{2} + \frac{\varepsilon}{2} \\
+  &amp;= \varepsilon,
+\end{align*} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;for all &lt;script type=&quot;math/tex&quot;&gt;n \geq N&lt;/script&gt;. This is what we needed. &lt;script type=&quot;math/tex&quot;&gt;\square&lt;/script&gt;&lt;/p&gt;</content><author><name>David Kraemer</name></author><category term="math" /><category term="proofs" /><category term="analysis" /><summary type="html">I took introductory analysis with Understanding Analysis by Stephen Abbott, and I think it is great for the purpose of a first course in real analysis. However, now that I’ve done a bit more in analysis, I’ve started to revisit some of the important proofs of the textbook with simpler (albeit more developed) alternatives.</summary></entry><entry><title type="html">When abstraction is simpler</title><link href="http://localhost:4000/ln/when-abstraction-is-simpler.html" rel="alternate" type="text/html" title="When abstraction is simpler" /><published>2018-04-04T00:00:00-04:00</published><updated>2018-04-04T00:00:00-04:00</updated><id>http://localhost:4000/ln/when-abstraction-is-simpler</id><content type="html" xml:base="http://localhost:4000/ln/when-abstraction-is-simpler.html">&lt;p&gt;I am always delighted when abstraction makes a problem noticeably easier to
+solve. Today I encountered (Jacod 1999) the following homework question:&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Let &lt;script type=&quot;math/tex&quot;&gt;Y \sim N(0,1)&lt;/script&gt; be standard-normally disributed, and let &lt;script type=&quot;math/tex&quot;&gt;a &gt; 0&lt;/script&gt;. Let&lt;/em&gt;&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\newcommand{\abs}[1]{\vert#1\vert}
+Z = 
+\begin{cases}
+  Y &amp; |Y| \leq a, \\
+  -Y &amp; |Y| &gt; a.
+\end{cases} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;&lt;em&gt;Show that &lt;script type=&quot;math/tex&quot;&gt;Z \sim N(0,1)&lt;/script&gt; as well.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;I honestly groaned when I first read it, because I imagined that I might have
+to evaluate some integrals involving a Gaussian kernel and error functions. This
+is not my favorite activity.&lt;/p&gt;
+
+&lt;p&gt;As I thought through it, I realized that I had no basic intuition for how to
+proceed with the solution, so I did what I love do: draw a picture. I ended up
+with something that resembled the following picture.&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+
+&lt;center&gt;
+&lt;img src=&quot;/assets/figures/gaussian.png&quot; /&gt;
+&lt;/center&gt;
+
+&lt;p&gt;Here the yellowish region indicates when &lt;script type=&quot;math/tex&quot;&gt;\abs{Y} \leq a&lt;/script&gt; and the bluish regions
+indicate when &lt;script type=&quot;math/tex&quot;&gt;\abs{Y} &gt; a&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;As I started playing around with the plot, I realized that if &lt;script type=&quot;math/tex&quot;&gt;|Y| \leq a&lt;/script&gt;
+then this simply meant that &lt;script type=&quot;math/tex&quot;&gt;Z&lt;/script&gt; would behave exactly as &lt;script type=&quot;math/tex&quot;&gt;Y&lt;/script&gt;, but if &lt;script type=&quot;math/tex&quot;&gt;|Y| &gt;
+a&lt;/script&gt; then the behavior would “flip” around the origin. But was the “flip”
+consequential? Apparently not, because the extremes are shaped symmetrically.&lt;/p&gt;
+
+&lt;p&gt;Actually the whole plot is symmetric, and this is well known about Gaussian
+kernels. My intuition had nothing to do with density functions that
+specifically followed &lt;script type=&quot;math/tex&quot;&gt;\exp(-x^2)&lt;/script&gt;, however. I really was just interested that
+&lt;script type=&quot;math/tex&quot;&gt;|Y|&lt;/script&gt; was symmetrically distributed.&lt;/p&gt;
+
+&lt;p&gt;So I started thinking about symmetrically distributed random variables as an
+abstraction over this particular instance. It turns out that the proof falls out
+easily if you just take this assumption:&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Proof&lt;/em&gt;. If &lt;script type=&quot;math/tex&quot;&gt;Y&lt;/script&gt; is symmetrically distributed, then &lt;script type=&quot;math/tex&quot;&gt;Y&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;-Y&lt;/script&gt; are
+identically distributed, and&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;P(Y \leq y) = P(-Y \leq y).&lt;/script&gt;
+
+&lt;p&gt;To determine &lt;script type=&quot;math/tex&quot;&gt;P(Z \leq z)&lt;/script&gt;, condition on &lt;script type=&quot;math/tex&quot;&gt;\abs{Y}&lt;/script&gt;. In particular, we can write&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;P(Z \leq z) = P(Y \leq z) P(|Y| \leq a) + P(-Y \leq z) P(|Y| &gt; a).&lt;/script&gt;
+
+&lt;p&gt;But since &lt;script type=&quot;math/tex&quot;&gt;Y&lt;/script&gt; is symmetrically distributed, this implies&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;P(Z \leq z) = P(Y \leq z) [P(|Y| \leq a) + P(|Y| &gt; a)],&lt;/script&gt;
+
+&lt;p&gt;and as &lt;script type=&quot;math/tex&quot;&gt;P(|Y| \leq a) + P(|Y| &gt; a) = 1&lt;/script&gt;, we conclude that &lt;script type=&quot;math/tex&quot;&gt;P(Z \leq z) = P(Y
+\leq z)&lt;/script&gt;, which means that &lt;script type=&quot;math/tex&quot;&gt;Z&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;Y&lt;/script&gt; are identically distributed.
+&lt;script type=&quot;math/tex&quot;&gt;\square&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;There are substantial reasons to prefer this result over the statement of the
+homework problem. For one, this fact doesn’t even require that &lt;script type=&quot;math/tex&quot;&gt;Y&lt;/script&gt; have a
+density function. It applies to &lt;em&gt;any&lt;/em&gt; symmetric distribution, whether discrete,
+continuous, singular, or mixed.&lt;/p&gt;
+
+&lt;p&gt;Truthfully, I enjoy these sorts of arguments not particularly because of the
+generality, but because they’re so simple. When I thought in terms of
+Gaussians and error functions, I was sweating the details of nasty integrals and
+proper bounds. The general case, by abstracting over those details, directs you
+to “cut to the chase.” Which assumptions are absolutely essential? Okay, well
+I’ll have to use those somewhere. The rest I can discard. In this sense, by
+abstracting, I “restricted” my toolkit and identified the important devices.&lt;/p&gt;
+
+&lt;p&gt;Of course this strategy doesn’t always work. Sometimes many properties, specific
+and general, are required to make an argument go through. Needless generality
+can easily obfuscate what’s actually going on, too, and this ruins rather
+than refines intuition.&lt;/p&gt;
+
+&lt;p&gt;This sort of exercise represents a “sweet spot” of abstraction. The payoff is a
+direct, clear argument, but one that remains connected to the original problem.&lt;/p&gt;
+
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1&quot;&gt;
+      &lt;p&gt;You can view the notebook for this plot &lt;a href=&quot;/files/notebooks/18-04-04-notebook.html&quot;&gt;here&lt;/a&gt;, or download it from &lt;a href=&quot;/files/notebooks/18-04-04-notebook.ipynb&quot;&gt;here&lt;/a&gt;. &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;</content><author><name>David Kraemer</name></author><category term="math" /><category term="proofs" /><category term="abstract" /><summary type="html">I am always delighted when abstraction makes a problem noticeably easier to solve. Today I encountered (Jacod 1999) the following homework question:</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/focus.jpg" /></entry></feed>
