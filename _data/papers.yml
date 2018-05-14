@@ -1,0 +1,27 @@
+journals:
+  - {
+    title: 'Analysis of iterative region-of-interest image reconstruction for x-ray computed tomography',
+    authors: ['Emil Sidky', 'David Kraemer', 'Erin G. Roth', 'Ingrid S. Reiser', 'Xiaochuan Pan'],
+    date: '3 October 2014',
+    publication: 'J. of Medical Imaging, 1(3), 031007',
+    doi: '10.1117/1.JMI.1.3.031007'
+}
+
+proceedings:
+  - {
+    title: 'Robust iterative image reconstruction for breast CT by use of projection differentiation',
+    authors: ['David Kraemer', 'Erin G. Roth', 'Emil Sidky', 'Ingrid S. Reiser', 'Xiaochuan Pan'],
+    date: '18 March 2015',
+    publication: 'Proc. SPIE 9412, Medical Imaging 2015: Physics of Medical Imaging, 941231',
+    doi: '10.1117/12.2082444'
+}
+
+  - {
+    title: 'Improving depth resolution in digital breast tomosynthesis by iterative image reconstruction',
+    authors: ['Erin G. Roth', 'David Kraemer', 'Emil Sidky', 'Ingrid S. Reiser', 'Xiaochuan Pan'],
+    date: '18 March 2015',
+    publication: 'Proc. SPIE 9412, Medical Imaging 2015: Physics of Medical Imaging, 941258',
+    doi: '10.1117/12.2082429'
+}   
+
+
