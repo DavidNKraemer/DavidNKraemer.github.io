@@ -1,0 +1,36 @@
+software:
+  - {
+    name: 'polygonal-niceness',
+    url: 'https://www.github.com/DavidNKraemer/polygonal-niceness',
+    description: '(<i>Active development</i>) The alpha-fatness and chord-arc scores are different measures of the "niceness" of polygons. They may prove useful in developing quantitative measures by which electoral districts may be determined illegal. This project includes software for implementing these measures together with preliminary results on random polygons.'
+}
+  - {
+    name: 'tf-sqn',
+    url: 'https://github.com/DavidNKraemer/cse592-project',
+    description: 'A TensorFlow-ready implementation of a stochastic dampened limited memory BFGS algorithm for nonconvex minimization problems, following the work of <a href="https://doi.org/10.1137/15M1053141">Wang, Ma, Goldfarb, Liu (2017)</a>.'
+  }
+  - {
+    name: 'bls', 
+    url: 'https://github.com/OliverSherouse/bls', 
+    description: 'A Python library for the Bureau of Labor Statistics API.'
+}
+  - {
+    name: 'numerical-julia', 
+    url: 'https://www.github.com/', 
+    description: 'https://www.github.com/'
+}
+  - {
+    name: 'latex-journal', 
+    url: 'https://www.github.com/', 
+    description: 'https://www.github.com/'
+}
+  - {
+    name: 'flu-propagation-models', 
+    url: 'https://www.github.com/', 
+    description: 'https://www.github.com/'
+}
+  - {
+    name: 'julia-cormen', 
+    url: 'https://www.github.com/', 
+    description: 'https://www.github.com/'
+}
