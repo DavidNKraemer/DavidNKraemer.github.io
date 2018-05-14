@@ -1,8 +1,9 @@
 ---
 layout: page
+title: Published papers 
 ---
 
-# Journal articles 
+## Journal articles
 
 <ul class="posts">
   {% for paper in site.data.papers.journals %}
@@ -14,7 +15,7 @@ layout: page
   {% endfor %}
 </ul>
 
-# Proceedings papers
+## Proceedings papers
 
 <ul class="posts">
   {% for paper in site.data.papers.proceedings %}

@@ -1,36 +1,41 @@
 software:
   - {
     name: 'polygonal-niceness',
-    url: 'https://www.github.com/DavidNKraemer/polygonal-niceness',
+    url: 'https://github.com/DavidNKraemer/polygonal-niceness',
     description: '(<i>Active development</i>) The alpha-fatness and chord-arc scores are different measures of the "niceness" of polygons. They may prove useful in developing quantitative measures by which electoral districts may be determined illegal. This project includes software for implementing these measures together with preliminary results on random polygons.'
 }
   - {
     name: 'tf-sqn',
     url: 'https://github.com/DavidNKraemer/cse592-project',
     description: 'A TensorFlow-ready implementation of a stochastic dampened limited memory BFGS algorithm for nonconvex minimization problems, following the work of <a href="https://doi.org/10.1137/15M1053141">Wang, Ma, Goldfarb, Liu (2017)</a>.'
-  }
+}
   - {
     name: 'bls', 
     url: 'https://github.com/OliverSherouse/bls', 
     description: 'A Python library for the Bureau of Labor Statistics API.'
 }
   - {
+    name: 'poisson1d',
+    url: 'https://github.com/DavidNKraemer/poisson1d',
+    description: 'Implementation of a 1D Poisson boundary value problem solver in C++ using different matrix compression formats. The underlying matrix methods are using CBLAS and LAPACK.'
+}
+  - {
     name: 'numerical-julia', 
-    url: 'https://www.github.com/', 
-    description: 'https://www.github.com/'
+    url: 'https://github.com/DavidNKraemer/numerical-julia',
+    description: 'Implementation of numerical algorithms from <i>Numerical Analysis</i> (Sauer) in the Julia programming language'
 }
   - {
     name: 'latex-journal', 
-    url: 'https://www.github.com/', 
-    description: 'https://www.github.com/'
+    url: 'https://github.com/DavidNKraemer/latex-journal', 
+    description: 'This repository provides a simple structure for a Latex compilation of journal entries.'
 }
   - {
     name: 'flu-propagation-models', 
-    url: 'https://www.github.com/', 
-    description: 'https://www.github.com/'
+    url: 'https://github.com/DavidNKraemer/flu-propagation-models', 
+    description: 'An undergraduate project on modeling flu propagation in a closed campus.'
 }
   - {
     name: 'julia-cormen', 
-    url: 'https://www.github.com/', 
-    description: 'https://www.github.com/'
+    url: 'https://github.com/DavidNKraemer/julia-cormen', 
+    description: 'Implementations of various data structures and algorithms from <i>Introduction to Algorithms</i> (Cormen, et al.) in the Julia programming language.'
 }
