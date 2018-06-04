@@ -7,6 +7,40 @@
 		<atom:link href="/rss-feed.xml" rel="self" type="application/rss+xml" />
 		
 			<item>
+				<title>Reflections on the first year of graduate school</title>
+				
+					<dc:creator>David Kraemer</dc:creator>
+				
+				
+					<description>&lt;h2 id=&quot;courses&quot;&gt;Courses&lt;/h2&gt;
+
+</description>
+				
+				<pubDate>Mon, 04 Jun 2018 00:00:00 -0400</pubDate>
+				<link>http://localhost:4000/ln/reflections-on-first-year-of-grad-school.html</link>
+				<guid isPermaLink="true">http://localhost:4000/ln/reflections-on-first-year-of-grad-school.html</guid>
+			</item>
+		
+			<item>
+				<title>Semantics for algorithmic accountability</title>
+				
+					<dc:creator>David Kraemer</dc:creator>
+				
+				
+					<description>&lt;p&gt;As someone who uses and, from time to time, designs algorithms for varied
+purposes, I am bemused when I read about them in the popular press. A &lt;em&gt;New York
+Times&lt;/em&gt; &lt;a href=&quot;https://www.nytimes.com/2017/10/26/opinion/algorithm-compas-sentencing-bias.html&quot;&gt;opinion piece&lt;/a&gt; (author credit: Ellora Israni) is typical.  In it, Ms.
+Israni argues that the use of algorithms to aid in criminal sentencing is
+dangerously susceptible to abuse:&lt;/p&gt;
+
+</description>
+				
+				<pubDate>Wed, 16 May 2018 21:25:35 -0400</pubDate>
+				<link>http://localhost:4000/ln/thinking-about-algorithmic-accountability.html</link>
+				<guid isPermaLink="true">http://localhost:4000/ln/thinking-about-algorithmic-accountability.html</guid>
+			</item>
+		
+			<item>
 				<title>Gradients for Grown-Ups (Part 2)</title>
 				
 					<dc:creator>David Kraemer</dc:creator>

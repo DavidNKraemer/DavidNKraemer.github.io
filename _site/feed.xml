@@ -1,4 +1,135 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-05-14T09:46:33-04:00</updated><id>http://localhost:4000/</id><title type="html">David Kraemer</title><subtitle>applied math phd student</subtitle><author><name>David Kraemer</name></author><entry><title type="html">Gradients for Grown-Ups (Part 2)</title><link href="http://localhost:4000/ln/gradients-for-grownups-part-02.html" rel="alternate" type="text/html" title="Gradients for Grown-Ups (Part 2)" /><published>2018-05-10T00:00:00-04:00</published><updated>2018-05-10T00:00:00-04:00</updated><id>http://localhost:4000/ln/gradients-for-grownups-part-02</id><content type="html" xml:base="http://localhost:4000/ln/gradients-for-grownups-part-02.html">&lt;p&gt;This is the second in a series of posts, “Gradients for Grown-Ups”. You can see
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-06-04T17:27:23-04:00</updated><id>http://localhost:4000/</id><title type="html">David Kraemer</title><subtitle>applied math phd student</subtitle><author><name>David Kraemer</name></author><entry><title type="html">Reflections on the first year of graduate school</title><link href="http://localhost:4000/ln/reflections-on-first-year-of-grad-school.html" rel="alternate" type="text/html" title="Reflections on the first year of graduate school" /><published>2018-06-04T00:00:00-04:00</published><updated>2018-06-04T00:00:00-04:00</updated><id>http://localhost:4000/ln/reflections-on-first-year-of-grad-school</id><content type="html" xml:base="http://localhost:4000/ln/reflections-on-first-year-of-grad-school.html">&lt;h2 id=&quot;courses&quot;&gt;Courses&lt;/h2&gt;
+
+&lt;p&gt;Probably the biggest transition from the undergraduate (and particularly,
+liberal arts) experience and graduate work became apparent in the courses I
+took. Generally speaking, I never had a class with more than 30 students in
+college. Here, the norm has been (with one exception) &lt;em&gt;at least&lt;/em&gt; that many.&lt;/p&gt;
+
+&lt;p&gt;I’ve found it harder to engage with the professors in larger environments. I
+discovered that, as the class size increases, the barriers to participating
+become stronger. I think barriers come in two forms. First, it simply is harder
+to get your question asked, given that there are many more students who may also
+have questions. More nefariously, I felt that with more students, the “stakes”
+were somehow higher. If I asked my question, the interruption would affect more
+students. And if, after the fact, it didn’t have the relevance or urgency that I
+believed it did, then I would feel guilty for having wasted the other folks’
+time.&lt;/p&gt;
+
+&lt;p&gt;I think the essential difference is that with a small class, there is a much
+stronger potential for having a collegial experience. That is, when you are with
+the professor and a handful of other students, the social dynamic requires that
+you behave differently: somewhat informal, participatory, and with more
+sustained back-and-forth discussions. Moreover, these behaviors are &lt;em&gt;productive&lt;/em&gt;
+in that they facilitate learning.&lt;/p&gt;
+
+&lt;p&gt;When the class becomes larger, however, these same behaviors suddenly feel
+emphatically unproductive. Your best strategy seems to devolve into soaking
+every moment of the lecture up like a sponge and process it all much later. By
+the way, this &lt;em&gt;really&lt;/em&gt; doesn’t work when the lecturer is awful, which was my
+experience in two separate classes.&lt;/p&gt;
+
+&lt;h2 id=&quot;professors&quot;&gt;Professors&lt;/h2&gt;
+
+&lt;p&gt;The professors at a research university are here to do research. Some also
+believe in the importance of their roles as teachers, but not all. This is not a
+new insight, but it is strongly supported by my experience. I have much stronger
+admiration for the professors who make an effort in their lectures, even when
+they don’t fully succeed, than the many who visibly put negligible thought into
+pedagogy.&lt;/p&gt;
+
+&lt;p&gt;I also find that the experience of talking to professors is a bit of a roulette
+game, depending on how they receive your interests and ideas. Whereas in
+college, the underlying concern is for my curricular success, this is not always
+true in graduate school. This is not necessarily bad, but it is certainly
+different.&lt;/p&gt;
+
+&lt;h2 id=&quot;research&quot;&gt;Research&lt;/h2&gt;
+
+&lt;p&gt;Starting in a new field is very intimidating. Research articles are not written
+for initiates, and frequently the topic’s textbook does not exist (because
+otherwise would it truly constitute research?). Reading and rereading, taking
+notes, and keeping a healthy sleep cycle have been my best tools in scaling this
+hill. But I can’t speak to research much after this year’s work,
+because course work simply dominated the bulk of my mental effort.&lt;/p&gt;
+
+&lt;h2 id=&quot;projects&quot;&gt;Projects&lt;/h2&gt;
+
+&lt;p&gt;I had a couple of small software projects in my first semester, none of which
+were (designed to be) particularly challenging. In the second semester, I worked
+on two substantial projects in computational geometry and convex optimization
+which came to a somewhat reasonable conclusion.&lt;/p&gt;
+
+&lt;p&gt;Besides the interpersonal fun that is always involved in a nontrivial group
+project, I found it interesting to discover what distinguished the “easy” and
+the “hard” parts of a project. Essentially, the “easy” part is the part you’ve
+done before, and the “hard” part is the part you’ve never encountered.&lt;/p&gt;
+
+&lt;p&gt;That sounds obvious. But what I mean is the parts that actually take up most of
+the effort of the project may have nothing to do with what is difficult or
+simple in the abstract. Two examples illustrate this.&lt;/p&gt;
+
+&lt;p&gt;In computational geometry, I implemented certain measures of simple polygons in
+C++. I expected that implementing the measures would be the most challenging
+part, since they were new ideas and since I couldn’t know for certain that the
+implementations were working. But, relative to the total time spent working on
+the project, I spent very little time writing the code for the measures. (I
+proved some basic results about the measures and checked that the
+implementations conformed, so I was reasonably happy with their correctness.)
+But I spent the vast majority of my work time dealing with the intricacies of
+the floating point arithmetic kernels provided by the CGAL project, futzing with
+Makefiles, and linking external dependencies.&lt;/p&gt;
+
+&lt;p&gt;In convex optimization, I implemented a new optimization algorithm so to be
+compatible with a major machine learning library. I expected that the algorithm
+itself would be the biggest obstacle. (To be fair, it was quite hard writing it.
+But it was “correct” and still failing for far longer than we had realized.)
+Actually, our work time was dominated by reading shoddy documentation and sparse
+discussion threads, studying existing library code, and periodically scrapping
+everything we had compiled so far.&lt;/p&gt;
+
+&lt;p&gt;For both cases, the project involved learning a component of a new library so
+that our code would properly interact with it. Unlike writing pure software,
+which I now have a few years’ experience with, working inside (and extending)
+existing projects was a brand new problem for me. As a consequence, it ate up
+the vast majority of my time.&lt;/p&gt;
+
+&lt;h2 id=&quot;work-life-balance&quot;&gt;Work-life balance&lt;/h2&gt;
+
+&lt;p&gt;I commuted to school all of first year, but because my girlfriend and I share a
+car, this ended up meaning I had rigid drop-off and pick-up times. In one
+respect this was great: it forced me to adopt the discipline of getting up early
+(circa 6:25am). In other respects, it was very challenging. In college I could
+use the campus to work far into the morning hours as the coursework demanded.
+But this year I was very much constrained by a 7am-4pm cycle.&lt;/p&gt;
+
+&lt;p&gt;Now that I live within walking distance to campus, I expect this cycle to relax
+a bit. I can attend more talks and workshops without any major scheduling
+crisis, and I can use the libraries or work with colleagues as needed.&lt;/p&gt;
+
+&lt;p&gt;The upside to this year’s schedule was in forcing a better work-life balance. I
+ate dinners at reasonable times. I took breaks from studying. I interacted with
+other human beings (i.e. my girlfriend) socially. I don’t want to lose these
+things, although I think the future demands of my program may require I scale
+them back from time to time.&lt;/p&gt;
+
+&lt;h2 id=&quot;what-is-applied-math&quot;&gt;What is applied math&lt;/h2&gt;
+
+&lt;p&gt;Coming into this year, my working definition of applied math was: &lt;em&gt;mathematical
+answers to questions arising outside of math&lt;/em&gt;. By contrast, I defined pure math
+as: &lt;em&gt;mathematical answers to questions arising inside of math&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;I really like this definition, but I suspect this is not quite accurate. Applied
+math, as I have learned this year, is a broader field than the definition
+permits. In the fall, I started out studying numerical solutions to differential
+equations. Of course there is mathematics at play here, but there is just as
+much physics motivating the solutions. High performance computing is classified
+by some as an applied math field. It’s not obvious to me that the
+theorem-proving, which lies at the heart of pure mathematics, is as central in
+these areas.&lt;/p&gt;
+
+&lt;p&gt;Though I haven’t been able to revise the definition in light of these new
+experiences, I hope to stay &lt;em&gt;personally&lt;/em&gt; in an area of applied math that meets
+my old criterion. It’s still early, but so far it seems like a good possibility.&lt;/p&gt;</content><author><name>David Kraemer</name></author><category term="math" /><category term="school" /><category term="introspective" /><summary type="html">Courses</summary></entry><entry><title type="html">Gradients for Grown-Ups (Part 2)</title><link href="http://localhost:4000/ln/gradients-for-grownups-part-02.html" rel="alternate" type="text/html" title="Gradients for Grown-Ups (Part 2)" /><published>2018-05-10T00:00:00-04:00</published><updated>2018-05-10T00:00:00-04:00</updated><id>http://localhost:4000/ln/gradients-for-grownups-part-02</id><content type="html" xml:base="http://localhost:4000/ln/gradients-for-grownups-part-02.html">&lt;p&gt;This is the second in a series of posts, “Gradients for Grown-Ups”. You can see
 the previous post &lt;a href=&quot;gradients-for-grownups-part-01&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;Last time, we got started with the example &lt;script type=&quot;math/tex&quot;&gt;f(x) = c^T x&lt;/script&gt; to showcase the
