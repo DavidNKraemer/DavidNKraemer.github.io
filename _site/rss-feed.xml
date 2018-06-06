@@ -7,6 +7,44 @@
 		<atom:link href="/rss-feed.xml" rel="self" type="application/rss+xml" />
 		
 			<item>
+				<title>Multifunction inverses</title>
+				
+					<dc:creator>David Kraemer</dc:creator>
+				
+				
+					<description>&lt;p&gt;When we deal with normal functions &lt;script type=&quot;math/tex&quot;&gt;f : X \to Y&lt;/script&gt; we are frequently
+interested in the behavior of &lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt; on subsets of &lt;script type=&quot;math/tex&quot;&gt;X&lt;/script&gt;, rather than just
+elements. We might write &lt;script type=&quot;math/tex&quot;&gt;f [ A ]&lt;/script&gt; to denote the image of &lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt; on the
+subset &lt;script type=&quot;math/tex&quot;&gt;A \subseteq X&lt;/script&gt;. Conversely, given a subset &lt;script type=&quot;math/tex&quot;&gt;B \subseteq Y&lt;/script&gt;, we
+can examine the “preimage” of &lt;script type=&quot;math/tex&quot;&gt;B&lt;/script&gt; by &lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt;:&lt;/p&gt;
+
+</description>
+				
+				<pubDate>Wed, 06 Jun 2018 00:00:00 -0400</pubDate>
+				<link>http://localhost:4000/ln/multifunction-inverses.html</link>
+				<guid isPermaLink="true">http://localhost:4000/ln/multifunction-inverses.html</guid>
+			</item>
+		
+			<item>
+				<title>My summer excursion into multifunctions</title>
+				
+					<dc:creator>David Kraemer</dc:creator>
+				
+				
+					<description>&lt;p&gt;Besides managing a course, my first summer goal is to understand the &lt;a href=&quot;https://en.wikipedia.org/wiki/Maximum_theorem&quot;&gt;Berge
+maximum theorem&lt;/a&gt; (BMT). According to Wikipedia, the theorem is useful for
+describing continuity conditions for the solution of parameterized optimization
+problems. Since I’m still new to the whole subject, I don’t quite understand
+what that means! More on its interpretation and applications (hopefully!) soon.&lt;/p&gt;
+
+</description>
+				
+				<pubDate>Tue, 05 Jun 2018 00:00:00 -0400</pubDate>
+				<link>http://localhost:4000/ln/summer-excursion-on-multifunctions.html</link>
+				<guid isPermaLink="true">http://localhost:4000/ln/summer-excursion-on-multifunctions.html</guid>
+			</item>
+		
+			<item>
 				<title>Reflections on the first year of graduate school</title>
 				
 					<dc:creator>David Kraemer</dc:creator>
