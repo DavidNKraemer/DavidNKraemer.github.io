@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-06-06T12:05:40-04:00</updated><id>http://localhost:4000/</id><title type="html">David Kraemer</title><subtitle>applied math phd student</subtitle><author><name>David Kraemer</name></author><entry><title type="html">Multifunction inverses</title><link href="http://localhost:4000/ln/multifunction-inverses.html" rel="alternate" type="text/html" title="Multifunction inverses" /><published>2018-06-06T00:00:00-04:00</published><updated>2018-06-06T00:00:00-04:00</updated><id>http://localhost:4000/ln/multifunction-inverses</id><content type="html" xml:base="http://localhost:4000/ln/multifunction-inverses.html">&lt;p&gt;When we deal with normal functions &lt;script type=&quot;math/tex&quot;&gt;f : X \to Y&lt;/script&gt; we are frequently
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-06-06T12:10:20-04:00</updated><id>http://localhost:4000/</id><title type="html">David Kraemer</title><subtitle>applied math phd student</subtitle><author><name>David Kraemer</name></author><entry><title type="html">Multifunction inverses</title><link href="http://localhost:4000/ln/multifunction-inverses.html" rel="alternate" type="text/html" title="Multifunction inverses" /><published>2018-06-06T00:00:00-04:00</published><updated>2018-06-06T00:00:00-04:00</updated><id>http://localhost:4000/ln/multifunction-inverses</id><content type="html" xml:base="http://localhost:4000/ln/multifunction-inverses.html">&lt;p&gt;When we deal with normal functions &lt;script type=&quot;math/tex&quot;&gt;f : X \to Y&lt;/script&gt; we are frequently
 interested in the behavior of &lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt; on subsets of &lt;script type=&quot;math/tex&quot;&gt;X&lt;/script&gt;, rather than just
 elements. We might write &lt;script type=&quot;math/tex&quot;&gt;f [ A ]&lt;/script&gt; to denote the image of &lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt; on the
 subset &lt;script type=&quot;math/tex&quot;&gt;A \subseteq X&lt;/script&gt;. Conversely, given a subset &lt;script type=&quot;math/tex&quot;&gt;B \subseteq Y&lt;/script&gt;, we
-can examine the “preimage” of &lt;script type=&quot;math/tex&quot;&gt;B&lt;/script&gt; by &lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt;:&lt;/p&gt;
+can examine the “preimage” of &lt;script type=&quot;math/tex&quot;&gt;B&lt;/script&gt; by &lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt; in the following way:&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;f^{-1} [B] = \{ x \in X : f(x) \in B \}.&lt;/script&gt;
 
@@ -12,7 +12,7 @@ bijective (and consequently &lt;script type=&quot;math/tex&quot;&gt;f^{-1}&lt;/s
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;f^{-1} [\{ y \}] = \{ f^{-1} (y) \}&lt;/script&gt;
 
-&lt;p&gt;for all &lt;script type=&quot;math/tex&quot;&gt;y \in Y&lt;/script&gt;. That is to say, the preimage of a singleton &lt;script type=&quot;math/tex&quot;&gt;\{ y \}&lt;/script&gt;
+&lt;p&gt;for all &lt;script type=&quot;math/tex&quot;&gt;y \in Y&lt;/script&gt;. That is to say, the preimage of the singleton &lt;script type=&quot;math/tex&quot;&gt;\{ y \}&lt;/script&gt;
 corresponds to the inverse function applied to &lt;script type=&quot;math/tex&quot;&gt;y&lt;/script&gt;.&lt;/p&gt;
 
 &lt;h2 id=&quot;upper-and-lower-inverses&quot;&gt;Upper and lower inverses&lt;/h2&gt;
@@ -38,25 +38,26 @@ It is not hard to see that the upper inverse property is stronger than the lower
 inverse property. Indeed, &lt;script type=&quot;math/tex&quot;&gt;\Gamma^+ B \subseteq \Gamma^- B&lt;/script&gt; for any &lt;script type=&quot;math/tex&quot;&gt;B&lt;/script&gt;.&lt;/p&gt;
 
 &lt;p&gt;As a sanity check, let’s verify that the upper and lower inverse images for
-single-valued mappings (i.e. functions) coincide. Let &lt;script type=&quot;math/tex&quot;&gt;\sigma : X
-\twoheadrightarrow Y&lt;/script&gt; be a single-valued mapping, and let &lt;script type=&quot;math/tex&quot;&gt;B \subseteq Y&lt;/script&gt;
-be arbitrary. We know that &lt;script type=&quot;math/tex&quot;&gt;\sigma^+ B \subseteq \sigma^- B&lt;/script&gt;, so we just
-need to show that &lt;script type=&quot;math/tex&quot;&gt;\sigma^- B \subseteq \sigma^+ B&lt;/script&gt;. In that case, consider
-an arbitrary &lt;script type=&quot;math/tex&quot;&gt;x \in \sigma^- B&lt;/script&gt;. We know that &lt;script type=&quot;math/tex&quot;&gt;\sigma x \cap B \ne
+single-valued multifunctions (i.e. functions) coincide. Let &lt;script type=&quot;math/tex&quot;&gt;\sigma : X
+\twoheadrightarrow Y&lt;/script&gt; be a single-valued multifunction, and let &lt;script type=&quot;math/tex&quot;&gt;B \subseteq
+Y&lt;/script&gt; be arbitrary. We know that &lt;script type=&quot;math/tex&quot;&gt;\sigma^+ B \subseteq \sigma^- B&lt;/script&gt;, so we
+just need to show that &lt;script type=&quot;math/tex&quot;&gt;\sigma^- B \subseteq \sigma^+ B&lt;/script&gt;. In that case,
+consider an arbitrary &lt;script type=&quot;math/tex&quot;&gt;x \in \sigma^- B&lt;/script&gt;. We know that &lt;script type=&quot;math/tex&quot;&gt;\sigma x \cap B \ne
 \emptyset&lt;/script&gt;, but since &lt;script type=&quot;math/tex&quot;&gt;\sigma&lt;/script&gt; is single-valued, this means that&lt;/p&gt;
 
 &lt;script type=&quot;math/tex; mode=display&quot;&gt;\{\sigma(x)\} \cap B \ne \emptyset.&lt;/script&gt;
 
 &lt;p&gt;In other words, &lt;script type=&quot;math/tex&quot;&gt;\sigma x \subseteq B&lt;/script&gt;, which implies that &lt;script type=&quot;math/tex&quot;&gt;x \in \sigma^+
-B&lt;/script&gt;. In summary, for single-valued mappings, &lt;script type=&quot;math/tex&quot;&gt;\sigma^+ = \sigma^- =
-\sigma^{-1}&lt;/script&gt; in the function sense.&lt;/p&gt;
+B&lt;/script&gt;. In summary, for single-valued multifunctions, &lt;script type=&quot;math/tex&quot;&gt;\sigma^+ = \sigma^- =
+\sigma^{-1}&lt;/script&gt;, which is exactly the way we understand the preimage of a
+function.&lt;/p&gt;
 
 &lt;h2 id=&quot;inverses-as-multifunctions&quot;&gt;Inverses as multifunctions&lt;/h2&gt;
 
 &lt;p&gt;It is equivalent for a function &lt;script type=&quot;math/tex&quot;&gt;f : X \to Y&lt;/script&gt; to have an inverse that &lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt; be bijective. This means that only a very small class of functions have
 inverses. Of course every function has its preimage, which &lt;em&gt;resembles&lt;/em&gt; an
 inverse function, but since functions have considerable structure the preimage
-need not formally coincide with a inverse function.&lt;/p&gt;
+need not formally coincide with an inverse function.&lt;/p&gt;
 
 &lt;p&gt;By contrast, when we weaken our assumption that our mappings have unique outputs
 (i.e., when we go from functions to multifunctions), the distinction between
@@ -78,7 +79,7 @@ here: lower and upper semi-continuity. When we disaggregate, we will see that
 lower semi-continuity has a characterization in terms of the lower inverse and
 upper semi-continuity has a characterization in terms of the upper inverse. In
 the special case when both notions coincide, we arrive back at the usual
-criterion.&lt;/p&gt;</content><author><name>David Kraemer</name></author><category term="research" /><category term="games" /><category term="topology" /><category term="optimization" /><summary type="html">When we deal with normal functions we are frequently interested in the behavior of on subsets of , rather than just elements. We might write to denote the image of on the subset . Conversely, given a subset , we can examine the “preimage” of by :</summary></entry><entry><title type="html">My summer excursion into multifunctions</title><link href="http://localhost:4000/ln/summer-excursion-on-multifunctions.html" rel="alternate" type="text/html" title="My summer excursion into multifunctions" /><published>2018-06-05T00:00:00-04:00</published><updated>2018-06-05T00:00:00-04:00</updated><id>http://localhost:4000/ln/summer-excursion-on-multifunctions</id><content type="html" xml:base="http://localhost:4000/ln/summer-excursion-on-multifunctions.html">&lt;p&gt;Besides managing a course, my first summer goal is to understand the &lt;a href=&quot;https://en.wikipedia.org/wiki/Maximum_theorem&quot;&gt;Berge
+criterion.&lt;/p&gt;</content><author><name>David Kraemer</name></author><category term="research" /><category term="games" /><category term="topology" /><category term="optimization" /><summary type="html">When we deal with normal functions we are frequently interested in the behavior of on subsets of , rather than just elements. We might write to denote the image of on the subset . Conversely, given a subset , we can examine the “preimage” of by in the following way:</summary></entry><entry><title type="html">My summer excursion into multifunctions</title><link href="http://localhost:4000/ln/summer-excursion-on-multifunctions.html" rel="alternate" type="text/html" title="My summer excursion into multifunctions" /><published>2018-06-05T00:00:00-04:00</published><updated>2018-06-05T00:00:00-04:00</updated><id>http://localhost:4000/ln/summer-excursion-on-multifunctions</id><content type="html" xml:base="http://localhost:4000/ln/summer-excursion-on-multifunctions.html">&lt;p&gt;Besides managing a course, my first summer goal is to understand the &lt;a href=&quot;https://en.wikipedia.org/wiki/Maximum_theorem&quot;&gt;Berge
 maximum theorem&lt;/a&gt; (BMT). According to Wikipedia, the theorem is useful for
 describing continuity conditions for the solution of parameterized optimization
 problems. Since I’m still new to the whole subject, I don’t quite understand

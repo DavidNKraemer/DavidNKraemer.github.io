@@ -16,7 +16,7 @@
 interested in the behavior of &lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt; on subsets of &lt;script type=&quot;math/tex&quot;&gt;X&lt;/script&gt;, rather than just
 elements. We might write &lt;script type=&quot;math/tex&quot;&gt;f [ A ]&lt;/script&gt; to denote the image of &lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt; on the
 subset &lt;script type=&quot;math/tex&quot;&gt;A \subseteq X&lt;/script&gt;. Conversely, given a subset &lt;script type=&quot;math/tex&quot;&gt;B \subseteq Y&lt;/script&gt;, we
-can examine the “preimage” of &lt;script type=&quot;math/tex&quot;&gt;B&lt;/script&gt; by &lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt;:&lt;/p&gt;
+can examine the “preimage” of &lt;script type=&quot;math/tex&quot;&gt;B&lt;/script&gt; by &lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt; in the following way:&lt;/p&gt;
 
 </description>
 				
