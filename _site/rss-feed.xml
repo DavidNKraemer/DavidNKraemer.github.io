@@ -7,6 +7,67 @@
 		<atom:link href="/rss-feed.xml" rel="self" type="application/rss+xml" />
 		
 			<item>
+				<title>Investigating the stability of linear programs</title>
+				
+					<dc:creator>David Kraemer</dc:creator>
+				
+				
+					<description>&lt;p&gt;I have been posting lately about the theory of multifunctions, which has so far
+only tenuously related to possible applications. So for a break (actually, it’s
+because I’ve been thinking about it in the last few days), we can explore how
+the theory of multifunctions and semi-continuity inform a very practical
+problem.&lt;/p&gt;
+
+</description>
+				
+				<pubDate>Tue, 26 Jun 2018 16:47:10 -0400</pubDate>
+				<link>http://localhost:4000/ln/linear-programming.html</link>
+				<guid isPermaLink="true">http://localhost:4000/ln/linear-programming.html</guid>
+			</item>
+		
+			<item>
+				<title>Understanding semi-continuity of multifunctions</title>
+				
+					<dc:creator>David Kraemer</dc:creator>
+				
+				
+					<description>&lt;p&gt;Let &lt;script type=&quot;math/tex&quot;&gt;X&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;Y&lt;/script&gt; be topological spaces. One of the basic objects of study
+in topology are the continuous functions &lt;script type=&quot;math/tex&quot;&gt;f : X \to Y&lt;/script&gt;. Continuity in its
+pure form is a topological characterization: if &lt;script type=&quot;math/tex&quot;&gt;V \subseteq Y&lt;/script&gt; is an open
+set, then continuity is equivalent to the openness of &lt;script type=&quot;math/tex&quot;&gt;f^{-1}[V] \subseteq X&lt;/script&gt;. The same concept is useful for multifunctions in addition to regular
+functions, though we need to clarify &lt;script type=&quot;math/tex&quot;&gt;f^{-1} [V]&lt;/script&gt; in this context. First,
+however, we need to disaggregate continuity into two weaker properties.&lt;/p&gt;
+
+</description>
+				
+				<pubDate>Tue, 26 Jun 2018 00:00:00 -0400</pubDate>
+				<link>http://localhost:4000/ln/semi-continuity.html</link>
+				<guid isPermaLink="true">http://localhost:4000/ln/semi-continuity.html</guid>
+			</item>
+		
+			<item>
+				<title>A theory of &lt;i&gt;The Simpsons&lt;/i&gt;' continuity</title>
+				
+					<dc:creator>David Kraemer</dc:creator>
+				
+				
+					<description>&lt;p&gt;Much ink has been spilled about how to process the 29-season run of &lt;em&gt;The
+Simpsons&lt;/em&gt;.  The venerable television series has a dedicated but splintered
+fandom, especially with respect to its evolution (or decline) in the latter
+decades of the show.  Of particular concern is the show’s willingness to rewrite
+its own history, the so-called “ret-con”problem.  Modifications to the timeline
+of Homer and Marge’s marriage and similarly of Bart’s birth have produced
+considerable criticism, and the ret-conning appears frequently elsewhere in the
+show’s extended world.&lt;/p&gt;
+
+</description>
+				
+				<pubDate>Thu, 14 Jun 2018 22:52:28 -0400</pubDate>
+				<link>http://localhost:4000/ln/theory-of-the-simpsons.html</link>
+				<guid isPermaLink="true">http://localhost:4000/ln/theory-of-the-simpsons.html</guid>
+			</item>
+		
+			<item>
 				<title>Multifunction inverses</title>
 				
 					<dc:creator>David Kraemer</dc:creator>
@@ -127,22 +188,6 @@ alternatives.&lt;/p&gt;
 				<pubDate>Mon, 07 May 2018 00:00:00 -0400</pubDate>
 				<link>http://localhost:4000/ln/neat-proof-of-cauchy-criterion.html</link>
 				<guid isPermaLink="true">http://localhost:4000/ln/neat-proof-of-cauchy-criterion.html</guid>
-			</item>
-		
-			<item>
-				<title>When abstraction is simpler</title>
-				
-					<dc:creator>David Kraemer</dc:creator>
-				
-				
-					<description>&lt;p&gt;I am always delighted when abstraction makes a problem noticeably easier to
-solve. Today I encountered (Jacod 1999) the following homework question:&lt;/p&gt;
-
-</description>
-				
-				<pubDate>Wed, 04 Apr 2018 00:00:00 -0400</pubDate>
-				<link>http://localhost:4000/ln/when-abstraction-is-simpler.html</link>
-				<guid isPermaLink="true">http://localhost:4000/ln/when-abstraction-is-simpler.html</guid>
 			</item>
 		
 	</channel>

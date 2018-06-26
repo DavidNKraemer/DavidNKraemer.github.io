@@ -98,5 +98,5 @@ direct, clear argument, but one that remains connected to the original problem.
 
 [^1]: You can view the notebook for this plot [here][1], or download it from [here][2]. 
 
-[1]: /files/notebooks/18-04-04-notebook.html
-[2]: /files/notebooks/18-04-04-notebook.ipynb
+[1]: /files/notebooks/2018-04-04-notebook.html
+[2]: /files/notebooks/2018-04-04-notebook.ipynb
