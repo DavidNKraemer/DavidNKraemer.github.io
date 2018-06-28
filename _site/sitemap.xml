@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>http://localhost:4000/ln/when-abstraction-is-simpler.html</loc>
-<lastmod>2018-04-04T00:00:00-04:00</lastmod>
-</url>
-<url>
 <loc>http://localhost:4000/ln/neat-proof-of-cauchy-criterion.html</loc>
 <lastmod>2018-05-07T00:00:00-04:00</lastmod>
 </url>
@@ -41,17 +37,26 @@
 <lastmod>2018-06-26T00:00:00-04:00</lastmod>
 </url>
 <url>
+<loc>http://localhost:4000/ln/numerical-semicontinuous-functions.html</loc>
+<lastmod>2018-06-27T00:00:00-04:00</lastmod>
+</url>
+<url>
 <loc>http://localhost:4000/ln/linear-programming.html</loc>
-<lastmod>2018-06-26T16:47:10-04:00</lastmod>
+<lastmod>2018-06-27T12:09:00-04:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/ln/characterizing-numerical-lsc-functions.html</loc>
+<lastmod>2018-06-28T00:00:00-04:00</lastmod>
+</url>
+<url>
+<loc>http://localhost:4000/ln/gradients-for-grownups-part-03.html</loc>
+<lastmod>2018-06-28T12:20:50-04:00</lastmod>
 </url>
 <url>
 <loc>http://localhost:4000/menu/about.html</loc>
 </url>
 <url>
 <loc>http://localhost:4000/menu/contact.html</loc>
-</url>
-<url>
-<loc>http://localhost:4000/menu/courses.html</loc>
 </url>
 <url>
 <loc>http://localhost:4000/</loc>
@@ -64,6 +69,9 @@
 </url>
 <url>
 <loc>http://localhost:4000/menu/projects.html</loc>
+</url>
+<url>
+<loc>http://localhost:4000/menu/teaching.html</loc>
 </url>
 <url>
 <loc>http://localhost:4000/page2/</loc>

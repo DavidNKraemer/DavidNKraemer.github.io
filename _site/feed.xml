@@ -1,4 +1,196 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-06-26T16:47:10-04:00</updated><id>http://localhost:4000/</id><title type="html">David Kraemer</title><subtitle>applied math phd student</subtitle><author><name>David Kraemer</name></author><entry><title type="html">Understanding semi-continuity of multifunctions</title><link href="http://localhost:4000/ln/semi-continuity.html" rel="alternate" type="text/html" title="Understanding semi-continuity of multifunctions" /><published>2018-06-26T00:00:00-04:00</published><updated>2018-06-26T00:00:00-04:00</updated><id>http://localhost:4000/ln/semi-continuity</id><content type="html" xml:base="http://localhost:4000/ln/semi-continuity.html">&lt;p&gt;Let &lt;script type=&quot;math/tex&quot;&gt;X&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;Y&lt;/script&gt; be topological spaces. One of the basic objects of study
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-06-28T13:50:25-04:00</updated><id>http://localhost:4000/</id><title type="html">David Kraemer</title><subtitle>applied math phd student</subtitle><author><name>David Kraemer</name></author><entry><title type="html">A characterization of numerical lower semi-continuity</title><link href="http://localhost:4000/ln/characterizing-numerical-lsc-functions.html" rel="alternate" type="text/html" title="A characterization of numerical lower semi-continuity" /><published>2018-06-28T00:00:00-04:00</published><updated>2018-06-28T00:00:00-04:00</updated><id>http://localhost:4000/ln/characterizing-numerical-lsc-functions</id><content type="html" xml:base="http://localhost:4000/ln/characterizing-numerical-lsc-functions.html">&lt;p&gt;One can define numerical lower semi-continuity using a sequential criterion: for
+&lt;script type=&quot;math/tex&quot;&gt;\newcommand{\RR}{\mathbb{R}}
+\renewcommand{\bar}{\overline}
+f : X \to \bar{\RR},&lt;/script&gt;
+we say that &lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt; is &lt;em&gt;lower semi-continuous&lt;/em&gt; at &lt;script type=&quot;math/tex&quot;&gt;x \in X&lt;/script&gt; if for any
+sequence &lt;script type=&quot;math/tex&quot;&gt;x_n \to x&lt;/script&gt; we have&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;f(x) \leq \liminf_{n \to \infty} f(x_n).&lt;/script&gt;
+
+&lt;p&gt;The idea is that &lt;script type=&quot;math/tex&quot;&gt;f(x_n)&lt;/script&gt; is eventually bounded below by &lt;script type=&quot;math/tex&quot;&gt;f(x)&lt;/script&gt;; that
+is, for every &lt;script type=&quot;math/tex&quot;&gt;\varepsilon &gt; 0&lt;/script&gt; there exists an &lt;script type=&quot;math/tex&quot;&gt;N \in \mathbb{N}&lt;/script&gt; such
+that whenever &lt;script type=&quot;math/tex&quot;&gt;n \geq N&lt;/script&gt; we have&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+f(x_n) - f(x) &lt; \varepsilon. %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;Unsurprisingly, if &lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt; is lower semi-continuous it follows that for any
+convergent sequence &lt;script type=&quot;math/tex&quot;&gt;x_n \to x&lt;/script&gt; we have&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;f(x) \leq \limsup_{n \to \infty} f(x_n),&lt;/script&gt;
+
+&lt;p&gt;since&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+f(x) &amp; \leq \liminf_{n \to \infty} f(x_n) \\
+&amp;\leq \limsup_{n \to \infty} f(x_n).
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;What’s more surprising is that these conditions are equivalent!&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Proposition&lt;/strong&gt;. &lt;em&gt;If for any convergent sequence &lt;script type=&quot;math/tex&quot;&gt;x_n \to x&lt;/script&gt; we have&lt;/em&gt;&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;f(x) \leq \limsup_{n \to \infty} f(x_n)&lt;/script&gt;
+
+&lt;p&gt;&lt;em&gt;then &lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt; is lower semi-continuous at &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt;.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;I find this surprising because the property above relates to the limiting &lt;em&gt;upper
+bounds&lt;/em&gt; of a sequence. Why should that have any influence on the limiting
+behavior of the &lt;em&gt;lower bounds&lt;/em&gt;? There is sort of a mathematical feint at work
+here, because the upper limit is not where the strength of the hypothesis lies.
+Instead, it’s hidden in the fact that this upper limit bound holds &lt;em&gt;for every&lt;/em&gt;
+convergent sequence. Let’s find out why.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Proof&lt;/em&gt;. By the contrapositive. Suppose &lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt; is not lower semi-continuous, so
+that there exists a sequence &lt;script type=&quot;math/tex&quot;&gt;x_n \to x&lt;/script&gt; with&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\liminf_{n \to \infty} f(x_n) = s &lt; f(x). %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;Now, &lt;script type=&quot;math/tex&quot;&gt;s&lt;/script&gt; is a limit point of the sequence &lt;script type=&quot;math/tex&quot;&gt;( f(x_n) )&lt;/script&gt;, which means we
+can fix a subsequence &lt;script type=&quot;math/tex&quot;&gt;x_{n_k}&lt;/script&gt; for which &lt;script type=&quot;math/tex&quot;&gt;\lim _ {k \to \infty}
+f(x_{n_k}) = s&lt;/script&gt;. But since &lt;script type=&quot;math/tex&quot;&gt;( x _ {n_k} )&lt;/script&gt; is a subsequence of &lt;script type=&quot;math/tex&quot;&gt;(x _ n)&lt;/script&gt;, it remains true that &lt;script type=&quot;math/tex&quot;&gt;x _ {n_k} \to x&lt;/script&gt;. This sequence converges to &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; but also has the property that&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+\limsup _ {k \to \infty} f(x _ {n_k}) &amp;= \lim _ {k \to \infty} f(n_k) \\
+&amp;= s \\
+&amp;&lt; f(x) 
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;which implies that the hypothesis of the proposition is false. By taking the
+contrapositive, we obtain the desired result. &lt;script type=&quot;math/tex&quot;&gt;\square&lt;/script&gt;&lt;/p&gt;
+
+&lt;p&gt;I suspect that this is actually a highly practical result, because it provides
+the flexibility of looking at either the upper or lower limits of arbitrary
+sequences. That can (and soon will) come in handy for some of my work.&lt;/p&gt;</content><author><name>David Kraemer</name></author><category term="research" /><category term="games" /><category term="topology" /><category term="optimization" /><summary type="html">One can define numerical lower semi-continuity using a sequential criterion: for we say that is lower semi-continuous at if for any sequence we have</summary></entry><entry><title type="html">Examples of numerical semi-continuous functions</title><link href="http://localhost:4000/ln/numerical-semicontinuous-functions.html" rel="alternate" type="text/html" title="Examples of numerical semi-continuous functions" /><published>2018-06-27T00:00:00-04:00</published><updated>2018-06-27T00:00:00-04:00</updated><id>http://localhost:4000/ln/numerical-semicontinuous-functions</id><content type="html" xml:base="http://localhost:4000/ln/numerical-semicontinuous-functions.html">&lt;p&gt;Though we have been previously discussing the abstract definition of lower and
+upper semi-continuity, there are also tailored definitions for &lt;em&gt;numerical
+functions&lt;/em&gt;, single-valued multifunctions which map into the extended real
+numbers. For the moment, let’s only consider these numerical functions &lt;script type=&quot;math/tex&quot;&gt;\newcommand{\set}[1]{\{#1\}} \renewcommand{\bar}{\overline}
+\newcommand{\RR}{\mathbb{R}}
+f : X
+\to \bar{\RR}&lt;/script&gt;. The relevant sets for lower and upper semi-continuity become&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+\mathcal{L}_f(\lambda ; H ) &amp;= \set{ x \in X : f(x) \leq \lambda} \\
+\mathcal{U}_f(\lambda ; H ) &amp;= \set{ x \in X : f(x) \geq \lambda}.
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;These are just the normal level sets of &lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt;. Since we will usually consider
+the cases when &lt;script type=&quot;math/tex&quot;&gt;H = X&lt;/script&gt;, let’s agree to the shorthand notations of &lt;script type=&quot;math/tex&quot;&gt;\mathcal{L}_f(\lambda) = \mathcal{L}_f(\lambda ; X )&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;\mathcal{U}_f(\lambda) = \mathcal{U}_f(\lambda ; X )&lt;/script&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;examples&quot;&gt;Examples&lt;/h2&gt;
+
+&lt;p&gt;The first basic (yet important) example of a function &lt;script type=&quot;math/tex&quot;&gt;f : X \to \RR&lt;/script&gt; which
+is semi-continuous but &lt;em&gt;not&lt;/em&gt; continuous is a step function:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/files/ipe-graphics/2018-06-14-real-usc-not-lsc.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Here &lt;script type=&quot;math/tex&quot;&gt;f : \RR \to \RR&lt;/script&gt; is defined by&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+f(x) = 
+\begin{cases}
+1 &amp; x &lt; 1 \\
+2 &amp; 1 \leq x &lt; 2 \\
+3 &amp; 3 \geq x
+\end{cases} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;I drew an arbitrary &lt;script type=&quot;math/tex&quot;&gt;\lambda&lt;/script&gt; at around &lt;script type=&quot;math/tex&quot;&gt;5/2&lt;/script&gt; to illustrate how
+semi-continuity works. In this case, &lt;script type=&quot;math/tex&quot;&gt;\mathcal{L}_f(\lambda) = (-\infty, 2)&lt;/script&gt;
+is an open set, and in particular it is not closed. So we can see that &lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt;
+is not &lt;script type=&quot;math/tex&quot;&gt;\RR&lt;/script&gt;-lower semi-continuous. However, &lt;script type=&quot;math/tex&quot;&gt;\mathcal{U}_f(\lambda) = [2,
+\infty)&lt;/script&gt; which is closed. It seems to suggest that &lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt; may indeed by
+&lt;script type=&quot;math/tex&quot;&gt;\RR&lt;/script&gt;-upper semi-continuous. Indeed, you can imagine sweeping the &lt;script type=&quot;math/tex&quot;&gt;\lambda&lt;/script&gt;
+line up and down the plot, and no matter where it lands, the upper level set
+will be a closed set.&lt;/p&gt;
+
+&lt;p&gt;Why is this the case? We have to pay special attention to two facts. First, note
+that &lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt; is monotonically increasing. Second, notice how the jump
+discontinuities at &lt;script type=&quot;math/tex&quot;&gt;1&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;2&lt;/script&gt; are oriented. In particular, the left-side
+limit of &lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt; does not match its actual value at these spots, whereas the
+right-side limit does. This means that if you swept &lt;script type=&quot;math/tex&quot;&gt;\lambda&lt;/script&gt; down from
+&lt;script type=&quot;math/tex&quot;&gt;+\infty&lt;/script&gt; and reached past, say, &lt;script type=&quot;math/tex&quot;&gt;\lambda = 3&lt;/script&gt;, the upper level sets
+have already gobbled up &lt;script type=&quot;math/tex&quot;&gt;(2,f(2))&lt;/script&gt;, which is a limit point of the graph. As a
+consequence, the lower level sets will periodically miss limit points, violating
+closure.&lt;/p&gt;
+
+&lt;p&gt;Monotonicity is important for step functions to retain semi-continuity, but the
+direction matters for the specifics. In our case, &lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt; monotonically
+increases, and together with the arrangement of jump discontinuities gives us
+upper semi-continuity. If we considered &lt;script type=&quot;math/tex&quot;&gt;-f&lt;/script&gt;, which now monotonically
+decreases with the same jump discontinuities, it follows that &lt;script type=&quot;math/tex&quot;&gt;-f&lt;/script&gt; is lower
+semi-continuous. Or, if we switched the arrangement of jump discontinuities for
+&lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt;, then it would become lower semi-continuous. (Doing both exchanges
+returns us back to upper semi-continuity.)&lt;/p&gt;
+
+&lt;p&gt;For probability theory, distribution functions are always oriented like &lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt;
+in that they are monotonically increasing and upper semi-continuous.&lt;/p&gt;
+
+&lt;h3 id=&quot;thomaes-function&quot;&gt;Thomae’s function&lt;/h3&gt;
+
+&lt;p&gt;Taking off the training wheels, let’s consider Thomae’s function, which is
+notorious in introduction to analysis courses.  This is defined &lt;script type=&quot;math/tex&quot;&gt;f : \RR \to
+[0,1]&lt;/script&gt; in the following way. If &lt;script type=&quot;math/tex&quot;&gt;x \in [0,1]&lt;/script&gt; is irrational, then set &lt;script type=&quot;math/tex&quot;&gt;f(x) = 0&lt;/script&gt;. Otherwise, let &lt;script type=&quot;math/tex&quot;&gt;x = p/q&lt;/script&gt; be the canonical rational form (that
+is, such that &lt;script type=&quot;math/tex&quot;&gt;\gcd(p,q) = 1&lt;/script&gt;, since there is only one such pair &lt;script type=&quot;math/tex&quot;&gt;(p,q)&lt;/script&gt;),
+and set &lt;script type=&quot;math/tex&quot;&gt;f(x) = 1/q&lt;/script&gt;. You get something which looks like the following
+plot&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/files/notebooks/2018-06-14-thomaes-function.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This is a function which is continuous at any irrational number but
+discontinuous at every rational number. I won’t prove this fact here. On
+&lt;script type=&quot;math/tex&quot;&gt;\RR&lt;/script&gt;, the entire function is clearly not continuous, but we might ask
+whether it is semi-continuous.&lt;/p&gt;
+
+&lt;p&gt;We’ll start with upper semi-continuity. So, let &lt;script type=&quot;math/tex&quot;&gt;\lambda \in [0,1]&lt;/script&gt; be
+arbitrary. Notice that by definition &lt;script type=&quot;math/tex&quot;&gt;\mathcal{U}_f(0) = \RR&lt;/script&gt;, so consider
+the case when &lt;script type=&quot;math/tex&quot;&gt;\lambda &gt; 0&lt;/script&gt;.  To see that &lt;script type=&quot;math/tex&quot;&gt;\mathcal{U}_f(\lambda)&lt;/script&gt; is closed, we will
+show that it has no limit points.&lt;sup id=&quot;fnref:2&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt; Let &lt;script type=&quot;math/tex&quot;&gt;Q = \max \set{q \in \mathbb{N} : 1/q &gt;
+\lambda }&lt;/script&gt;,&lt;sup id=&quot;fnref:3&quot;&gt;&lt;a href=&quot;#fn:3&quot; class=&quot;footnote&quot;&gt;3&lt;/a&gt;&lt;/sup&gt; and let&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\Delta = \inf \set{ |x-y| : x, y \in \mathcal{U}_f(\lambda)}.&lt;/script&gt;
+
+&lt;!-- _fix --&gt;
+
+&lt;p&gt;Now, &lt;script type=&quot;math/tex&quot;&gt;\mathcal{U}_f(\lambda)&lt;/script&gt; &lt;!-- _fix --&gt; if and only if &lt;script type=&quot;math/tex&quot;&gt;\Delta = 0&lt;/script&gt;.
+Now at first glance, there’s no reason to suspect &lt;script type=&quot;math/tex&quot;&gt;\Delta&lt;/script&gt; to be positive. But
+examine the plot again, and it starts to become clear that there are only
+finitely many different “widths” in the upper level set. Indeed, we actually
+have&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\Delta = \inf \set{ |1/q - 1/q'| : q,q' \in \set{1,\dots,Q},  q \ne q' }.&lt;/script&gt;
+
+&lt;p&gt;But since the set on the right hand side has at most &lt;script type=&quot;math/tex&quot;&gt;Q^2&lt;/script&gt; members, we can
+exchange the infimum for a minimum and conclude that &lt;script type=&quot;math/tex&quot;&gt;\Delta &gt; 0&lt;/script&gt;. So
+&lt;script type=&quot;math/tex&quot;&gt;\mathcal{U}_f(\lambda)&lt;/script&gt; &lt;!-- _fix --&gt; has no limit points, and is vacuously
+closed. Hence, &lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt; is &lt;script type=&quot;math/tex&quot;&gt;\RR&lt;/script&gt;-upper semi-continuous.&lt;/p&gt;
+
+&lt;p&gt;Of course, this also means that &lt;script type=&quot;math/tex&quot;&gt;\mathcal{L}_f(\lambda)&lt;/script&gt; &lt;!-- _fix --&gt; is
+&lt;em&gt;not&lt;/em&gt; closed for any &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+\lambda &lt; 1 %]]&gt;&lt;/script&gt;, which implies that &lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt; is
+not &lt;script type=&quot;math/tex&quot;&gt;\RR&lt;/script&gt;-lower semi-continuous.&lt;/p&gt;
+
+&lt;h4 id=&quot;endnotes&quot;&gt;Endnotes&lt;/h4&gt;
+
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1&quot;&gt;
+      &lt;p&gt;I used Matplotlib to make this plot. If you want to see how, &lt;a href=&quot;/files/notebooks/2018-06-14-thomaes-function.html&quot;&gt;here&lt;/a&gt; is the notebook, which you can download &lt;a href=&quot;/files/notebooks/2018-06-14-thomaes-function.ipynb&quot;&gt;here&lt;/a&gt; &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:2&quot;&gt;
+      &lt;p&gt;The natural numbers &lt;script type=&quot;math/tex&quot;&gt;\mathbb{N}&lt;/script&gt; are an example of a set without limit points, which is vacuously closed. &lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:3&quot;&gt;
+      &lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+Q &lt; \infty %]]&gt;&lt;/script&gt; because once &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+1 / q &lt; \lambda %]]&gt;&lt;/script&gt;, every &lt;script type=&quot;math/tex&quot;&gt;p &gt; q&lt;/script&gt; satisfies &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+1/p &lt; \lambda %]]&gt;&lt;/script&gt;. Also, &lt;script type=&quot;math/tex&quot;&gt;q&lt;/script&gt; exists by the Archimedean property of &lt;script type=&quot;math/tex&quot;&gt;\mathbb{N}&lt;/script&gt;. &lt;a href=&quot;#fnref:3&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;</content><author><name>David Kraemer</name></author><category term="research" /><category term="games" /><category term="topology" /><category term="optimization" /><summary type="html">Though we have been previously discussing the abstract definition of lower and upper semi-continuity, there are also tailored definitions for numerical functions, single-valued multifunctions which map into the extended real numbers. For the moment, let’s only consider these numerical functions . The relevant sets for lower and upper semi-continuity become</summary></entry><entry><title type="html">Understanding semi-continuity of multifunctions</title><link href="http://localhost:4000/ln/semi-continuity.html" rel="alternate" type="text/html" title="Understanding semi-continuity of multifunctions" /><published>2018-06-26T00:00:00-04:00</published><updated>2018-06-26T00:00:00-04:00</updated><id>http://localhost:4000/ln/semi-continuity</id><content type="html" xml:base="http://localhost:4000/ln/semi-continuity.html">&lt;p&gt;Let &lt;script type=&quot;math/tex&quot;&gt;X&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;Y&lt;/script&gt; be topological spaces. One of the basic objects of study
 in topology are the continuous functions &lt;script type=&quot;math/tex&quot;&gt;f : X \to Y&lt;/script&gt;. Continuity in its
 pure form is a topological characterization: if &lt;script type=&quot;math/tex&quot;&gt;V \subseteq Y&lt;/script&gt; is an open
 set, then continuity is equivalent to the openness of &lt;script type=&quot;math/tex&quot;&gt;f^{-1}[V] \subseteq X&lt;/script&gt;. The same concept is useful for multifunctions in addition to regular
@@ -815,92 +1007,4 @@ Taking &lt;script type=&quot;math/tex&quot;&gt;N = \max(\overline{N}, \underline
   &amp;= \varepsilon,
 \end{align*} %]]&gt;&lt;/script&gt;
 
-&lt;p&gt;for all &lt;script type=&quot;math/tex&quot;&gt;n \geq N&lt;/script&gt;. This is what we needed. &lt;script type=&quot;math/tex&quot;&gt;\square&lt;/script&gt;&lt;/p&gt;</content><author><name>David Kraemer</name></author><category term="math" /><category term="proofs" /><category term="analysis" /><summary type="html">I took introductory analysis with Understanding Analysis by Stephen Abbott, and I think it is great for the purpose of a first course in real analysis. However, now that I’ve done a bit more in analysis, I’ve started to revisit some of the important proofs of the textbook with simpler (albeit more developed) alternatives.</summary></entry><entry><title type="html">When abstraction is simpler</title><link href="http://localhost:4000/ln/when-abstraction-is-simpler.html" rel="alternate" type="text/html" title="When abstraction is simpler" /><published>2018-04-04T00:00:00-04:00</published><updated>2018-04-04T00:00:00-04:00</updated><id>http://localhost:4000/ln/when-abstraction-is-simpler</id><content type="html" xml:base="http://localhost:4000/ln/when-abstraction-is-simpler.html">&lt;p&gt;I am always delighted when abstraction makes a problem noticeably easier to
-solve. Today I encountered (Jacod 1999) the following homework question:&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Let &lt;script type=&quot;math/tex&quot;&gt;Y \sim N(0,1)&lt;/script&gt; be standard-normally disributed, and let &lt;script type=&quot;math/tex&quot;&gt;a &gt; 0&lt;/script&gt;. Let&lt;/em&gt;&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
-\newcommand{\abs}[1]{\vert#1\vert}
-Z = 
-\begin{cases}
-  Y &amp; |Y| \leq a, \\
-  -Y &amp; |Y| &gt; a.
-\end{cases} %]]&gt;&lt;/script&gt;
-
-&lt;p&gt;&lt;em&gt;Show that &lt;script type=&quot;math/tex&quot;&gt;Z \sim N(0,1)&lt;/script&gt; as well.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;I honestly groaned when I first read it, because I imagined that I might have
-to evaluate some integrals involving a Gaussian kernel and error functions. This
-is not my favorite activity.&lt;/p&gt;
-
-&lt;p&gt;As I thought through it, I realized that I had no basic intuition for how to
-proceed with the solution, so I did what I love do: draw a picture. I ended up
-with something that resembled the following picture.&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-
-&lt;center&gt;
-&lt;img src=&quot;/assets/figures/gaussian.png&quot; /&gt;
-&lt;/center&gt;
-
-&lt;p&gt;Here the yellowish region indicates when &lt;script type=&quot;math/tex&quot;&gt;\abs{Y} \leq a&lt;/script&gt; and the bluish regions
-indicate when &lt;script type=&quot;math/tex&quot;&gt;\abs{Y} &gt; a&lt;/script&gt;.&lt;/p&gt;
-
-&lt;p&gt;As I started playing around with the plot, I realized that if &lt;script type=&quot;math/tex&quot;&gt;|Y| \leq a&lt;/script&gt;
-then this simply meant that &lt;script type=&quot;math/tex&quot;&gt;Z&lt;/script&gt; would behave exactly as &lt;script type=&quot;math/tex&quot;&gt;Y&lt;/script&gt;, but if &lt;script type=&quot;math/tex&quot;&gt;|Y| &gt;
-a&lt;/script&gt; then the behavior would “flip” around the origin. But was the “flip”
-consequential? Apparently not, because the extremes are shaped symmetrically.&lt;/p&gt;
-
-&lt;p&gt;Actually the whole plot is symmetric, and this is well known about Gaussian
-kernels. My intuition had nothing to do with density functions that
-specifically followed &lt;script type=&quot;math/tex&quot;&gt;\exp(-x^2)&lt;/script&gt;, however. I really was just interested that
-&lt;script type=&quot;math/tex&quot;&gt;|Y|&lt;/script&gt; was symmetrically distributed.&lt;/p&gt;
-
-&lt;p&gt;So I started thinking about symmetrically distributed random variables as an
-abstraction over this particular instance. It turns out that the proof falls out
-easily if you just take this assumption:&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Proof&lt;/em&gt;. If &lt;script type=&quot;math/tex&quot;&gt;Y&lt;/script&gt; is symmetrically distributed, then &lt;script type=&quot;math/tex&quot;&gt;Y&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;-Y&lt;/script&gt; are
-identically distributed, and&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;P(Y \leq y) = P(-Y \leq y).&lt;/script&gt;
-
-&lt;p&gt;To determine &lt;script type=&quot;math/tex&quot;&gt;P(Z \leq z)&lt;/script&gt;, condition on &lt;script type=&quot;math/tex&quot;&gt;\abs{Y}&lt;/script&gt;. In particular, we can write&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;P(Z \leq z) = P(Y \leq z) P(|Y| \leq a) + P(-Y \leq z) P(|Y| &gt; a).&lt;/script&gt;
-
-&lt;p&gt;But since &lt;script type=&quot;math/tex&quot;&gt;Y&lt;/script&gt; is symmetrically distributed, this implies&lt;/p&gt;
-
-&lt;script type=&quot;math/tex; mode=display&quot;&gt;P(Z \leq z) = P(Y \leq z) [P(|Y| \leq a) + P(|Y| &gt; a)],&lt;/script&gt;
-
-&lt;p&gt;and as &lt;script type=&quot;math/tex&quot;&gt;P(|Y| \leq a) + P(|Y| &gt; a) = 1&lt;/script&gt;, we conclude that &lt;script type=&quot;math/tex&quot;&gt;P(Z \leq z) = P(Y
-\leq z)&lt;/script&gt;, which means that &lt;script type=&quot;math/tex&quot;&gt;Z&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;Y&lt;/script&gt; are identically distributed.
-&lt;script type=&quot;math/tex&quot;&gt;\square&lt;/script&gt;&lt;/p&gt;
-
-&lt;p&gt;There are substantial reasons to prefer this result over the statement of the
-homework problem. For one, this fact doesn’t even require that &lt;script type=&quot;math/tex&quot;&gt;Y&lt;/script&gt; have a
-density function. It applies to &lt;em&gt;any&lt;/em&gt; symmetric distribution, whether discrete,
-continuous, singular, or mixed.&lt;/p&gt;
-
-&lt;p&gt;Truthfully, I enjoy these sorts of arguments not particularly because of the
-generality, but because they’re so simple. When I thought in terms of
-Gaussians and error functions, I was sweating the details of nasty integrals and
-proper bounds. The general case, by abstracting over those details, directs you
-to “cut to the chase.” Which assumptions are absolutely essential? Okay, well
-I’ll have to use those somewhere. The rest I can discard. In this sense, by
-abstracting, I “restricted” my toolkit and identified the important devices.&lt;/p&gt;
-
-&lt;p&gt;Of course this strategy doesn’t always work. Sometimes many properties, specific
-and general, are required to make an argument go through. Needless generality
-can easily obfuscate what’s actually going on, too, and this ruins rather
-than refines intuition.&lt;/p&gt;
-
-&lt;p&gt;This sort of exercise represents a “sweet spot” of abstraction. The payoff is a
-direct, clear argument, but one that remains connected to the original problem.&lt;/p&gt;
-
-&lt;div class=&quot;footnotes&quot;&gt;
-  &lt;ol&gt;
-    &lt;li id=&quot;fn:1&quot;&gt;
-      &lt;p&gt;You can view the notebook for this plot &lt;a href=&quot;/files/notebooks/2018-04-04-notebook.html&quot;&gt;here&lt;/a&gt;, or download it from &lt;a href=&quot;/files/notebooks/2018-04-04-notebook.ipynb&quot;&gt;here&lt;/a&gt;. &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-  &lt;/ol&gt;
-&lt;/div&gt;</content><author><name>David Kraemer</name></author><category term="math" /><category term="proofs" /><category term="abstract" /><summary type="html">I am always delighted when abstraction makes a problem noticeably easier to solve. Today I encountered (Jacod 1999) the following homework question:</summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/focus.jpg" /></entry></feed>
+&lt;p&gt;for all &lt;script type=&quot;math/tex&quot;&gt;n \geq N&lt;/script&gt;. This is what we needed. &lt;script type=&quot;math/tex&quot;&gt;\square&lt;/script&gt;&lt;/p&gt;</content><author><name>David Kraemer</name></author><category term="math" /><category term="proofs" /><category term="analysis" /><summary type="html">I took introductory analysis with Understanding Analysis by Stephen Abbott, and I think it is great for the purpose of a first course in real analysis. However, now that I’ve done a bit more in analysis, I’ve started to revisit some of the important proofs of the textbook with simpler (albeit more developed) alternatives.</summary></entry></feed>

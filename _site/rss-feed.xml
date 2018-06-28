@@ -7,6 +7,42 @@
 		<atom:link href="/rss-feed.xml" rel="self" type="application/rss+xml" />
 		
 			<item>
+				<title>Gradients for Grown-Ups (Part 3)</title>
+				
+					<dc:creator>David Kraemer</dc:creator>
+				
+				
+					<description>&lt;p&gt;This is the third posts in a series of posts, “Gradients for Grown-Ups”. You can
+see the previous post &lt;a href=&quot;gradients-for-grownups-part-02&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+</description>
+				
+				<pubDate>Thu, 28 Jun 2018 12:20:50 -0400</pubDate>
+				<link>http://localhost:4000/ln/gradients-for-grownups-part-03.html</link>
+				<guid isPermaLink="true">http://localhost:4000/ln/gradients-for-grownups-part-03.html</guid>
+			</item>
+		
+			<item>
+				<title>A characterization of numerical lower semi-continuity</title>
+				
+					<dc:creator>David Kraemer</dc:creator>
+				
+				
+					<description>&lt;p&gt;One can define numerical lower semi-continuity using a sequential criterion: for
+&lt;script type=&quot;math/tex&quot;&gt;\newcommand{\RR}{\mathbb{R}}
+\renewcommand{\bar}{\overline}
+f : X \to \bar{\RR},&lt;/script&gt;
+we say that &lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt; is &lt;em&gt;lower semi-continuous&lt;/em&gt; at &lt;script type=&quot;math/tex&quot;&gt;x \in X&lt;/script&gt; if for any
+sequence &lt;script type=&quot;math/tex&quot;&gt;x_n \to x&lt;/script&gt; we have&lt;/p&gt;
+
+</description>
+				
+				<pubDate>Thu, 28 Jun 2018 00:00:00 -0400</pubDate>
+				<link>http://localhost:4000/ln/characterizing-numerical-lsc-functions.html</link>
+				<guid isPermaLink="true">http://localhost:4000/ln/characterizing-numerical-lsc-functions.html</guid>
+			</item>
+		
+			<item>
 				<title>Investigating the stability of linear programs</title>
 				
 					<dc:creator>David Kraemer</dc:creator>
@@ -20,9 +56,30 @@ problem.&lt;/p&gt;
 
 </description>
 				
-				<pubDate>Tue, 26 Jun 2018 16:47:10 -0400</pubDate>
+				<pubDate>Wed, 27 Jun 2018 12:09:00 -0400</pubDate>
 				<link>http://localhost:4000/ln/linear-programming.html</link>
 				<guid isPermaLink="true">http://localhost:4000/ln/linear-programming.html</guid>
+			</item>
+		
+			<item>
+				<title>Examples of numerical semi-continuous functions</title>
+				
+					<dc:creator>David Kraemer</dc:creator>
+				
+				
+					<description>&lt;p&gt;Though we have been previously discussing the abstract definition of lower and
+upper semi-continuity, there are also tailored definitions for &lt;em&gt;numerical
+functions&lt;/em&gt;, single-valued multifunctions which map into the extended real
+numbers. For the moment, let’s only consider these numerical functions &lt;script type=&quot;math/tex&quot;&gt;\newcommand{\set}[1]{\{#1\}} \renewcommand{\bar}{\overline}
+\newcommand{\RR}{\mathbb{R}}
+f : X
+\to \bar{\RR}&lt;/script&gt;. The relevant sets for lower and upper semi-continuity become&lt;/p&gt;
+
+</description>
+				
+				<pubDate>Wed, 27 Jun 2018 00:00:00 -0400</pubDate>
+				<link>http://localhost:4000/ln/numerical-semicontinuous-functions.html</link>
+				<guid isPermaLink="true">http://localhost:4000/ln/numerical-semicontinuous-functions.html</guid>
 			</item>
 		
 			<item>
@@ -137,57 +194,6 @@ dangerously susceptible to abuse:&lt;/p&gt;
 				<pubDate>Wed, 16 May 2018 21:25:35 -0400</pubDate>
 				<link>http://localhost:4000/ln/thinking-about-algorithmic-accountability.html</link>
 				<guid isPermaLink="true">http://localhost:4000/ln/thinking-about-algorithmic-accountability.html</guid>
-			</item>
-		
-			<item>
-				<title>Gradients for Grown-Ups (Part 2)</title>
-				
-					<dc:creator>David Kraemer</dc:creator>
-				
-				
-					<description>&lt;p&gt;This is the second in a series of posts, “Gradients for Grown-Ups”. You can see
-the previous post &lt;a href=&quot;gradients-for-grownups-part-01&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
-
-</description>
-				
-				<pubDate>Thu, 10 May 2018 00:00:00 -0400</pubDate>
-				<link>http://localhost:4000/ln/gradients-for-grownups-part-02.html</link>
-				<guid isPermaLink="true">http://localhost:4000/ln/gradients-for-grownups-part-02.html</guid>
-			</item>
-		
-			<item>
-				<title>Gradients for Grown-Ups (Part 1)</title>
-				
-					<dc:creator>David Kraemer</dc:creator>
-				
-				
-					<description>&lt;p&gt;This is the first in a series of posts, “Gradients for Grown-Ups”. You can see
-the next post &lt;a href=&quot;gradients-for-grownups-part-02&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
-
-</description>
-				
-				<pubDate>Wed, 09 May 2018 00:00:00 -0400</pubDate>
-				<link>http://localhost:4000/ln/gradients-for-grownups-part-01.html</link>
-				<guid isPermaLink="true">http://localhost:4000/ln/gradients-for-grownups-part-01.html</guid>
-			</item>
-		
-			<item>
-				<title>A neat proof of the Cauchy criterion</title>
-				
-					<dc:creator>David Kraemer</dc:creator>
-				
-				
-					<description>&lt;p&gt;I took introductory analysis with &lt;em&gt;Understanding Analysis&lt;/em&gt; by Stephen Abbott,
-and I think it is great for the purpose of a first course in real analysis.
-However, now that I’ve done a bit more in analysis, I’ve started to revisit some
-of the important proofs of the textbook with simpler (albeit more developed)
-alternatives.&lt;/p&gt;
-
-</description>
-				
-				<pubDate>Mon, 07 May 2018 00:00:00 -0400</pubDate>
-				<link>http://localhost:4000/ln/neat-proof-of-cauchy-criterion.html</link>
-				<guid isPermaLink="true">http://localhost:4000/ln/neat-proof-of-cauchy-criterion.html</guid>
 			</item>
 		
 	</channel>
