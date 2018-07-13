@@ -7,6 +7,25 @@
 		<atom:link href="/rss-feed.xml" rel="self" type="application/rss+xml" />
 		
 			<item>
+				<title>Investigating the stability of linear programs</title>
+				
+					<dc:creator>David Kraemer</dc:creator>
+				
+				
+					<description>&lt;p&gt;I have been posting lately about the theory of multifunctions, which has so far
+only tenuously related to possible applications. So for a break (actually, it’s
+because I’ve been thinking about it in the last few days), we can explore how
+the theory of multifunctions and semi-continuity inform a very practical
+problem.&lt;/p&gt;
+
+</description>
+				
+				<pubDate>Thu, 12 Jul 2018 23:54:37 -0400</pubDate>
+				<link>http://localhost:4000/ln/linear-programming.html</link>
+				<guid isPermaLink="true">http://localhost:4000/ln/linear-programming.html</guid>
+			</item>
+		
+			<item>
 				<title>Semantics for algorithmic accountability</title>
 				
 					<dc:creator>David Kraemer</dc:creator>
@@ -45,25 +64,6 @@ show’s extended world.&lt;/p&gt;
 				<pubDate>Thu, 28 Jun 2018 13:55:51 -0400</pubDate>
 				<link>http://localhost:4000/ln/theory-of-the-simpsons.html</link>
 				<guid isPermaLink="true">http://localhost:4000/ln/theory-of-the-simpsons.html</guid>
-			</item>
-		
-			<item>
-				<title>Investigating the stability of linear programs</title>
-				
-					<dc:creator>David Kraemer</dc:creator>
-				
-				
-					<description>&lt;p&gt;I have been posting lately about the theory of multifunctions, which has so far
-only tenuously related to possible applications. So for a break (actually, it’s
-because I’ve been thinking about it in the last few days), we can explore how
-the theory of multifunctions and semi-continuity inform a very practical
-problem.&lt;/p&gt;
-
-</description>
-				
-				<pubDate>Thu, 28 Jun 2018 13:55:51 -0400</pubDate>
-				<link>http://localhost:4000/ln/linear-programming.html</link>
-				<guid isPermaLink="true">http://localhost:4000/ln/linear-programming.html</guid>
 			</item>
 		
 			<item>

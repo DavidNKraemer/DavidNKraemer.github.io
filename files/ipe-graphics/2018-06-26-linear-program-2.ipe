@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE ipe SYSTEM "ipe.dtd">
 <ipe version="70107" creator="Ipe 7.1.10">
-<info created="D:20180626160637" modified="D:20180712172559"/>
+<info created="D:20180626160637" modified="D:20180712172451"/>
 <ipestyle name="basic">
 <symbol name="arrow/arc(spx)">
 <path stroke="sym-stroke" fill="sym-stroke" pen="sym-pen">
@@ -294,5 +294,45 @@ h
 272 592 l
 </path>
 <text matrix="1 0 0 1 -4 -4" transformations="translations" pos="120 700" stroke="red" type="label" width="10.274" height="6.86" depth="0" valign="baseline">$x^*$</text>
+<path matrix="1 0 0 0.6 224 313.6" stroke="blue" pen="heavier">
+128 784 m
+128 624 l
+</path>
+<path matrix="0.6 0 0 1 332.8 0" stroke="blue" pen="heavier">
+112 640 m
+272 640 l
+</path>
+<path matrix="1 0 0 1 224 0" stroke="blue" pen="heavier">
+112 720 m
+208 624 l
+</path>
+<path matrix="1 0 0 1 224 0" stroke="blue" pen="heavier">
+112 768 m
+272 768 l
+</path>
+<path matrix="1 0 0 1 224 0" stroke="blue" pen="heavier">
+256 784 m
+256 624 l
+</path>
+<path matrix="1 0 0 1 224 0" stroke="blue" fill="blue" pen="heavier" opacity="10%">
+128 768 m
+256 768 l
+256 640 l
+192 640 l
+128 704 l
+h
+</path>
+<use matrix="1 0 0 1 224 0" name="mark/disk(sx)" pos="128 704" size="normal" stroke="red"/>
+<text matrix="1 0 0 1 220 -4" transformations="translations" pos="120 700" stroke="red" type="label" width="10.274" height="6.86" depth="0" valign="baseline">$x^*$</text>
+<path matrix="0.00000979 0 0 1.16667 399.998 -98.6667" stroke="red" pen="fat">
+176 784 m
+272 592 l
+</path>
+<text matrix="1 0 0 1 0 -16" transformations="translations" pos="368 800" stroke="red" type="label" width="16.281" height="8.381" depth="0" valign="baseline">$c^T x$</text>
+<path stroke="red" dash="dotted" arrow="normal/normal">
+400 736 m
+368 736 l
+</path>
+<text matrix="1 0 0 1 224 0" transformations="translations" pos="160 704" stroke="blue" type="label" width="11.507" height="6.808" depth="0" valign="baseline">$\Phi c$</text>
 </page>
 </ipe>

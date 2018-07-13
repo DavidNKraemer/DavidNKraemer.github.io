@@ -103,22 +103,24 @@ $$. In linear programming, $$ c $$ doesn't affect feasibility, so we see that $$
 \Phi $$ is a constant multifunction. This immediately tells us that $$ \Phi $$
 is upper and lower semi-continuous (hence continuous).
 
+### Stability of the optimum value
+
 A useful theoretical tool for studying optimization problems is the so-called
-*extreme value function*, which in our case is $$ \varphi : \RR^n \to
+*extreme value function*, which in our case is $$ v : \RR^n \to
 \bar{\RR} $$ defined by
 
 $$
-\varphi(c) = \inf \set{ u(x, c) : x \in \Phi c }
+v(c) = \inf \set{ u(x, c) : x \in \Phi c }
 $$
 
-For general problems $$ \varphi $$ has to remain theoretical, and this is the
+For general problems $$ v $$ has to remain theoretical, and this is the
 case when the available computational techniques are only able to approximate
 the infimum. For linear programming, the simplex method is one way to achieve
-$$\varphi(c)$$ in finite time, so considering the extreme value function has
+$$v(c)$$ in finite time, so considering the extreme value function has
 immediate practical implications.
 
-The stability of $$ \varphi $$ is the first subject of our investigation. Since
-$$ \varphi $$ is a numerical function, we can begin by asking questions about
+The stability of $$ v $$ is the first subject of our investigation. Since
+$$ v $$ is a numerical function, we can begin by asking questions about
 continuity. In this pursuit, Berge's theorem is the standard tool. In order to
 apply Berge's theorem, we need to verify three things:
 
@@ -157,4 +159,25 @@ semi-continuity of $$ u $$.
 
 Now, as we've already noted, $$ \Phi $$ is a constant multifunction, which
 implies that $$ \Phi $$ is continuous. Whether $$ \Phi $$ is compact is
-independent of our choice of $$ c $$ and depends on $$b$$ and
+independent of our choice of $$ c $$, however, and depends exclusively on the
+selection of $$A$$ and $$b$$. More can be discussed on this topic, but for now
+we will operate under the assumptions that $$A$$ and $$b$$ are chosen so that $$
+\Phi c $$ is compact. With this giant caveat in mind, we can apply Berge's
+theorem to conclude that $$ v $$ is a continuous function of $$ c $$,
+which provides the desired stability guarantee.
+
+### Stability of the optimal points
+
+From the above discussion we have established that $$ v $$ is continuous, which
+has immediate stability implications. Now we turn to another important
+investigation: namely, the stability of the multifunction $$ \Phi^* : \RR^n \to
+2^{\RR^n} $$ by
+
+$$
+\Phi^* c = \set{x \in \Phi c : u(x,c) = v(c)},
+$$
+
+which identifies the set of optimal points of the LP. In previous posts, I
+introduced the notions of semi-continuity for multifunctions. Here we will see
+how to characterize $$ \Phi^* $$ according to these properties.
+
