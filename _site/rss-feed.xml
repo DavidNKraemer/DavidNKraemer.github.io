@@ -7,6 +7,136 @@
 		<atom:link href="/rss-feed.xml" rel="self" type="application/rss+xml" />
 		
 			<item>
+				<title>Berge's maximum theorem is overpowered (and weak)</title>
+				
+					<dc:creator>David Kraemer</dc:creator>
+				
+				
+					<description>&lt;p&gt;I’ve spent some time thinking about the Berge maximum theorem, which is
+a classic result in parametric optimization. It relates to some of my work with
+Professor Feinberg here at Stony Brook, but we are pushing in a different
+direction at the moment. I’m interested in the “classical” theorem, which
+appeared in Berge’s book &lt;em&gt;Topological spaces&lt;/em&gt; in 1963. (To be clear, it appears
+&lt;em&gt;in English&lt;/em&gt; in 1963, but the original French edition was in 1959.) To
+summarize the result, we usually say that it provides sufficient conditions for
+the optimal values of an optimization problem to be continuous in the
+parameters of the problem.&lt;/p&gt;
+
+</description>
+				
+				<pubDate>Mon, 11 Mar 2019 10:52:53 -0400</pubDate>
+				<link>http://localhost:4000/ln/max-theorem-is-natural.html</link>
+				<guid isPermaLink="true">http://localhost:4000/ln/max-theorem-is-natural.html</guid>
+			</item>
+		
+			<item>
+				<title>Semantics for algorithmic accountability</title>
+				
+					<dc:creator>David Kraemer</dc:creator>
+				
+				
+					<description>&lt;p&gt;As someone who uses and, from time to time, designs algorithms for varied
+purposes, I am bemused when I read about them in the popular press. A &lt;em&gt;New York
+Times&lt;/em&gt; &lt;a href=&quot;https://www.nytimes.com/2017/10/26/opinion/algorithm-compas-sentencing-bias.html&quot;&gt;opinion piece&lt;/a&gt; (author credit: Ellora Israni) is typical.  In it, Ms.
+Israni argues that the use of algorithms to aid in criminal sentencing is
+dangerously susceptible to abuse:&lt;/p&gt;
+
+</description>
+				
+				<pubDate>Mon, 11 Feb 2019 11:08:15 -0500</pubDate>
+				<link>http://localhost:4000/ln/thinking-about-algorithmic-accountability.html</link>
+				<guid isPermaLink="true">http://localhost:4000/ln/thinking-about-algorithmic-accountability.html</guid>
+			</item>
+		
+			<item>
+				<title>Investigating the stability of linear programs</title>
+				
+					<dc:creator>David Kraemer</dc:creator>
+				
+				
+					<description>&lt;p&gt;I have been posting lately about the theory of multifunctions, which has so far
+only tenuously related to possible applications. So for a break (actually, it’s
+because I’ve been thinking about it in the last few days), we can explore how
+the theory of multifunctions and semi-continuity inform a very practical
+problem.&lt;/p&gt;
+
+</description>
+				
+				<pubDate>Mon, 11 Feb 2019 11:08:15 -0500</pubDate>
+				<link>http://localhost:4000/ln/linear-programming.html</link>
+				<guid isPermaLink="true">http://localhost:4000/ln/linear-programming.html</guid>
+			</item>
+		
+			<item>
+				<title>Gradients for Grown-Ups (Part 3)</title>
+				
+					<dc:creator>David Kraemer</dc:creator>
+				
+				
+					<description>&lt;p&gt;This is the third posts in a series of posts, “Gradients for Grown-Ups”. You can
+see the previous post &lt;a href=&quot;gradients-for-grownups-part-02&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+</description>
+				
+				<pubDate>Mon, 11 Feb 2019 11:08:15 -0500</pubDate>
+				<link>http://localhost:4000/ln/gradients-for-grownups-part-03.html</link>
+				<guid isPermaLink="true">http://localhost:4000/ln/gradients-for-grownups-part-03.html</guid>
+			</item>
+		
+			<item>
+				<title>Sliding down pyramids in Python</title>
+				
+					<dc:creator>David Kraemer</dc:creator>
+				
+				
+					<description>&lt;p&gt;When I studied computer science in college, I often enjoyed thinking about
+algorithms and data structures in quite “abstract” settings. To be clear, I
+don’t mean that I particularly preferred problems on arcane objects over those
+with more immediate practical relevance. Rather, I was quite happy to work above
+the level of concern for the implementation details involved in converting my
+solutions into code. There’s a simple—if embarrassing—reason for
+this: I come up with ideas in “natural language,” which absolves me from having
+to describe their contours precisely and, as a result, grapple with and fix
+their ambiguities. It’s a kind of lazy mental evaluation that is useful when
+brainstorming for the high level insights but useless when it’s time to sit down
+and actually write some code. I know I’m not alone here.&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1&quot;&gt;
+      &lt;p&gt;Relevant &lt;a href=&quot;https://xkcd.com/568/&quot;&gt;xkcd&lt;/a&gt; &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+</description>
+				
+				<pubDate>Mon, 11 Feb 2019 11:08:15 -0500</pubDate>
+				<link>http://localhost:4000/ln/code-kata-slide.html</link>
+				<guid isPermaLink="true">http://localhost:4000/ln/code-kata-slide.html</guid>
+			</item>
+		
+			<item>
+				<title>Accountable countability: an airtight program for counting the rationals.</title>
+				
+					<dc:creator>David Kraemer</dc:creator>
+				
+				
+					<description>&lt;p&gt;An introductory course in analysis is incomplete without an examination of the
+cardinality of infinite sets, much to the chagrin of the students! The important
+points, which are carefully emphasized in such a course, are that while the natural
+numbers &lt;script type=&quot;math/tex&quot;&gt;\mathbb{N}&lt;/script&gt; and the rational numbers &lt;script type=&quot;math/tex&quot;&gt;\mathbb{Q}&lt;/script&gt; have the same
+cardinality, the real numbers &lt;script type=&quot;math/tex&quot;&gt;\mathbb{R}&lt;/script&gt; has a strictly “larger”
+cardinality. If the cardinality of &lt;script type=&quot;math/tex&quot;&gt;\mathbb{N}&lt;/script&gt; is labeled &lt;em&gt;countable&lt;/em&gt;, we say
+that the cardinality of &lt;script type=&quot;math/tex&quot;&gt;\mathbb{R}&lt;/script&gt; is &lt;em&gt;uncountable&lt;/em&gt;.&lt;/p&gt;
+
+</description>
+				
+				<pubDate>Mon, 11 Feb 2019 11:08:15 -0500</pubDate>
+				<link>http://localhost:4000/ln/accounting-for-countability.html</link>
+				<guid isPermaLink="true">http://localhost:4000/ln/accounting-for-countability.html</guid>
+			</item>
+		
+			<item>
 				<title>A characterization of numerical lower semi-continuity</title>
 				
 					<dc:creator>David Kraemer</dc:creator>
@@ -84,88 +214,6 @@ can examine the “preimage” of &lt;script type=&quot;math/tex&quot;&gt;B&lt;/
 				<pubDate>Wed, 06 Jun 2018 00:00:00 -0400</pubDate>
 				<link>http://localhost:4000/ln/multifunction-inverses.html</link>
 				<guid isPermaLink="true">http://localhost:4000/ln/multifunction-inverses.html</guid>
-			</item>
-		
-			<item>
-				<title>My summer excursion into multifunctions</title>
-				
-					<dc:creator>David Kraemer</dc:creator>
-				
-				
-					<description>&lt;p&gt;Besides managing a course, my first summer goal is to understand the &lt;a href=&quot;https://en.wikipedia.org/wiki/Maximum_theorem&quot;&gt;Berge
-maximum theorem&lt;/a&gt; (BMT). According to Wikipedia, the theorem is useful for
-describing continuity conditions for the solution of parameterized optimization
-problems. Since I’m still new to the whole subject, I don’t quite understand
-what that means! More on its interpretation and applications (hopefully!) soon.&lt;/p&gt;
-
-</description>
-				
-				<pubDate>Tue, 05 Jun 2018 00:00:00 -0400</pubDate>
-				<link>http://localhost:4000/ln/summer-excursion-on-multifunctions.html</link>
-				<guid isPermaLink="true">http://localhost:4000/ln/summer-excursion-on-multifunctions.html</guid>
-			</item>
-		
-			<item>
-				<title>Reflections on the first year of graduate school</title>
-				
-					<dc:creator>David Kraemer</dc:creator>
-				
-				
-					<description>&lt;h2 id=&quot;courses&quot;&gt;Courses&lt;/h2&gt;
-
-</description>
-				
-				<pubDate>Mon, 04 Jun 2018 00:00:00 -0400</pubDate>
-				<link>http://localhost:4000/ln/reflections-on-first-year-of-grad-school.html</link>
-				<guid isPermaLink="true">http://localhost:4000/ln/reflections-on-first-year-of-grad-school.html</guid>
-			</item>
-		
-			<item>
-				<title>Gradients for Grown-Ups (Part 2)</title>
-				
-					<dc:creator>David Kraemer</dc:creator>
-				
-				
-					<description>&lt;p&gt;This is the second in a series of posts, “Gradients for Grown-Ups”. You can see
-the previous post &lt;a href=&quot;gradients-for-grownups-part-01&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
-
-</description>
-				
-				<pubDate>Thu, 10 May 2018 00:00:00 -0400</pubDate>
-				<link>http://localhost:4000/ln/gradients-for-grownups-part-02.html</link>
-				<guid isPermaLink="true">http://localhost:4000/ln/gradients-for-grownups-part-02.html</guid>
-			</item>
-		
-			<item>
-				<title>Gradients for Grown-Ups (Part 1)</title>
-				
-					<dc:creator>David Kraemer</dc:creator>
-				
-				
-					<description>&lt;p&gt;This is the first in a series of posts, “Gradients for Grown-Ups”. You can see
-the next post &lt;a href=&quot;gradients-for-grownups-part-02&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
-
-</description>
-				
-				<pubDate>Wed, 09 May 2018 00:00:00 -0400</pubDate>
-				<link>http://localhost:4000/ln/gradients-for-grownups-part-01.html</link>
-				<guid isPermaLink="true">http://localhost:4000/ln/gradients-for-grownups-part-01.html</guid>
-			</item>
-		
-			<item>
-				<title>When abstraction is simpler</title>
-				
-					<dc:creator>David Kraemer</dc:creator>
-				
-				
-					<description>&lt;p&gt;I am always delighted when abstraction makes a problem noticeably easier to
-solve. Today I encountered (Jacod 1999) the following homework question:&lt;/p&gt;
-
-</description>
-				
-				<pubDate>Wed, 04 Apr 2018 00:00:00 -0400</pubDate>
-				<link>http://localhost:4000/ln/when-abstraction-is-simpler.html</link>
-				<guid isPermaLink="true">http://localhost:4000/ln/when-abstraction-is-simpler.html</guid>
 			</item>
 		
 	</channel>

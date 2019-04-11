@@ -43,9 +43,9 @@
 
 
   <!-- Use Jekyll SEO plugin -->
-  <!-- Begin Jekyll SEO tag v2.5.0 -->
+  <!-- Begin Jekyll SEO tag v2.4.0 -->
 <title>Home | David Kraemer</title>
-<meta name="generator" content="Jekyll v3.6.2" />
+<meta name="generator" content="Jekyll v3.6.3" />
 <meta property="og:title" content="Home" />
 <meta name="author" content="David Kraemer" />
 <meta property="og:locale" content="en_US" />
@@ -56,7 +56,7 @@
 <meta property="og:site_name" content="David Kraemer" />
 <link rel="next" href="http://localhost:4000/page2" />
 <script type="application/ld+json">
-{"@type":"WebSite","url":"http://localhost:4000/","name":"David Kraemer","author":{"@type":"Person","name":"David Kraemer"},"description":"applied math phd student","headline":"Home","@context":"http://schema.org"}</script>
+{"name":"David Kraemer","description":"applied math phd student","url":"http://localhost:4000/","headline":"Home","@type":"WebSite","author":{"@type":"Person","name":"David Kraemer"},"@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -121,29 +121,19 @@
       
 <div class="posts">
   <h1>
-    <a href="/ln/characterizing-numerical-lsc-functions.html">A characterization of numerical lower semi-continuity</a>
+    <a href="/ln/max-theorem-is-natural.html">Berge's maximum theorem is overpowered (and weak)</a>
   </h1>
   
   <p>
-    One can define numerical lower semi-continuity using a sequential criterion: for
-
-we say that  is lower semi-continuous at  if for any
-sequence  we have
-
-
-
-The idea is that  is eventually bounded below by ; that
-is, for every  there exists an  such
-that whenever  we have
-
-
-
-Unsurprisingly, if  is lower semi-continuous it follows that for any
-con... <a href="/ln/characterizing-numerical-lsc-functions.html">Read more</a>
-    <span class="post-date"><i class="fa fa-calendar" aria-hidden="true"></i> 28 Jun 2018 - <i class="fa fa-clock-o" aria-hidden="true"></i> 
+    I’ve spent some time thinking about the Berge maximum theorem, which is
+a classic result in parametric optimization. It relates to some of my work with
+Professor Feinberg here at Stony Brook, but we are pushing in a different
+direction at the moment. I’m interested in the “classical” theorem, which
+appeared in Berge’s book Topological spaces in ... <a href="/ln/max-theorem-is-natural.html">Read more</a>
+    <span class="post-date"><i class="fa fa-calendar" aria-hidden="true"></i> 11 Mar 2019 - <i class="fa fa-clock-o" aria-hidden="true"></i> 
   
   
-    1 minute read
+    4 minute read
   
 
 
@@ -154,18 +144,22 @@ con... <a href="/ln/characterizing-numerical-lsc-functions.html">Read more</a>
 
 <div class="posts">
   <h1>
-    <a href="/ln/numerical-semicontinuous-functions.html">Examples of numerical semi-continuous functions</a>
+    <a href="/ln/thinking-about-algorithmic-accountability.html">Semantics for algorithmic accountability</a>
   </h1>
   
   <p>
-    Though we have been previously discussing the abstract definition of lower and
-upper semi-continuity, there are also tailored definitions for numerical
-functions, single-valued multifunctions which map into the extended real
-numbers. For the moment, let’s only consider these numerical functions . The relevant sets for lower and upper semi-contin... <a href="/ln/numerical-semicontinuous-functions.html">Read more</a>
-    <span class="post-date"><i class="fa fa-calendar" aria-hidden="true"></i> 27 Jun 2018 - <i class="fa fa-clock-o" aria-hidden="true"></i> 
+    As someone who uses and, from time to time, designs algorithms for varied
+purposes, I am bemused when I read about them in the popular press. A New York
+Times opinion piece (author credit: Ellora Israni) is typical.  In it, Ms.
+Israni argues that the use of algorithms to aid in criminal sentencing is
+dangerously susceptible to abuse:
+
+
+  Algorit... <a href="/ln/thinking-about-algorithmic-accountability.html">Read more</a>
+    <span class="post-date"><i class="fa fa-calendar" aria-hidden="true"></i> 11 Feb 2019 - <i class="fa fa-clock-o" aria-hidden="true"></i> 
   
   
-    3 minute read
+    4 minute read
   
 
 
@@ -176,19 +170,22 @@ numbers. For the moment, let’s only consider these numerical functions . The r
 
 <div class="posts">
   <h1>
-    <a href="/ln/semi-continuity.html">Understanding semi-continuity of multifunctions</a>
+    <a href="/ln/linear-programming.html">Investigating the stability of linear programs</a>
   </h1>
   
   <p>
-    Let  and  be topological spaces. One of the basic objects of study
-in topology are the continuous functions . Continuity in its
-pure form is a topological characterization: if  is an open
-set, then continuity is equivalent to the openness of . The same concept is useful for multifunctions in addition to regular
-functions, though we need to clari... <a href="/ln/semi-continuity.html">Read more</a>
-    <span class="post-date"><i class="fa fa-calendar" aria-hidden="true"></i> 26 Jun 2018 - <i class="fa fa-clock-o" aria-hidden="true"></i> 
+    I have been posting lately about the theory of multifunctions, which has so far
+only tenuously related to possible applications. So for a break (actually, it’s
+because I’ve been thinking about it in the last few days), we can explore how
+the theory of multifunctions and semi-continuity inform a very practical
+problem.
+
+Let  
+(), let , and . In l... <a href="/ln/linear-programming.html">Read more</a>
+    <span class="post-date"><i class="fa fa-calendar" aria-hidden="true"></i> 11 Feb 2019 - <i class="fa fa-clock-o" aria-hidden="true"></i> 
   
   
-    3 minute read
+    5 minute read
   
 
 
@@ -199,21 +196,18 @@ functions, though we need to clari... <a href="/ln/semi-continuity.html">Read mo
 
 <div class="posts">
   <h1>
-    <a href="/ln/multifunction-inverses.html">Multifunction inverses</a>
+    <a href="/ln/gradients-for-grownups-part-03.html">Gradients for Grown-Ups (Part 3)</a>
   </h1>
   
   <p>
-    When we deal with normal functions  we are frequently
-interested in the behavior of  on subsets of , rather than just
-elements. We might write  to denote the image of  on the
-subset . Conversely, given a subset , we
-can examine the “preimage” of  by  in the following way:
+    This is the third posts in a series of posts, “Gradients for Grown-Ups”. You can
+see the previous post here.
 
-
-
-This is, to some extent, an abuse of notation because the function 
-may... <a href="/ln/multifunction-inverses.html">Read more</a>
-    <span class="post-date"><i class="fa fa-calendar" aria-hidden="true"></i> 06 Jun 2018 - <i class="fa fa-clock-o" aria-hidden="true"></i> 
+Last time, we used the general procedure to compute the gradients of the
+ubiquitous linear algebra functions  and . This time,
+we’ll get used to the standard calculus tools that come with the gradient:
+linearity, the product rule, and th... <a href="/ln/gradients-for-grownups-part-03.html">Read more</a>
+    <span class="post-date"><i class="fa fa-calendar" aria-hidden="true"></i> 11 Feb 2019 - <i class="fa fa-clock-o" aria-hidden="true"></i> 
   
   
     2 minute read
@@ -227,23 +221,19 @@ may... <a href="/ln/multifunction-inverses.html">Read more</a>
 
 <div class="posts">
   <h1>
-    <a href="/ln/summer-excursion-on-multifunctions.html">My summer excursion into multifunctions</a>
+    <a href="/ln/code-kata-slide.html">Sliding down pyramids in Python</a>
   </h1>
   
-  <div class="thumbnail-container">
-    <a href="/ln/summer-excursion-on-multifunctions.html"><img src="/assets/img/2018-06-04-multifunction.png"></a>
-  </div>
-  
   <p>
-    Besides managing a course, my first summer goal is to understand the Berge
-maximum theorem (BMT). According to Wikipedia, the theorem is useful for
-describing continuity conditions for the solution of parameterized optimization
-problems. Since I’m still new to the whole subject, I don’t quite understand
-what that means! More on its interpretatio... <a href="/ln/summer-excursion-on-multifunctions.html">Read more</a>
-    <span class="post-date"><i class="fa fa-calendar" aria-hidden="true"></i> 05 Jun 2018 - <i class="fa fa-clock-o" aria-hidden="true"></i> 
+    When I studied computer science in college, I often enjoyed thinking about
+algorithms and data structures in quite “abstract” settings. To be clear, I
+don’t mean that I particularly preferred problems on arcane objects over those
+with more immediate practical relevance. Rather, I was quite happy to work above
+the level of concern for the impleme... <a href="/ln/code-kata-slide.html">Read more</a>
+    <span class="post-date"><i class="fa fa-calendar" aria-hidden="true"></i> 11 Feb 2019 - <i class="fa fa-clock-o" aria-hidden="true"></i> 
   
   
-    2 minute read
+    15 minute read
   
 
 

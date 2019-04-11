@@ -4,12 +4,12 @@ title: Books that changed my mind
 ---
 
 I am starting a project to compile a collection of books whose arguments
-influenced my beliefs and document exactly how each one did so. People change
-their minds quite frequently during their lives, but we often aren't willing --
-or able -- to admit it when we do. That is partly because, as a rule, these
-shifts occur not as foundation-shaking quakes but as small tremors in our
-beliefs. Yet we should distinguish gradual, continuous evolution of beliefs with
-rigid consistency in them.
+influenced my beliefs and document exactly how each one did so. I find that we
+change our minds quite frequently during our lives, but we often aren't willing
+-- or able -- to admit it when we do. That is partly because, as a rule, these
+shifts occur, not as foundation-shaking quakes, but as small tremors in our
+beliefs. Yet I strongly believe we should distinguish gradual, continuous
+evolution of beliefs with rigid consistency in them.
 
 I expect this will be a difficult but useful exercise, and I hope to discover
 the motivations, contours, and major shifts of my own beliefs in the process.

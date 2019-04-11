@@ -3,8 +3,8 @@ layout: page
 title: About me
 ---
 
-I'm a first-year PhD student in the Department of Applied Mathematics at
-Stony Brook University. 
+I'm a second-year PhD student in the Department of Applied Mathematics at Stony
+Brook University. 
 
 ## Previous work
 
@@ -17,9 +17,9 @@ topics in college, such as
 
 ## Research interests
 
-I'm interested in the intersection of mathematical analysis and optimization and
-modeling. I like to stay right on the boundary between pure and applied math,
-and I enjoy working on simulation and other software projects. 
+I'm interested in the intersection of mathematical analysis and optimization
+and control. I like to stay right on the boundary between pure and applied
+math, and I enjoy working on simulation and other software projects. 
 
 My "hobby" interests are primarily in economics, where I enjoy studying the
 models of theoretical macroeconomics and monetary policy. I also like to study
