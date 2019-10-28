@@ -1,4 +1,342 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-03-11T10:52:53-04:00</updated><id>http://localhost:4000/</id><title type="html">David Kraemer</title><subtitle>applied math phd student</subtitle><author><name>David Kraemer</name></author><entry><title type="html">A characterization of numerical lower semi-continuity</title><link href="http://localhost:4000/ln/characterizing-numerical-lsc-functions.html" rel="alternate" type="text/html" title="A characterization of numerical lower semi-continuity" /><published>2018-06-28T00:00:00-04:00</published><updated>2018-06-28T00:00:00-04:00</updated><id>http://localhost:4000/ln/characterizing-numerical-lsc-functions</id><content type="html" xml:base="http://localhost:4000/ln/characterizing-numerical-lsc-functions.html">&lt;p&gt;One can define numerical lower semi-continuity using a sequential criterion: for
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.3">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2019-10-28T12:58:32-04:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">David Kraemer</title><subtitle>applied math phd student</subtitle><author><name>David Kraemer</name></author><entry><title type="html">Berge’s maximum theorem is overpowered (and weak)</title><link href="http://localhost:4000/ln/max-theorem-is-overpowered.html" rel="alternate" type="text/html" title="Berge's maximum theorem is overpowered (and weak)" /><published>2019-07-09T00:00:00-04:00</published><updated>2019-07-09T00:00:00-04:00</updated><id>http://localhost:4000/ln/max-theorem-is-overpowered</id><content type="html" xml:base="http://localhost:4000/ln/max-theorem-is-overpowered.html">&lt;p&gt;I’ve spent some time thinking about the Berge maximum theorem, which is
+a classic result in parametric optimization. It relates to some of my work with
+Professor Feinberg here at Stony Brook, but we are pushing in a different
+direction at the moment. I’m interested in the “classical” theorem, which
+appeared in Berge’s book &lt;em&gt;Topological spaces&lt;/em&gt; in 1963. (To be clear, it appears
+&lt;em&gt;in English&lt;/em&gt; in 1963, but the original French edition was in 1959.) To
+summarize the result, we usually say that it provides sufficient conditions for
+the optimal values of an optimization problem to be continuous in the
+parameters of the problem.&lt;/p&gt;
+
+&lt;p&gt;The general setup for the theorem is as follows. There are two (formally,
+topological, but for the sake of presentation) metric spaces &lt;script type=&quot;math/tex&quot;&gt;X&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;Y&lt;/script&gt;
+and a set-valued map &lt;script type=&quot;math/tex&quot;&gt;\Phi : X \to 2^Y&lt;/script&gt;, so that for each &lt;script type=&quot;math/tex&quot;&gt;x \in X&lt;/script&gt; we have
+&lt;script type=&quot;math/tex&quot;&gt;\Phi(x) \subseteq Y&lt;/script&gt;. In addition, we have a real function &lt;script type=&quot;math/tex&quot;&gt;u : X \times
+Y \to \newcommand{\RR}{\mathbb{R}}\RR&lt;/script&gt; over the product space. Call the pair
+&lt;script type=&quot;math/tex&quot;&gt;(X, Y, \Phi, u)&lt;/script&gt; a &lt;em&gt;maximization problem&lt;/em&gt;, and associate with it two
+additional objects &lt;script type=&quot;math/tex&quot;&gt;u^* : X \to \RR&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;\Phi^* : X \to 2^Y&lt;/script&gt; defined as&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+u^*(x) &amp;= \sup \{u(x,y) : y \in \Phi(x) \} \\
+\Phi^*(x) &amp;= \{y \in \Phi(x) : u(x,y) = v(x) \}
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;We’re calling &lt;script type=&quot;math/tex&quot;&gt;(X, Y, \Phi, u)&lt;/script&gt; a maximization problem because we wish to
+study the properties of &lt;script type=&quot;math/tex&quot;&gt;u^*&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;\Phi^*&lt;/script&gt;, which represent for each &lt;script type=&quot;math/tex&quot;&gt;x \in
+X&lt;/script&gt; the maximum value and set of maximizers in &lt;script type=&quot;math/tex&quot;&gt;\Phi(x)&lt;/script&gt; of the function
+&lt;script type=&quot;math/tex&quot;&gt;u&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;I want to pause to give some motivation for the theorem. When I was first
+getting introduced to the statement, it seemed like a quaint application of
+general topology to real functions on product spaces. Indeed that is the math
+involved. But this is not a particularly successful way of &lt;em&gt;reasoning&lt;/em&gt; about
+the theorem, and so I want to clarify this point.&lt;/p&gt;
+
+&lt;h2 id=&quot;motivation-parametric-optimization&quot;&gt;Motivation: parametric optimization&lt;/h2&gt;
+
+&lt;p&gt;There are two applications I have seen that give a good picture of the result
+and why we should care about it. The first arises from “parametric
+optimization”. Consider, for example, a common optimization problem with the
+form&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;% &lt;![CDATA[
+\begin{align}
+\max_{y \in Y} \quad &amp;f_0(y) \\
+\text{s.t.} \quad &amp;f_i(y) \leq x_i \qquad i = 1, 2, \dots, n.
+\end{align} %]]&gt;&lt;/script&gt;
+
+&lt;p&gt;You can imagine that perhaps each &lt;script type=&quot;math/tex&quot;&gt;f_i&lt;/script&gt; (&lt;script type=&quot;math/tex&quot;&gt;i = 0, \dots, n&lt;/script&gt;) is convex, so
+that this problem is to maximize a convex function over a convex set. We have
+all sorts of nice theory to tell us when the maximum is achieved and how to
+characterize the maximizers.&lt;/p&gt;
+
+&lt;p&gt;However, you’re not convinced about the correctness of the &lt;script type=&quot;math/tex&quot;&gt;x_i&lt;/script&gt; terms. Maybe
+you got them from an experiment, or maybe they were estimated from some
+previous problem. They’re probably in a ballpark of being correct, but there
+are error bars. How confident can you be that the maximum and maximizers are
+meaningful to your application, given the uncertainty of your measurements?&lt;/p&gt;
+
+&lt;p&gt;If we let &lt;script type=&quot;math/tex&quot;&gt;(x_1, \dots, x_n)&lt;/script&gt; be our “parameter” &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt;, and define&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\Phi(x) = \{y \in Y : f_i(y) \leq x_i, i = 1, \dots, n\}&lt;/script&gt;
+
+&lt;p&gt;to be the feasible sets associated with the parameter, then we can cast our
+convex problem with uncertainty as a parametric optimization problem. So our
+formalism treats &lt;script type=&quot;math/tex&quot;&gt;X&lt;/script&gt; as a space of parameters, &lt;script type=&quot;math/tex&quot;&gt;Y&lt;/script&gt; as the variable space,
+and the optimization is done in &lt;script type=&quot;math/tex&quot;&gt;Y&lt;/script&gt; over a fixed set of parameters.If it
+happens that &lt;script type=&quot;math/tex&quot;&gt;u^*&lt;/script&gt; is continuous, then we get a stability guarantee of our
+parameter estimate.&lt;/p&gt;
+
+&lt;h2 id=&quot;motivation-control-theory&quot;&gt;Motivation: control theory&lt;/h2&gt;
+
+&lt;p&gt;A completely different application arises from control theory. Say you have
+a model with state space &lt;script type=&quot;math/tex&quot;&gt;X&lt;/script&gt; and action space &lt;script type=&quot;math/tex&quot;&gt;Y&lt;/script&gt;. At each state &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt;,
+there is some set of feasible actions, which we’ll call (wink wink)
+&lt;script type=&quot;math/tex&quot;&gt;\Phi(x)&lt;/script&gt;. Whenever we have the state-action pair &lt;script type=&quot;math/tex&quot;&gt;(x,y)&lt;/script&gt;, we receive
+a reward (wink wink wink) &lt;script type=&quot;math/tex&quot;&gt;u(x,y)&lt;/script&gt;. Our goal is to maximize reward at every
+state, which means choosing the best actions to that effect. Our optimal &lt;em&gt;value
+function&lt;/em&gt;, then, is a map &lt;script type=&quot;math/tex&quot;&gt;u^* : X \to \RR&lt;/script&gt; that maximizes &lt;script type=&quot;math/tex&quot;&gt;u(x,y)&lt;/script&gt; for
+each state &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt;.&lt;/p&gt;
+
+&lt;p&gt;When the state space is not countable, having any ability to speak about the
+structure of value function usually requires measurability or continuity
+properties on the rewards. In addition, we usually get to the value function by
+means of sequential approximation. In this case, the goal is not necessarily
+“stability” per say, but rather that the limits involved in such arguments
+behave properly.&lt;/p&gt;
+
+&lt;h2 id=&quot;motivation-summary&quot;&gt;Motivation summary&lt;/h2&gt;
+
+&lt;p&gt;I want to emphasize that this formalism is applied really differently in
+control theory than in parametric optimization. You have to do a mental
+jump rope exercise to go from one to the other. On the other hand, continuity
+of the function &lt;script type=&quot;math/tex&quot;&gt;u^*&lt;/script&gt; has important implications in both domains. To
+summarize, we have three interpretations (including the technical math version).&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt; &lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt;X&lt;/script&gt;&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt;Y&lt;/script&gt;&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt;\Phi&lt;/script&gt;&lt;/th&gt;
+      &lt;th style=&quot;text-align: left&quot;&gt;&lt;script type=&quot;math/tex&quot;&gt;u&lt;/script&gt;&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Math&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Metric space&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Metric space&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Subset&lt;sup id=&quot;fnref:1&quot;&gt;&lt;a href=&quot;#fn:1&quot; class=&quot;footnote&quot;&gt;1&lt;/a&gt;&lt;/sup&gt; of &lt;script type=&quot;math/tex&quot;&gt;X \times Y&lt;/script&gt;&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Real function on &lt;script type=&quot;math/tex&quot;&gt;X \times Y&lt;/script&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Parametric optimization&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Parameter space&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Variable space&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Feasibility regions&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Objective function&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Control theory&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;State space&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Action space&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Available actions&lt;/td&gt;
+      &lt;td style=&quot;text-align: left&quot;&gt;Reward function&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;h1 id=&quot;berges-maximum-theorem&quot;&gt;Berge’s maximum theorem.&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;Or: How I learned to to stop worrying and love function composition&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Theorem&lt;/strong&gt; (Berge). &lt;em&gt;Let &lt;script type=&quot;math/tex&quot;&gt;(X, Y, u, \Phi)&lt;/script&gt; be a maximization problem. If &lt;script type=&quot;math/tex&quot;&gt;u&lt;/script&gt; is
+a continuous function, then&lt;/em&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;em&gt;if &lt;script type=&quot;math/tex&quot;&gt;\Phi&lt;/script&gt; is upper semi-continuous and compact valued, then &lt;script type=&quot;math/tex&quot;&gt;u^*&lt;/script&gt; is upper
+semi-continuous;&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;if &lt;script type=&quot;math/tex&quot;&gt;\Phi&lt;/script&gt; is lower semi-continuous, then &lt;script type=&quot;math/tex&quot;&gt;u^*&lt;/script&gt; is lower semi-continuous;&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;if &lt;script type=&quot;math/tex&quot;&gt;\Phi&lt;/script&gt; is continuous and compact valued, then &lt;script type=&quot;math/tex&quot;&gt;u^*&lt;/script&gt; is continuous.&lt;/em&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;The third statement is really just a rephrasing of the previous two, but it is
+invoked a lot by applications.&lt;/p&gt;
+
+&lt;p&gt;Now, it’s true that the first two statements are independent of each other. For
+many applications, it’s important to keep these separate. If you want weaker
+hypotheses, you also need to attack each component separately. But for the sake
+of this post, let’s consider the classical case found in the back of every
+rigorous economics textbook: continuous &lt;script type=&quot;math/tex&quot;&gt;u&lt;/script&gt;, continuous &lt;script type=&quot;math/tex&quot;&gt;\Phi&lt;/script&gt;, compact
+values.&lt;/p&gt;
+
+&lt;p&gt;In that case, consider the set-valued function &lt;script type=&quot;math/tex&quot;&gt;\Lambda : X \to
+2^{\mathbb{R}}&lt;/script&gt; defined by&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\renewcommand{\bar}{\overline}
+\Lambda(x) = \{u(x,y) : y \in \Phi(x)\}.&lt;/script&gt;
+
+&lt;p&gt;Informally, &lt;script type=&quot;math/tex&quot;&gt;\Lambda(x)&lt;/script&gt; is the set of all values possibly attained when &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt;
+is the parameter. Actually, we can think of &lt;script type=&quot;math/tex&quot;&gt;\Lambda&lt;/script&gt; as a kind of “partial”
+composition. Given &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt;, we compose the function &lt;script type=&quot;math/tex&quot;&gt;u_x(y) = u(x,y)&lt;/script&gt; over the
+set &lt;script type=&quot;math/tex&quot;&gt;\Phi(x)&lt;/script&gt;. You might write &lt;script type=&quot;math/tex&quot;&gt;\Lambda(x) = u(x, \Phi(x))&lt;/script&gt; with only
+somewhat abuse of notation. My preference is to write &lt;script type=&quot;math/tex&quot;&gt;\Lambda = u \circ
+\Phi&lt;/script&gt;, because this suggests the partial composition directly. Define the &lt;em&gt;top&lt;/em&gt;
+of &lt;script type=&quot;math/tex&quot;&gt;\Lambda&lt;/script&gt; to be the function &lt;script type=&quot;math/tex&quot;&gt;\bar{\Lambda} : X \to \RR&lt;/script&gt; satisfying&lt;/p&gt;
+
+&lt;script type=&quot;math/tex; mode=display&quot;&gt;\bar{\Lambda}(x) = \sup \Lambda(x).&lt;/script&gt;
+
+&lt;p&gt;Then the top of &lt;script type=&quot;math/tex&quot;&gt;\Lambda&lt;/script&gt; is exactly the maximum function &lt;script type=&quot;math/tex&quot;&gt;u^*&lt;/script&gt;. By studying
+the properties of &lt;script type=&quot;math/tex&quot;&gt;\Lambda&lt;/script&gt; we will be able to deduce the continuity of its
+top, and thereby prove the maximum theorem. To this end, we have to accomplish
+two tasks. The first is “natural” as a result of framing &lt;script type=&quot;math/tex&quot;&gt;\Lambda&lt;/script&gt; in terms of
+function composition.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Theorem&lt;/strong&gt;. &lt;em&gt;For the maximization problem &lt;script type=&quot;math/tex&quot;&gt;(X, Y, u, \Phi)&lt;/script&gt; with &lt;script type=&quot;math/tex&quot;&gt;\Lambda&lt;/script&gt;
+defined as above, if &lt;script type=&quot;math/tex&quot;&gt;u&lt;/script&gt; is continuous, then:&lt;/em&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;em&gt;if &lt;script type=&quot;math/tex&quot;&gt;\Phi&lt;/script&gt; is lower semi-continuous, then so is &lt;script type=&quot;math/tex&quot;&gt;\Lambda&lt;/script&gt;;&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;if &lt;script type=&quot;math/tex&quot;&gt;\Phi&lt;/script&gt; is upper semi-continuous with compact values, then so is
+&lt;script type=&quot;math/tex&quot;&gt;\Lambda&lt;/script&gt;.&lt;/em&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;em&gt;Proof&lt;/em&gt;. Suppose first &lt;script type=&quot;math/tex&quot;&gt;\Phi&lt;/script&gt; is lower semi-continuous. Let &lt;script type=&quot;math/tex&quot;&gt;G \subseteq
+\RR&lt;/script&gt; be an open set, and suppose &lt;script type=&quot;math/tex&quot;&gt;\Lambda(x) \cap G \ne \emptyset&lt;/script&gt;. Since the
+function &lt;script type=&quot;math/tex&quot;&gt;u(x, \:\cdot\:)&lt;/script&gt; is continuous, it follows that &lt;script type=&quot;math/tex&quot;&gt;V = \{y \in Y :
+u(x, y) \in G\}&lt;/script&gt; is open. What’s more, 
+there is a &lt;script type=&quot;math/tex&quot;&gt;y \in \Phi(x)&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;u(x,y) \in G&lt;/script&gt;. In other words,
+&lt;script type=&quot;math/tex&quot;&gt;\Phi(x) \cap V \ne \emptyset&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;\Phi&lt;/script&gt; is lower semi-continuous, we
+can fix an open neighborhood &lt;script type=&quot;math/tex&quot;&gt;U&lt;/script&gt; of &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; such that whenever &lt;script type=&quot;math/tex&quot;&gt;x' \in U&lt;/script&gt; we
+have &lt;script type=&quot;math/tex&quot;&gt;\Phi(x') \cap V \ne \emptyset&lt;/script&gt;. But this means that &lt;script type=&quot;math/tex&quot;&gt;\Lambda(x') \cap G
+\ne \emptyset&lt;/script&gt;, which proves lower semi-continuity.&lt;/p&gt;
+
+&lt;p&gt;Next, suppose &lt;script type=&quot;math/tex&quot;&gt;\Phi&lt;/script&gt; is upper semi-continuous and compact-valued. Let &lt;script type=&quot;math/tex&quot;&gt;G
+\subseteq \RR&lt;/script&gt; be an open set with &lt;script type=&quot;math/tex&quot;&gt;\Lambda(x) \subseteq G&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;u&lt;/script&gt; is
+continuous, for all &lt;script type=&quot;math/tex&quot;&gt;y \in \Phi(x)&lt;/script&gt; there are open neighborhoods &lt;script type=&quot;math/tex&quot;&gt;U_y&lt;/script&gt; of
+&lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;V_y&lt;/script&gt; of &lt;script type=&quot;math/tex&quot;&gt;y&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;(x',y') \in U_y \times V_y&lt;/script&gt; implies
+&lt;script type=&quot;math/tex&quot;&gt;u(x',y') \in G&lt;/script&gt;. The sets &lt;script type=&quot;math/tex&quot;&gt;\{V_y\}_{y \in \Phi(x)}&lt;/script&gt; forms an open cover of
+&lt;script type=&quot;math/tex&quot;&gt;\Phi(x)&lt;/script&gt;, which is compact, so we can fix &lt;script type=&quot;math/tex&quot;&gt;V_{y_1}, \dots, V_{y_n}&lt;/script&gt; a
+finite subcover with the corresponding &lt;script type=&quot;math/tex&quot;&gt;U_{y_1}, \dots, U_{y_n}&lt;/script&gt; neighborhoods
+of &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt;. Let &lt;script type=&quot;math/tex&quot;&gt;U_1 = \bigcap_{j=1}^{n} U_{y_j}&lt;/script&gt;, so that if &lt;script type=&quot;math/tex&quot;&gt;x' \in U_1&lt;/script&gt; and
+&lt;script type=&quot;math/tex&quot;&gt;y' \in \bigcup_{j=1}^{n} V_{y_j}&lt;/script&gt; we have &lt;script type=&quot;math/tex&quot;&gt;u(x',y') \in G&lt;/script&gt;. On the other
+hand, since &lt;script type=&quot;math/tex&quot;&gt;\Phi&lt;/script&gt; is upper semi-continuous, there is an open neighborhood
+&lt;script type=&quot;math/tex&quot;&gt;U_2&lt;/script&gt; of &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;\Phi(x') \subseteq \bigcup_{j=1}^{n} V_{y_j}&lt;/script&gt; for
+all &lt;script type=&quot;math/tex&quot;&gt;x' \in U_2&lt;/script&gt;. Let &lt;script type=&quot;math/tex&quot;&gt;U = U_1 \cap U_2&lt;/script&gt;. Then for all &lt;script type=&quot;math/tex&quot;&gt;x' \in U&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;y'
+\in \Phi(x')&lt;/script&gt;, it follows that &lt;script type=&quot;math/tex&quot;&gt;u(x', y') \in G&lt;/script&gt;; hence, &lt;script type=&quot;math/tex&quot;&gt;\Lambda(x')
+\subseteq G&lt;/script&gt;, which proves upper semi-continuity. Finally, let
+&lt;script type=&quot;math/tex&quot;&gt;\{G_\alpha\}_{\alpha \in A}&lt;/script&gt; be an open cover of &lt;script type=&quot;math/tex&quot;&gt;\Lambda(x)&lt;/script&gt;. Since &lt;script type=&quot;math/tex&quot;&gt;u(x,
+\:\cdot\:)&lt;/script&gt; is continuous, the sets of the form &lt;script type=&quot;math/tex&quot;&gt;V_\alpha = \{y \in Y : u(x,y)
+\in G_\alpha\}&lt;/script&gt; are themselves an open cover of &lt;script type=&quot;math/tex&quot;&gt;\Phi(x)&lt;/script&gt;, which is compact.
+Hence there are &lt;script type=&quot;math/tex&quot;&gt;V_{\alpha_1}, \dots, V_{\alpha_n}&lt;/script&gt; a finite subcover, and
+&lt;script type=&quot;math/tex&quot;&gt;G_{\alpha_1}, \dots, G_{\alpha_n}&lt;/script&gt; is the corresponding subcover for
+&lt;script type=&quot;math/tex&quot;&gt;\Lambda(x)&lt;/script&gt;. This proves that &lt;script type=&quot;math/tex&quot;&gt;\Lambda&lt;/script&gt; is compact-valued. &lt;script type=&quot;math/tex&quot;&gt;\square&lt;/script&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;It therefore follows that the conditions of Berge’s maximum theorem together
+imply that the set-valued function &lt;script type=&quot;math/tex&quot;&gt;\Lambda&lt;/script&gt; is continuous and compact-valued.
+If we can show that the top of &lt;script type=&quot;math/tex&quot;&gt;\Lambda&lt;/script&gt; is a continuous function, the theorem
+will be proved.&lt;/p&gt;
+
+&lt;p&gt;Here’s another question that has bugged me for a year or so now.  The notion of
+semi-continuous real-valued functions is very old (at least as old as Baire’s
+1895 dissertation), but semi-continuous set-valued functions are more modern. A
+lower semi-continuous set-valued function really doesn’t have anything to do
+with lower semi-continuous real-valued functions. In fact, if you consider a
+“singleton” set-valued function &lt;script type=&quot;math/tex&quot;&gt;\Gamma(x) = \{f(x)\}&lt;/script&gt;, you can show that
+lower and upper semi-continuity of &lt;script type=&quot;math/tex&quot;&gt;\Gamma&lt;/script&gt; coincide!&lt;sup id=&quot;fnref:2&quot;&gt;&lt;a href=&quot;#fn:2&quot; class=&quot;footnote&quot;&gt;2&lt;/a&gt;&lt;/sup&gt; What’s the deal with
+the nomenclature?&lt;/p&gt;
+
+&lt;p&gt;Maybe there was a deep connection intended by this language. On the other hand,
+it’s possible that, historically speaking, there was no strong relationship
+between these concepts. Perhaps the pioneers of this theory had a different
+connection in mind. I can affirm that naming things is hard, so I wouldn’t put
+it past the pioneers to settle early on slightly wonky terminology.&lt;/p&gt;
+
+&lt;p&gt;Regardless, the next theorem sheds some light on a possible relationship. It’s
+how I personally intuit the language similarities. It may not be worth the
+confusion it seems to cause more generally (Rockafellar and Wets, for example,
+opt for “inner” and “outer” semi-continuity, albeit “outer” does not mean
+“upper” in our case), but at least it’s a plausible justification.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Theorem&lt;/strong&gt;. &lt;em&gt;With &lt;script type=&quot;math/tex&quot;&gt;\Lambda&lt;/script&gt; defined as above,&lt;/em&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;em&gt;if &lt;script type=&quot;math/tex&quot;&gt;\Lambda&lt;/script&gt; is lower semi-continuous, then &lt;script type=&quot;math/tex&quot;&gt;\bar{\Lambda}&lt;/script&gt; is lower
+semi-continuous;&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;if &lt;script type=&quot;math/tex&quot;&gt;\Lambda&lt;/script&gt; is upper semi-continuous, then &lt;script type=&quot;math/tex&quot;&gt;\bar{\Lambda}&lt;/script&gt; is upper
+semi-continuous;&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;therefore, if &lt;script type=&quot;math/tex&quot;&gt;\Lambda&lt;/script&gt; is a continuous set-valued function, its top is a
+continuous real-valued function.&lt;/em&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;em&gt;Proof&lt;/em&gt;. First, suppose &lt;script type=&quot;math/tex&quot;&gt;\Lambda&lt;/script&gt; is lower semi-continuous. Let &lt;script type=&quot;math/tex&quot;&gt;\varepsilon &gt; 
+0&lt;/script&gt; be arbitrary, and let &lt;script type=&quot;math/tex&quot;&gt;G = (\bar{\Lambda}(x)-\varepsilon,\infty)&lt;/script&gt;. Then
+&lt;script type=&quot;math/tex&quot;&gt;\Lambda(x) \cap G \ne \emptyset&lt;/script&gt;, so there exists an open neighborhood
+&lt;script type=&quot;math/tex&quot;&gt;U&lt;/script&gt; of &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;\Lambda(x') \cap G \ne \emptyset&lt;/script&gt; for all &lt;script type=&quot;math/tex&quot;&gt;x' \in
+U&lt;/script&gt;. So there exists &lt;script type=&quot;math/tex&quot;&gt;\lambda' \in \Lambda(x')&lt;/script&gt; such that &lt;script type=&quot;math/tex&quot;&gt;\lambda' &gt;
+\bar{\Lambda}(x) - \varepsilon&lt;/script&gt;, and by definition of &lt;script type=&quot;math/tex&quot;&gt;\bar{\Lambda}&lt;/script&gt; it
+follows that &lt;script type=&quot;math/tex&quot;&gt;\bar{\Lambda}(x') \geq \lambda' &gt; \bar{\Lambda}(x) -
+\varepsilon&lt;/script&gt;. This confirms that &lt;script type=&quot;math/tex&quot;&gt;\bar{\Lambda}&lt;/script&gt; is lower semi-continuous.&lt;/p&gt;
+
+&lt;p&gt;Next, suppose &lt;script type=&quot;math/tex&quot;&gt;\Lambda&lt;/script&gt; is upper semi-continuous. Let &lt;script type=&quot;math/tex&quot;&gt;\varepsilon &gt; 0&lt;/script&gt; be
+arbitrary, and let &lt;script type=&quot;math/tex&quot;&gt;G = (-\infty, \bar{\Lambda}(x) + \varepsilon)&lt;/script&gt;. Then
+&lt;script type=&quot;math/tex&quot;&gt;\Lambda(x) \subseteq G&lt;/script&gt;, so there exists an open neighborhood &lt;script type=&quot;math/tex&quot;&gt;U&lt;/script&gt; of &lt;script type=&quot;math/tex&quot;&gt;x&lt;/script&gt;
+such that &lt;script type=&quot;math/tex&quot;&gt;\Lambda(x') \subseteq G&lt;/script&gt; for all &lt;script type=&quot;math/tex&quot;&gt;x' \in U&lt;/script&gt;. So for all
+&lt;script type=&quot;math/tex&quot;&gt;\lambda' \in \Lambda(x')&lt;/script&gt;, we have &lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+\lambda' &lt; \bar{\Lambda}(x) +
+\varepsilon %]]&gt;&lt;/script&gt;. By definition of &lt;script type=&quot;math/tex&quot;&gt;\bar{\Lambda}&lt;/script&gt;, it follows that
+&lt;script type=&quot;math/tex&quot;&gt;% &lt;![CDATA[
+\bar{\Lambda}(x') &lt; \bar{\Lambda}(x) + \varepsilon %]]&gt;&lt;/script&gt;, which confirms that
+&lt;script type=&quot;math/tex&quot;&gt;\bar{\Lambda}&lt;/script&gt; is upper semi-continuous.&lt;/p&gt;
+
+&lt;p&gt;Combining these two results implies the third condition. &lt;script type=&quot;math/tex&quot;&gt;\square&lt;/script&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;This approach to Berge’s maximum theorem combined two simple intuitions. First,
+function composition should hopefully preserve continuity. Second, the top of a
+real set-valued function is just a normal function, so hopefully semi-continuity
+concepts diffuse from one to the other. It turns out that both of these
+intuitions are correct. It also means that Berge’s maximum theorem is pretty
+simple. Its presentation is already elementary in Berge’s 1963 text, but here
+we’ve shown that it’s merely the consequence of even-more-elementary
+observations.&lt;/p&gt;
+
+&lt;h1 id=&quot;the-weakness-within&quot;&gt;The weakness within&lt;/h1&gt;
+
+&lt;p&gt;Say I’m a firm trying to maximize my profits subject to some parametric
+constraints. I would love to apply Berge’s maximum theorem to guarantee my
+profits are continuous. In fact, I go out into the world and observe that they
+&lt;em&gt;look&lt;/em&gt; pretty damn continuous. So I get to work verifying the hypotheses of the
+theorem.&lt;/p&gt;
+
+&lt;p&gt;This is where I get stuck. It turns out that the profit-maximizing behavior is
+very stable, because resource and competition constraints lead to some nice
+properties on the “max” operation. But as a firm, I could theoretically behave
+really, &lt;em&gt;really&lt;/em&gt; suboptimally. Just burn cash on useless projects and make no
+money at all. If I cared to, I could make my minimum possible profit unboundedly
+bad. Not that I would. I have my fiduciary responsibilities, after all. But it’s
+possible.&lt;/p&gt;
+
+&lt;p&gt;In applications, the maximization problem is usually well-posed, but few
+applications simultaneously care about both maximizing &lt;em&gt;and minimizing&lt;/em&gt; the
+objective function.  Berge’s maximum theorem doesn’t account for this
+possibility. In fact, if you define the &lt;em&gt;bottom&lt;/em&gt; of &lt;script type=&quot;math/tex&quot;&gt;\Lambda&lt;/script&gt; by
+&lt;script type=&quot;math/tex&quot;&gt;\underline{\Lambda}(x) = \inf \Lambda(x)&lt;/script&gt;, it follows directly that the
+conditions of Berge’s maximum theorem imply that &lt;script type=&quot;math/tex&quot;&gt;\underline{\Lambda}&lt;/script&gt; is
+continuous. In other words, the hypotheses are strong enough to give continuity
+of the minimum. It’s just that we don’t care about the minimum! Symmetry has an
+aesthetic value, but in this case no practical one.&lt;/p&gt;
+
+&lt;p&gt;To refine the theorem is therefore to de-symmetrize it. An important development
+in this line of research was the introduction of &lt;script type=&quot;math/tex&quot;&gt;\mathbb{K}&lt;/script&gt;-inf-compactness
+by Professor Feinberg and his collaborators. It explicitly attacks the
+compactness assumption on &lt;script type=&quot;math/tex&quot;&gt;\Phi&lt;/script&gt;, but it also de-symmetrizes the upper
+semi-continuity condition. Another development, by Tian and Zhou, de-symmetrizes
+the lower semi-continuity condition with a feasible path transfer upper
+semi-continuity condition on the objective function. In either case, the maximum
+retains its continuity, but for the minimum all bets are off. Progress!&lt;/p&gt;
+
+&lt;p&gt;On a related note, it’s weird to have been thinking about a single theorem for
+the better part of a year. It doesn’t feel that impressive, but I suppose that’s
+just research for you.&lt;/p&gt;
+
+&lt;h1 id=&quot;notes&quot;&gt;Notes&lt;/h1&gt;
+
+&lt;div class=&quot;footnotes&quot;&gt;
+  &lt;ol&gt;
+    &lt;li id=&quot;fn:1&quot;&gt;
+      &lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;\Phi&lt;/script&gt; defines a subset of &lt;script type=&quot;math/tex&quot;&gt;X \times Y&lt;/script&gt; by its graph &lt;script type=&quot;math/tex&quot;&gt;\{(x,y) \in X \times Y : y \in \Phi(x) \}&lt;/script&gt;. In fact, it is completely determined by its graph, and every subset &lt;script type=&quot;math/tex&quot;&gt;G \subseteq X \times Y&lt;/script&gt; determines a unique set-valued map &lt;script type=&quot;math/tex&quot;&gt;\Gamma : X \to 2^Y&lt;/script&gt; defined by &lt;script type=&quot;math/tex&quot;&gt;\Gamma(x) = \{y \in Y : (x,y) \in G\}&lt;/script&gt;. &lt;a href=&quot;#fnref:1&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li id=&quot;fn:2&quot;&gt;
+      &lt;p&gt;What &lt;em&gt;really&lt;/em&gt; bends my noodle is that in the case of the singleton set-valued function &lt;script type=&quot;math/tex&quot;&gt;\Gamma(x) = \{f(x)\}&lt;/script&gt;, upper and lower semi-continuity of &lt;script type=&quot;math/tex&quot;&gt;\Gamma&lt;/script&gt; each imply that &lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt; is a continuous function. My first reaction: does this contradict our theorem? No. Since &lt;script type=&quot;math/tex&quot;&gt;\bar{\Gamma}(x) = f(x)&lt;/script&gt;, it is certainly true that &lt;script type=&quot;math/tex&quot;&gt;\bar{\Gamma}&lt;/script&gt; is continuous. My second reaction: does this mean that we can say more about the continuity of &lt;script type=&quot;math/tex&quot;&gt;\bar{\Lambda}&lt;/script&gt; in general? The answer also appears to be no. The magical case of single-valued &lt;script type=&quot;math/tex&quot;&gt;\Gamma&lt;/script&gt; is somehow quite distinct from the general &lt;script type=&quot;math/tex&quot;&gt;\Lambda&lt;/script&gt;, and nothing more in general can be inferred. &lt;a href=&quot;#fnref:2&quot; class=&quot;reversefootnote&quot;&gt;&amp;#8617;&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;</content><author><name>David Kraemer</name></author><category term="math" /><category term="berge" /><category term="maximum" /><summary type="html">I’ve spent some time thinking about the Berge maximum theorem, which is a classic result in parametric optimization. It relates to some of my work with Professor Feinberg here at Stony Brook, but we are pushing in a different direction at the moment. I’m interested in the “classical” theorem, which appeared in Berge’s book Topological spaces in 1963. (To be clear, it appears in English in 1963, but the original French edition was in 1959.) To summarize the result, we usually say that it provides sufficient conditions for the optimal values of an optimization problem to be continuous in the parameters of the problem.</summary></entry><entry><title type="html">A characterization of numerical lower semi-continuity</title><link href="http://localhost:4000/ln/characterizing-numerical-lsc-functions.html" rel="alternate" type="text/html" title="A characterization of numerical lower semi-continuity" /><published>2018-06-28T00:00:00-04:00</published><updated>2018-06-28T00:00:00-04:00</updated><id>http://localhost:4000/ln/characterizing-numerical-lsc-functions</id><content type="html" xml:base="http://localhost:4000/ln/characterizing-numerical-lsc-functions.html">&lt;p&gt;One can define numerical lower semi-continuity using a sequential criterion: for
 &lt;script type=&quot;math/tex&quot;&gt;\newcommand{\RR}{\mathbb{R}}
 \renewcommand{\bar}{\overline}
 f : X \to \bar{\RR},&lt;/script&gt;
