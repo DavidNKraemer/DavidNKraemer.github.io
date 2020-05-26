@@ -43,17 +43,17 @@ student will henceforth take on fiat) is a cop-out by textbook authors and
 professors who don't want to get their hands dirty, and I'm tired of their
 nonsense! Is $$\mathbb{Q}$$ countable or not?
 
-In this post, I propose an approach to showing that $$\QQ$$ is countable by means of the following outline:
+In this post, I propose an approach to showing that $$\mathbb{Q}$$ is countable by means of the following outline:
 
 1. The set of integers $$\mathbb{Z}$$ is countable.
-2. If $$A \subseteq \RR$$ is nonnegative, countable, and $$0 \in A$$, then $$A
+2. If $$A \subseteq \mathbb{R}$$ is nonnegative, countable, and $$0 \in A$$, then $$A
    \cup -A$$ is also countable.
-3. The product $$\NN \times \NN$$ is countable.
-4. If $$A_1, A_2, A_3, \dots$$ are a countable union of sets, then
+3. The product $$\mathbb{N} \times \mathbb{N}$$ is countable.
+4. If $$A_1, A_2, A_3, \dots$$ are a countable union of countable sets, then
    $$\bigcup_{j=1}^{\infty} A_j$$ is also countable.
-5. There exists a countable partition of the set of rational numbers $$\QQ^+$$
+5. There exists a countable partition of the set of rational numbers $$\mathbb{Q}^+$$
    into countable sets.
-6. Then $$\QQ$$ is countable.
+6. Then $$\mathbb{Q}$$ is countable.
 
 This approach has two advantages. First, it's completely rigorous, with no gaps
 to be filled in by the reader. Second, the first few components of the outline
@@ -71,18 +71,18 @@ f(a_1) = f(a_2)$$ we have $$a_1 = a_2$$. It is *surjective* if for every $$b \in
 B$$ there exists an $$a \in A$$ with $$f(a) = b$$. It is *bijective* if it is
 both injective and surjective.
 
-**Definition 2**. A set $$A$$ is *finite* if there exists $$ n \in \NN $$ and a
+**Definition 2**. A set $$A$$ is *finite* if there exists $$ n \in \mathbb{N} $$ and a
 bijective function $$ f : \{0,1,2,\dots, n-1\} \to A$$. It is *countable* if
-there exists a bijective function $$ f : \NN \to A$$. It is *uncountable* if it
+there exists a bijective function $$ f : \mathbb{N} \to A$$. It is *uncountable* if it
 is neither finite nor countable.
 
 Some people would prefer to include finite sets in the definition of countable,
 but for clarity I will impose that these are distinct concepts. Now, I gave an
 introductory spiel about why leaving exercises for the reader is an invitation
 for neglect. Fully aware of this problem (and the hypocrite it makes me), I will
-leave it as an exercise to show that $$\NN$$ is itself a countable set. (*Hint*:
+leave it as an exercise to show that $$\mathbb{N}$$ is itself a countable set. (*Hint*:
 let $$f(n) = n$$ and show that $$f$$ is bijective.) My justification for this
-inconsistency is to say that the proof that $$\NN$$ is countable is more of a
+inconsistency is to say that the proof that $$\mathbb{N}$$ is countable is more of a
 comprehension check for the above definitions than an insightful result itself.
 
 # Warmup: showing $$\mathbb{Z}$$ is countable
@@ -106,7 +106,7 @@ Let's see how this function starts out on the first few numbers in $$\mathbb{N}$
 
 Look's promising! Let's formalize this idea into a proof.
 
-**Proposition 1**. *The set of integers $$\ZZ$$ is countable.*
+**Proposition 1**. *The set of integers $$\mathbb{Z}$$ is countable.*
 
 *Proof*.  We will show that $$f$$ is injective and surjective. First injective.
 Suppose $$f(n_1) = f(n_2)$$. In particular, it is either the case that $$f(n_1),
@@ -162,7 +162,7 @@ to be the set of all additive inverses of $$A$$, we want to consider the set
 $$A' = A \cup (-A)$$. Our goal is to show that $$A'$$ is still countable. The
 trick will be that we don't need to care about the values of each $$a_k \in A$$;
 rather, we can perform all of the same manipulations on the index $$k$$ instead.
-In particular, let $$f : \NN \to A'$$ to be
+In particular, let $$f : \mathbb{N} \to A'$$ to be
 
 $$
 f(n) =
@@ -198,7 +198,7 @@ follows that $$n_1 = n_2$$. Hence, $$f$$ is injective.
 Next, we show that $$f$$ is surjective. Fix any $$a \in A'$$. Now,
 either $$a \geq 0$$ or $$a < 0$$. Suppose that $$a < 0$$ (the nonnegative case
 is almost identical, as before).  Then it follows that $$-a \in A$$, and since
-$$A$$ is countable, we can write $$-a = a_n$$ for some $$n \in \NN$$.
+$$A$$ is countable, we can write $$-a = a_n$$ for some $$n \in \mathbb{N}$$.
 $$f(-2z-1) = z$$, we are done. We conclude that $$f$$ is bijective, and hence
 $$\mathbb{Z}$$ is countable. $$\square$$
 
@@ -207,20 +207,20 @@ Was it strictly necessary to include $$0 \in A$$? No, because given a countable
 set $$A$$, a point $$a \in A$$, and a point $$b \notin A$$, you can show that
 both $$A \setminus \{a \}$$ and $$A \cup \{b\}$$ are themselves countable sets.
 (Again, I'm leaving this as an exercise because I don't follow what I preach.
-But to think this through, consider the case for $$\NN$$ when we're deciding to
+But to think this through, consider the case for $$\mathbb{N}$$ when we're deciding to
 include $$-1$$ or throw away $$0$$. *Hint*: $$f(n) = n-1$$ and $$g(n) = n+1$$
-are useful functions here.) We included $$0$$ because $$\NN$$ includes $$0$$,
+are useful functions here.) We included $$0$$ because $$\mathbb{N}$$ includes $$0$$,
 and in order to make the direct connection from the previous case of showing
-$$\ZZ$$ is countable, we needed to treat $$a_0$$ as the "center" of $$A'$$, much
-like how $$0$$ is the "center" of $$\ZZ$$.
+$$\mathbb{Z}$$ is countable, we needed to treat $$a_0$$ as the "center" of $$A'$$, much
+like how $$0$$ is the "center" of $$\mathbb{Z}$$.
 
-# Making progress: showing that $$\NN \times \NN$$ is countable
+# Making progress: showing that $$\mathbb{N} \times \mathbb{N}$$ is countable
 
 With the previous details worked out, we can comfortably return to the main
 thrust of the argument for our program. The essential insight, which will
-dictate our future work, is to realize that $$\NN \times \NN$$ is itself a
-countable set. Let's see why by writing out the first part of $$\NN \times
-\NN$$.
+dictate our future work, is to realize that $$\mathbb{N} \times \mathbb{N}$$ is itself a
+countable set. Let's see why by writing out the first part of $$\mathbb{N} \times
+\mathbb{N}$$.
 
 | (m,n) | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
 | 0 | (0,0) | (0,1) | (0,2) | (0,3) | (0,4) | (0,5) | (0,6) | (0,7) |
@@ -231,6 +231,50 @@ countable set. Let's see why by writing out the first part of $$\NN \times
 | 5 | (5,0) | (5,1) | (5,2) | (5,3) | (5,4) | (5,5) | (5,6) | (5,7) |
 | 6 | (6,0) | (6,1) | (6,2) | (6,3) | (6,4) | (6,5) | (6,6) | (6,7) |
 | 7 | (7,0) | (7,1) | (7,2) | (7,3) | (7,4) | (7,5) | (7,6) | (7,7) |
+
+There's a straightforward way to count this visually by covering the diagonals.
+We start with the top left corner. On the other hand, once we've counted the
+first $$k$$ diagonals, we count the ($$k+1$$)th diagonal by adding the terms
+$$(k+1,0), (k, 1), \dots, (1, k), (0, k+1)$$ in order. This intuitively puts
+$$\NN \times \NN$$ in order. 
+
+But what exactly is this bijection? This is not so obvious. In fact, it's quite
+difficult to establish from thin air. Nevertheless, there is a relatively
+"simple" function which achieves this called the *Cantor pairing function*. It's
+defined as $$p : \NN \times \NN \to \NN$$ and is given by
+
+$$
+p(m,n) = \tfrac{1}{2}(m+n)(m+n+1) + n.
+$$
+
+By inspection we see that it's plausibly the right function. We have 
+
+| $$(m,n)$$ | (0, 0) | (1, 0) | (0, 1) | (2, 0) | (1, 1) | (0, 2) | (3, 0) | (2, 1) |
+| $$p(m,n)$$ | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
+
+The proof that $$p$$ is a bijection is not easy, and quite technical.
+Nevertheless we'll give it a go.
+
+Let's establish a preliminary lemma.
+
+**Lemma**. If $$m + n < m' + n'$$, then $$p(m,n) < p(m', n')$$.
+
+This lemma will be useful in establishing that $$p$$ is injective. To see why,
+suppose that the lemma holds. If $$p(m, n) = p(m', n')$$, then $$p(m,n) \geq
+p(m', n')$$ and $$p(m',n') \geq p(m,n)$$, which together imply that 
+$$m + n = m' + n'$$. On the other hand, if $$m + n = m' + n' = k$$ and $$p(m,n)
+= p(m',n')$$, then we have
+
+$$
+p(m,n) = \tfrac{k \cdot (k+1)}{2} + n = \tfrac{k \cdot(k+1)}{2} + n' = p(m', n'),
+$$
+
+which implies $$n = n'$$, and therefore $$m = m'$$. So this lemma is useful to
+us.
+
+*Proof*. 
+
+
 
 
 
