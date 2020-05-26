@@ -7,6 +7,22 @@
 		<atom:link href="/rss-feed.xml" rel="self" type="application/rss+xml" />
 		
 			<item>
+				<title>Orwell and Qoheles</title>
+				
+					<dc:creator>David Kraemer</dc:creator>
+				
+				
+					<description>&lt;p&gt;Rereading Orwell’s &lt;em&gt;Politics and the English language&lt;/em&gt;, I found myself cackling
+to his rendition of Qoheles:&lt;/p&gt;
+
+</description>
+				
+				<pubDate>Mon, 28 Oct 2019 12:52:10 -0400</pubDate>
+				<link>http://localhost:4000/ln/orwell-qoheles.html</link>
+				<guid isPermaLink="true">http://localhost:4000/ln/orwell-qoheles.html</guid>
+			</item>
+		
+			<item>
 				<title>Berge's maximum theorem is overpowered (and weak)</title>
 				
 					<dc:creator>David Kraemer</dc:creator>
@@ -24,63 +40,53 @@ parameters of the problem.&lt;/p&gt;
 
 </description>
 				
-				<pubDate>Mon, 11 Mar 2019 10:52:53 -0400</pubDate>
+				<pubDate>Mon, 28 Oct 2019 12:44:00 -0400</pubDate>
 				<link>http://localhost:4000/ln/max-theorem-is-natural.html</link>
 				<guid isPermaLink="true">http://localhost:4000/ln/max-theorem-is-natural.html</guid>
 			</item>
 		
 			<item>
-				<title>Semantics for algorithmic accountability</title>
+				<title>Berge's maximum theorem is overpowered (and weak)</title>
 				
 					<dc:creator>David Kraemer</dc:creator>
 				
 				
-					<description>&lt;p&gt;As someone who uses and, from time to time, designs algorithms for varied
-purposes, I am bemused when I read about them in the popular press. A &lt;em&gt;New York
-Times&lt;/em&gt; &lt;a href=&quot;https://www.nytimes.com/2017/10/26/opinion/algorithm-compas-sentencing-bias.html&quot;&gt;opinion piece&lt;/a&gt; (author credit: Ellora Israni) is typical.  In it, Ms.
-Israni argues that the use of algorithms to aid in criminal sentencing is
-dangerously susceptible to abuse:&lt;/p&gt;
+					<description>&lt;p&gt;I’ve spent some time thinking about the Berge maximum theorem, which is
+a classic result in parametric optimization. It relates to some of my work with
+Professor Feinberg here at Stony Brook, but we are pushing in a different
+direction at the moment. I’m interested in the “classical” theorem, which
+appeared in Berge’s book &lt;em&gt;Topological spaces&lt;/em&gt; in 1963. (To be clear, it appears
+&lt;em&gt;in English&lt;/em&gt; in 1963, but the original French edition was in 1959.) To
+summarize the result, we usually say that it provides sufficient conditions for
+the optimal values of an optimization problem to be continuous in the
+parameters of the problem.&lt;/p&gt;
 
 </description>
 				
-				<pubDate>Mon, 11 Feb 2019 11:08:15 -0500</pubDate>
-				<link>http://localhost:4000/ln/thinking-about-algorithmic-accountability.html</link>
-				<guid isPermaLink="true">http://localhost:4000/ln/thinking-about-algorithmic-accountability.html</guid>
+				<pubDate>Tue, 09 Jul 2019 00:00:00 -0400</pubDate>
+				<link>http://localhost:4000/ln/max-theorem-is-overpowered.html</link>
+				<guid isPermaLink="true">http://localhost:4000/ln/max-theorem-is-overpowered.html</guid>
 			</item>
 		
 			<item>
-				<title>Investigating the stability of linear programs</title>
+				<title>Accountable countability: an airtight program for counting the rationals.</title>
 				
 					<dc:creator>David Kraemer</dc:creator>
 				
 				
-					<description>&lt;p&gt;I have been posting lately about the theory of multifunctions, which has so far
-only tenuously related to possible applications. So for a break (actually, it’s
-because I’ve been thinking about it in the last few days), we can explore how
-the theory of multifunctions and semi-continuity inform a very practical
-problem.&lt;/p&gt;
+					<description>&lt;p&gt;An introductory course in analysis is incomplete without an examination of the
+cardinality of infinite sets, much to the chagrin of the students! The important
+points, which are carefully emphasized in such a course, are that while the natural
+numbers &lt;script type=&quot;math/tex&quot;&gt;\mathbb{N}&lt;/script&gt; and the rational numbers &lt;script type=&quot;math/tex&quot;&gt;\mathbb{Q}&lt;/script&gt; have the same
+cardinality, the real numbers &lt;script type=&quot;math/tex&quot;&gt;\mathbb{R}&lt;/script&gt; has a strictly “larger”
+cardinality. If the cardinality of &lt;script type=&quot;math/tex&quot;&gt;\mathbb{N}&lt;/script&gt; is labeled &lt;em&gt;countable&lt;/em&gt;, we say
+that the cardinality of &lt;script type=&quot;math/tex&quot;&gt;\mathbb{R}&lt;/script&gt; is &lt;em&gt;uncountable&lt;/em&gt;.&lt;/p&gt;
 
 </description>
 				
-				<pubDate>Mon, 11 Feb 2019 11:08:15 -0500</pubDate>
-				<link>http://localhost:4000/ln/linear-programming.html</link>
-				<guid isPermaLink="true">http://localhost:4000/ln/linear-programming.html</guid>
-			</item>
-		
-			<item>
-				<title>Gradients for Grown-Ups (Part 3)</title>
-				
-					<dc:creator>David Kraemer</dc:creator>
-				
-				
-					<description>&lt;p&gt;This is the third posts in a series of posts, “Gradients for Grown-Ups”. You can
-see the previous post &lt;a href=&quot;gradients-for-grownups-part-02&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
-
-</description>
-				
-				<pubDate>Mon, 11 Feb 2019 11:08:15 -0500</pubDate>
-				<link>http://localhost:4000/ln/gradients-for-grownups-part-03.html</link>
-				<guid isPermaLink="true">http://localhost:4000/ln/gradients-for-grownups-part-03.html</guid>
+				<pubDate>Thu, 04 Oct 2018 08:19:08 -0400</pubDate>
+				<link>http://localhost:4000/ln/accounting-for-countability.html</link>
+				<guid isPermaLink="true">http://localhost:4000/ln/accounting-for-countability.html</guid>
 			</item>
 		
 			<item>
@@ -110,30 +116,63 @@ and actually write some code. I know I’m not alone here.&lt;sup id=&quot;fnref
 &lt;/div&gt;
 </description>
 				
-				<pubDate>Mon, 11 Feb 2019 11:08:15 -0500</pubDate>
+				<pubDate>Fri, 10 Aug 2018 11:03:27 -0400</pubDate>
 				<link>http://localhost:4000/ln/code-kata-slide.html</link>
 				<guid isPermaLink="true">http://localhost:4000/ln/code-kata-slide.html</guid>
 			</item>
 		
 			<item>
-				<title>Accountable countability: an airtight program for counting the rationals.</title>
+				<title>Investigating the stability of linear programs</title>
 				
 					<dc:creator>David Kraemer</dc:creator>
 				
 				
-					<description>&lt;p&gt;An introductory course in analysis is incomplete without an examination of the
-cardinality of infinite sets, much to the chagrin of the students! The important
-points, which are carefully emphasized in such a course, are that while the natural
-numbers &lt;script type=&quot;math/tex&quot;&gt;\mathbb{N}&lt;/script&gt; and the rational numbers &lt;script type=&quot;math/tex&quot;&gt;\mathbb{Q}&lt;/script&gt; have the same
-cardinality, the real numbers &lt;script type=&quot;math/tex&quot;&gt;\mathbb{R}&lt;/script&gt; has a strictly “larger”
-cardinality. If the cardinality of &lt;script type=&quot;math/tex&quot;&gt;\mathbb{N}&lt;/script&gt; is labeled &lt;em&gt;countable&lt;/em&gt;, we say
-that the cardinality of &lt;script type=&quot;math/tex&quot;&gt;\mathbb{R}&lt;/script&gt; is &lt;em&gt;uncountable&lt;/em&gt;.&lt;/p&gt;
+					<description>&lt;p&gt;I have been posting lately about the theory of multifunctions, which has so far
+only tenuously related to possible applications. So for a break (actually, it’s
+because I’ve been thinking about it in the last few days), we can explore how
+the theory of multifunctions and semi-continuity inform a very practical
+problem.&lt;/p&gt;
 
 </description>
 				
-				<pubDate>Mon, 11 Feb 2019 11:08:15 -0500</pubDate>
-				<link>http://localhost:4000/ln/accounting-for-countability.html</link>
-				<guid isPermaLink="true">http://localhost:4000/ln/accounting-for-countability.html</guid>
+				<pubDate>Thu, 12 Jul 2018 23:54:37 -0400</pubDate>
+				<link>http://localhost:4000/ln/linear-programming.html</link>
+				<guid isPermaLink="true">http://localhost:4000/ln/linear-programming.html</guid>
+			</item>
+		
+			<item>
+				<title>Semantics for algorithmic accountability</title>
+				
+					<dc:creator>David Kraemer</dc:creator>
+				
+				
+					<description>&lt;p&gt;As someone who uses and, from time to time, designs algorithms for varied
+purposes, I am bemused when I read about them in the popular press. A &lt;em&gt;New York
+Times&lt;/em&gt; &lt;a href=&quot;https://www.nytimes.com/2017/10/26/opinion/algorithm-compas-sentencing-bias.html&quot;&gt;opinion piece&lt;/a&gt; (author credit: Ellora Israni) is typical.  In it, Ms.
+Israni argues that the use of algorithms to aid in criminal sentencing is
+dangerously susceptible to abuse:&lt;/p&gt;
+
+</description>
+				
+				<pubDate>Thu, 28 Jun 2018 13:55:51 -0400</pubDate>
+				<link>http://localhost:4000/ln/thinking-about-algorithmic-accountability.html</link>
+				<guid isPermaLink="true">http://localhost:4000/ln/thinking-about-algorithmic-accountability.html</guid>
+			</item>
+		
+			<item>
+				<title>Gradients for Grown-Ups (Part 3)</title>
+				
+					<dc:creator>David Kraemer</dc:creator>
+				
+				
+					<description>&lt;p&gt;This is the third posts in a series of posts, “Gradients for Grown-Ups”. You can
+see the previous post &lt;a href=&quot;gradients-for-grownups-part-02&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+</description>
+				
+				<pubDate>Thu, 28 Jun 2018 13:55:51 -0400</pubDate>
+				<link>http://localhost:4000/ln/gradients-for-grownups-part-03.html</link>
+				<guid isPermaLink="true">http://localhost:4000/ln/gradients-for-grownups-part-03.html</guid>
 			</item>
 		
 			<item>
@@ -175,45 +214,6 @@ f : X
 				<pubDate>Wed, 27 Jun 2018 00:00:00 -0400</pubDate>
 				<link>http://localhost:4000/ln/numerical-semicontinuous-functions.html</link>
 				<guid isPermaLink="true">http://localhost:4000/ln/numerical-semicontinuous-functions.html</guid>
-			</item>
-		
-			<item>
-				<title>Understanding semi-continuity of multifunctions</title>
-				
-					<dc:creator>David Kraemer</dc:creator>
-				
-				
-					<description>&lt;p&gt;Let &lt;script type=&quot;math/tex&quot;&gt;X&lt;/script&gt; and &lt;script type=&quot;math/tex&quot;&gt;Y&lt;/script&gt; be topological spaces. One of the basic objects of study
-in topology are the continuous functions &lt;script type=&quot;math/tex&quot;&gt;f : X \to Y&lt;/script&gt;. Continuity in its
-pure form is a topological characterization: if &lt;script type=&quot;math/tex&quot;&gt;V \subseteq Y&lt;/script&gt; is an open
-set, then continuity is equivalent to the openness of &lt;script type=&quot;math/tex&quot;&gt;f^{-1}[V] \subseteq X&lt;/script&gt;. The same concept is useful for multifunctions in addition to regular
-functions, though we need to clarify &lt;script type=&quot;math/tex&quot;&gt;f^{-1} [V]&lt;/script&gt; in this context. First,
-however, we need to disaggregate continuity into two weaker properties.&lt;/p&gt;
-
-</description>
-				
-				<pubDate>Tue, 26 Jun 2018 00:00:00 -0400</pubDate>
-				<link>http://localhost:4000/ln/semi-continuity.html</link>
-				<guid isPermaLink="true">http://localhost:4000/ln/semi-continuity.html</guid>
-			</item>
-		
-			<item>
-				<title>Multifunction inverses</title>
-				
-					<dc:creator>David Kraemer</dc:creator>
-				
-				
-					<description>&lt;p&gt;When we deal with normal functions &lt;script type=&quot;math/tex&quot;&gt;f : X \to Y&lt;/script&gt; we are frequently
-interested in the behavior of &lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt; on subsets of &lt;script type=&quot;math/tex&quot;&gt;X&lt;/script&gt;, rather than just
-elements. We might write &lt;script type=&quot;math/tex&quot;&gt;f [ A ]&lt;/script&gt; to denote the image of &lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt; on the
-subset &lt;script type=&quot;math/tex&quot;&gt;A \subseteq X&lt;/script&gt;. Conversely, given a subset &lt;script type=&quot;math/tex&quot;&gt;B \subseteq Y&lt;/script&gt;, we
-can examine the “preimage” of &lt;script type=&quot;math/tex&quot;&gt;B&lt;/script&gt; by &lt;script type=&quot;math/tex&quot;&gt;f&lt;/script&gt; in the following way:&lt;/p&gt;
-
-</description>
-				
-				<pubDate>Wed, 06 Jun 2018 00:00:00 -0400</pubDate>
-				<link>http://localhost:4000/ln/multifunction-inverses.html</link>
-				<guid isPermaLink="true">http://localhost:4000/ln/multifunction-inverses.html</guid>
 			</item>
 		
 	</channel>
