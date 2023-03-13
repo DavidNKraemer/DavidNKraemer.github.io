@@ -1,13 +1,13 @@
 ---
 layout: post
-title: "Orwell and Qoheles"
+title: "Orwell and Kohelet"
 author: "David Kraemer"
 categories: ln 
 tags: [math, writing, English, soft]
 ---
 
 Rereading Orwell's *Politics and the English language*, I found myself cackling
-to his rendition of Qoheles:
+to his rendition of Kohelet:
 
 > Objective considerations of contemporary phenomena compel the conclusion that
 success or failure in competitive activities exhibits no tendency to be commensurate

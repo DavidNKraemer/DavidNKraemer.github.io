@@ -1,8 +1,18 @@
 software:
   - {
+    name: 'gym-wordle',
+    url: 'https://github.com/DavidNKraemer/Gym-Wordle',
+    description: 'An OpenAI gym environment for the addictive and fleeting internet game Wordle.'
+  }
+  - {
+    name: 'drone-routing',
+    url: 'https://github.com/DavidNKraemer/ams553-final-project',
+    description: 'The drone-routing problem is a known NP-Hard combinatorial optimizatino problem. This project implements two different simulation-based approximate algorithms, simulated annealing and the cross-entropy method, on a variety of simulated problem instances.'
+  }
+  - {
     name: 'polygonal-niceness',
     url: 'https://github.com/DavidNKraemer/polygonal-niceness',
-    description: '(<i>Active development</i>) The alpha-fatness and chord-arc scores are different measures of the "niceness" of polygons. They may prove useful in developing quantitative measures by which electoral districts may be determined illegal. This project includes software for implementing these measures together with preliminary results on random polygons.'
+    description: 'The alpha-fatness and chord-arc scores are different measures of the "niceness" of polygons. They may prove useful in developing quantitative measures by which electoral districts may be determined illegal. This project includes software for implementing these measures together with preliminary results on random polygons.'
 }
   - {
     name: 'tf-sqn',

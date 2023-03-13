@@ -3,8 +3,24 @@ layout: page
 title: About me
 ---
 
-I'm a second-year PhD student in the Department of Applied Mathematics at Stony
-Brook University. 
+I am a sixth-year PhD student in the Department of Applied Mathematics at [Stony
+Brook University](https://www.stonybrook.edu/commcms/ams/). My thesis advisor is
+Distinguished Professor [Eugene
+Feinberg](http://www.ams.sunysb.edu/~feinberg/public/). 
+
+
+## Research interests
+
+I'm interested in the intersection of mathematical analysis and optimization
+and control. My main research interests involve parametric optimization
+problems and their applications to Markov decision processes, such as models of
+inventory control. I like to stay right on the boundary between pure and applied
+math, and I enjoy working on simulation and other software projects.
+
+My "hobby" interests are primarily in reinforcement learning, where I enjoy
+tinkering with different RL algorithms and environments. I also like to study
+math outside of my research interests, such as algebra, just to keep on my
+toes!  
 
 ## Previous work
 
@@ -15,15 +31,6 @@ topics in college, such as
 * "rainbow" analogues to classical theorems in Ramsey theory
 * natural language processing models for a technology startup.
 
-## Research interests
-
-I'm interested in the intersection of mathematical analysis and optimization
-and control. I like to stay right on the boundary between pure and applied
-math, and I enjoy working on simulation and other software projects. 
-
-My "hobby" interests are primarily in economics, where I enjoy studying the
-models of theoretical macroeconomics and monetary policy. I also like to study
-math outside of my research interests, such as algebra, just to keep on my toes!
 
 ## Other stuff
 
@@ -32,5 +39,3 @@ I enjoy collecting [strange
 screencaps](https://frinkiac.com/img/S06E06/372855.jpg) from the show using the
 [Frinkiac](https://frinkiac.com/) site. 
 
-I'm also a proud fake-news reading, [mr bernke](http://i.imgur.com/ItWuCed.png) thanking, populist baiting, podcast listening, $oro$-bux earning
-[neoliberal](https://i.redd.it/3h4jgsvgh6jy.png) shill.

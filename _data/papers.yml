@@ -1,5 +1,19 @@
 journals:
   - {
+    title: 'Continuity of Discounted Values and the Structure of Optimal Policies for Periodic-Review Inventory Systems with Setup Costs',
+    authors: ['Eugene Feinberg', 'David Kraemer'],
+    date: '28 February 2023',
+    publication: 'Naval Research Logistics',
+    arxiv: '2112.14898'
+  }
+  - {
+    title: 'Perioperative chemotherapy versus adjuvant chemotherapy strategies in resectable gastric and gastroesophageal cancer: A Markov decision analysis',
+    authors: ['Minsig Choi', 'Sayaka Ishizawa', 'David Kraemer', 'Aaron Sasson', 'Eugene Feinberg'],
+    date: '16 August 2021',
+    publication: 'European Journal of Surgical Oncology',
+    doi: '10.1016/j.ejso.2021.08.012'
+}
+  - {
     title: 'Analysis of iterative region-of-interest image reconstruction for x-ray computed tomography',
     authors: ['Emil Sidky', 'David Kraemer', 'Erin G. Roth', 'Ingrid S. Reiser', 'Xiaochuan Pan'],
     date: '3 October 2014',
@@ -7,7 +21,27 @@ journals:
     doi: '10.1117/1.JMI.1.3.031007'
 }
 
+inprogress:
+  - {
+    title: 'Continuity of parametric optima for possibly discontinuous functions and noncompact decision sets',
+    authors: ['Eugene Feinberg', 'Pavlo Kasyanov', 'David Kraemer'],
+    date: '(Submission) 13 September 2021',
+    arxiv: '2109.06299'
+  }
+  - {
+    title: 'Continuity for discrete-time control system filters defined by explicit equations',
+    authors: ['Eugene Feinberg', 'Sayaka Ishizawa', 'Pavlo Kasyanov', 'David Kraemer'],
+    date: 'In Progress',
+  }
+
 proceedings:
+  - {
+    title: 'Reinforcement learning for cost-aware Markov decision processes',
+    authors: ['Wes Suttle', 'Kaiqing Zhang', 'Zhuoran Yang', 'Ji Liu', 'David Kraemer'],
+    date: '18 July 2021',
+    publication: 'Proc. 38th International Conference on Machine Learning: PMLR',
+    link: 'https://proceedings.mlr.press/v139/suttle21a.html'
+}
   - {
     title: 'Robust iterative image reconstruction for breast CT by use of projection differentiation',
     authors: ['David Kraemer', 'Erin G. Roth', 'Emil Sidky', 'Ingrid S. Reiser', 'Xiaochuan Pan'],

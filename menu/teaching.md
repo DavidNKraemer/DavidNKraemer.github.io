@@ -3,15 +3,31 @@ layout: page
 title: Teaching 
 ---
 
-I am currently a graduate teaching assistant for the course [AMS 103 "Applied
-Mathematics in Modern Technology"][course]. I was the graduate TA for AMS 103
-during the Fall 2017 and Spring 2018 semesters.
+I am not currently teaching this semester, but I am accepting students for
+private tutoring! Please write to my 
+[email](mailto:david.kraemer@stonybrook.edu) for inquiries.
 
-I also wasthe online instructor for AMS 103 during the Summer 2018 and Winter
-2019 sessions.
+## Previous teaching roles
 
-During the Fall 2018 semester, I was one of the graduate TAs for [AMS 261
-"Applied Calculus III"][calc].
+* [AMS 102 "Introduction to Statistics"][stats],
+* [AMS 103 "Applied Mathematics in Modern Technology"][tech],
+* [AMS 261 "Applied Calculus III"][calc].
 
-[course]: https://www.stonybrook.edu/commcms/ams/undergraduate/_courses/ams103.php
+
+# Tutoring subjects
+
+* Calculus I-III
+* Differential equations
+* Linear algebra
+* Introduction to proofs
+* Discrete math
+* Introduction to Python
+* Numerical methods with Julia
+* Data science with Python
+* Introduction to databases with SQL
+* Independent projects (recent: map routing algorithms)
+
+
+[tech]: https://www.stonybrook.edu/commcms/ams/undergraduate/_courses/ams103.php
+[stats]: https://www.stonybrook.edu/commcms/ams/undergraduate/_courses/ams102.php
 [calc]: https://www.stonybrook.edu/commcms/ams/undergraduate/_courses/ams261.php
