@@ -3,6 +3,7 @@ layout: post
 title: "Functional programming for numerical algorithms"
 author: "David Kraemer"
 categories: ln
+image: "dalle-abstract-fp.png"
 tags: [analysis, functional-programming, Python]
 ---
 
@@ -118,7 +119,7 @@ iterations. Using Python generators, this can be pretty straightforward:
 
 {% gist 60b36656165ea652b79de7e9141fc2f7 iterate_v1.py %}
 
-The trouble is that the line `x = f(x)` is not very functional; rather, it has
+The trouble is that the line `x = proc(x)` is not very functional; rather, it has
 the same procedural flavor as above. I would not be against compromising FP
 principles here, because the code is readable, serves as a nice application of
 the stream concept, and as an HOP, integrating `iterate` into other algorithms
